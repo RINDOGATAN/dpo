@@ -1,0 +1,407 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "import": "Importar",
+    "submit": "Enviar",
+    "confirm": "Confirmar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "close": "Cerrar",
+    "yes": "Sí",
+    "no": "No",
+    "all": "Todo",
+    "none": "Ninguno",
+    "actions": "Acciones",
+    "status": "Estado",
+    "name": "Nombre",
+    "description": "Descripción",
+    "date": "Fecha",
+    "type": "Tipo",
+    "details": "Detalles",
+    "notes": "Notas",
+    "more": "Más",
+    "less": "Menos",
+    "showAll": "Mostrar todo",
+    "viewDetails": "Ver detalles"
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signOut": "Cerrar sesión",
+    "signUp": "Registrarse",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "enterEmail": "Introduce tu correo para recibir un enlace mágico",
+    "continueWithEmail": "Continuar con correo",
+    "continueWithGoogle": "Continuar con Google",
+    "orContinueWith": "O continuar con",
+    "noPasswordNeeded": "No se necesita contraseña. Te enviaremos un enlace seguro.",
+    "checkEmail": "Revisa tu correo",
+    "magicLinkSent": "Hemos enviado un enlace mágico a {email}. Haz clic en el enlace del correo para iniciar sesión.",
+    "didntReceive": "¿No lo has recibido?",
+    "tryAgain": "Inténtalo de nuevo",
+    "sendingLink": "Enviando...",
+    "signingIn": "Iniciando sesión...",
+    "bySigningIn": "Al iniciar sesión, aceptas nuestros",
+    "termsOfUse": "Términos de uso",
+    "and": "y",
+    "privacyPolicy": "Política de privacidad",
+    "developmentMode": "Modo de desarrollo",
+    "devSignIn": "Inicio rápido (Dev)"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "dataInventory": "Inventario de datos",
+    "dsar": "DSAR",
+    "assessments": "Evaluaciones",
+    "incidents": "Incidentes",
+    "vendors": "Proveedores",
+    "settings": "Configuración",
+    "openMenu": "Abrir menú",
+    "findExpert": "Buscar experto",
+    "myClients": "Mis clientes",
+    "feedback": "Comentarios",
+    "signOut": "Cerrar sesión",
+    "reports": "Informes",
+    "regulations": "Regulaciones",
+    "aiSystems": "Sistemas de IA",
+    "more": "Más",
+    "newOrganization": "Nueva organización"
+  },
+  "footer": {
+    "serviceBy": "{brandName} es un servicio de {companyName}.",
+    "userGuide": "Guía de usuario",
+    "billing": "Facturación",
+    "termsOfService": "Términos de servicio",
+    "privacyPolicy": "Política de privacidad",
+    "dataSecurity": "Seguridad de los datos",
+    "docs": "Documentación",
+    "howItWorks": "Cómo funciona",
+    "signIn": "Iniciar sesión"
+  },
+  "onboarding": {
+    "welcome": "Bienvenido a {brandName}",
+    "subtitle": "Configura tu cuenta para empezar con la gestión de protección de datos",
+    "howWillYouUse": "¿Cómo vas a utilizar {brandName}?",
+    "businessOwner": "Propietario de empresa",
+    "businessOwnerDesc": "Necesito cumplimiento en protección de datos para mi organización",
+    "privacyProfessional": "Profesional de privacidad",
+    "privacyProfessionalDesc": "Asesoro a varias organizaciones en protección de datos",
+    "orgName": "Nombre de la organización",
+    "orgNamePlaceholder": "ej., Acme Corporation",
+    "getStarted": "Comenzar",
+    "settingUp": "Configurando..."
+  },
+  "organization": {
+    "welcome": "Bienvenido a {brandName}",
+    "createOrg": "Crea tu organización para comenzar con la gestión de privacidad",
+    "orgName": "Nombre de la organización",
+    "orgNamePlaceholder": "ej., Acme Corporation",
+    "createOrganization": "Crear organización",
+    "creating": "Creando...",
+    "switchOrg": "Cambiar organización"
+  },
+  "quickstart": {
+    "recommended": "Recomendado: Configuración completa",
+    "recommendedDesc": "Importa tus proveedores y añade una plantilla de sector para el programa de protección de datos más completo."
+  },
+  "dashboard": {
+    "title": "Panel de privacidad",
+    "overview": "Resumen",
+    "recentActivity": "Actividad reciente",
+    "quickActions": "Acciones rápidas",
+    "metrics": {
+      "totalAssets": "Total de activos",
+      "activeRequests": "Solicitudes activas",
+      "pendingAssessments": "Evaluaciones pendientes",
+      "openIncidents": "Incidentes abiertos"
+    }
+  },
+  "dataInventory": {
+    "title": "Inventario de datos",
+    "assets": "Activos de datos",
+    "elements": "Elementos de datos",
+    "activities": "Actividades de tratamiento",
+    "flows": "Flujos de datos",
+    "transfers": "Transferencias de datos",
+    "newAsset": "Nuevo activo",
+    "newElement": "Nuevo elemento",
+    "newActivity": "Nueva actividad",
+    "assetType": "Tipo de activo",
+    "sensitivity": "Sensibilidad",
+    "owner": "Responsable",
+    "location": "Ubicación"
+  },
+  "dsar": {
+    "title": "Solicitudes de acceso de los interesados",
+    "newRequest": "Nueva solicitud",
+    "allRequests": "Todas las solicitudes",
+    "pending": "Pendiente",
+    "inProgress": "En curso",
+    "completed": "Completada",
+    "overdue": "Fuera de plazo",
+    "requesterName": "Nombre del solicitante",
+    "requesterEmail": "Correo del solicitante",
+    "requestType": "Tipo de solicitud",
+    "dueDate": "Fecha límite",
+    "receivedDate": "Fecha de recepción",
+    "types": {
+      "access": "Derecho de acceso",
+      "rectification": "Derecho de rectificación",
+      "erasure": "Derecho de supresión",
+      "portability": "Derecho a la portabilidad",
+      "objection": "Derecho de oposición",
+      "restriction": "Derecho a la limitación del tratamiento"
+    }
+  },
+  "assessments": {
+    "title": "Evaluaciones",
+    "newAssessment": "Nueva evaluación",
+    "templates": "Plantillas",
+    "draft": "Borrador",
+    "inProgress": "En curso",
+    "pendingReview": "Pendiente de revisión",
+    "approved": "Aprobada",
+    "types": {
+      "dpia": "Evaluación de impacto en protección de datos",
+      "pia": "Evaluación de impacto en la privacidad",
+      "tia": "Evaluación de impacto de transferencia",
+      "lia": "Evaluación de interés legítimo",
+      "vendor": "Evaluación de riesgo de proveedores",
+      "custom": "Evaluación personalizada"
+    },
+    "riskLevel": "Nivel de riesgo",
+    "startDate": "Fecha de inicio",
+    "completedDate": "Fecha de finalización"
+  },
+  "incidents": {
+    "title": "Incidentes",
+    "newIncident": "Nuevo incidente",
+    "reported": "Comunicado",
+    "investigating": "En investigación",
+    "contained": "Controlado",
+    "resolved": "Resuelto",
+    "severity": "Gravedad",
+    "severityLevels": {
+      "low": "Baja",
+      "medium": "Media",
+      "high": "Alta",
+      "critical": "Crítica"
+    },
+    "discoveredAt": "Fecha de detección",
+    "affectedRecords": "Registros afectados",
+    "notificationRequired": "Notificación requerida"
+  },
+  "vendors": {
+    "title": "Proveedores",
+    "newVendor": "Nuevo proveedor",
+    "active": "Activo",
+    "prospective": "Potencial",
+    "underReview": "En revisión",
+    "suspended": "Suspendido",
+    "riskTier": "Nivel de riesgo",
+    "contracts": "Contratos",
+    "questionnaires": "Cuestionarios",
+    "lastAssessed": "Última evaluación",
+    "nextReview": "Próxima revisión"
+  },
+  "premium": {
+    "accessRequired": "Acceso requerido",
+    "premiumFeature": "Función premium",
+    "upgradeRequired": "Esta función requiere una licencia premium.",
+    "contactUs": "Contáctanos",
+    "upgradeNow": "Actualizar ahora",
+    "premiumSuite": "Este tipo de evaluación forma parte de la suite premium de {brandName}. Actualiza tu plan para acceder a herramientas avanzadas de evaluación de privacidad."
+  },
+  "expertCta": {
+    "findExpert": "Buscar experto",
+    "quickstart": {
+      "heading": "¿Necesitas ayuda para configurar tu programa de privacidad?",
+      "body": "Contacta con un experto certificado en protección de datos que te guíe en el cumplimiento del RGPD y te ayude a personalizar tu programa."
+    },
+    "assessment": {
+      "heading": "¿Necesitas ayuda con tu evaluación?",
+      "body": "Los expertos en protección de datos pueden ayudarte a realizar EIPD, EIP y otras evaluaciones para garantizar un cumplimiento exhaustivo."
+    },
+    "incident": {
+      "heading": "¿Necesitas orientación experta sobre respuesta a incidentes?",
+      "body": "Un profesional de protección de datos puede ayudarte a gestionar notificaciones de brechas, comunicaciones con la AEPD y la remediación."
+    },
+    "emptyState": {
+      "heading": "¿No sabes por dónde empezar?",
+      "body": "Un experto en protección de datos puede ayudarte a construir tu inventario de datos y establecer procesos conformes desde el primer día."
+    },
+    "general": {
+      "heading": "Solicita ayuda profesional con tu programa de protección de datos",
+      "body": "Contacta con profesionales certificados en protección de datos que pueden ayudarte con el cumplimiento del RGPD, evaluaciones y más."
+    },
+    "vendor": {
+      "heading": "¿Necesitas ayuda con la diligencia debida de proveedores?",
+      "body": "Un experto en protección de datos puede revisar tus contratos con proveedores, los acuerdos de tratamiento de datos y ayudar a evaluar los riesgos de terceros."
+    },
+    "dsar": {
+      "heading": "¿Necesitas ayuda gestionando solicitudes de acceso?",
+      "body": "Los profesionales de protección de datos pueden ayudarte a establecer flujos de trabajo eficientes para las solicitudes de los interesados y garantizar respuestas oportunas y conformes."
+    },
+    "highRisk": {
+      "heading": "Tratamiento de alto riesgo detectado",
+      "body": "Tu selección incluye proveedores que tratan datos sensibles. Un especialista en EIPD puede ayudarte a evaluar y mitigar estos riesgos."
+    },
+    "transfer": {
+      "heading": "Transferencias internacionales detectadas",
+      "body": "Los datos que salen del EEE requieren garantías adecuadas. Un especialista en transferencias puede ayudarte con las ETI y las cláusulas contractuales tipo."
+    }
+  },
+  "experts": {
+    "title": "Buscar experto en protección de datos",
+    "subtitle": "Conecta con profesionales certificados en protección de datos que pueden ayudarte con tus necesidades de cumplimiento",
+    "searchPlaceholder": "Buscar por nombre, despacho o especialización...",
+    "specialization": "Especialización",
+    "allSpecializations": "Todas las especialidades",
+    "expertType": "Tipo de experto",
+    "allTypes": "Todos los tipos",
+    "country": "País",
+    "allCountries": "Todos los países",
+    "language": "Idioma",
+    "allLanguages": "Todos los idiomas",
+    "showing": "Mostrando {count} de {total} experto(s)",
+    "available": "Disponible",
+    "contactExpert": "Contactar experto",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "noResults": "No se han encontrado expertos que coincidan con los criterios. Prueba a ajustar los filtros.",
+    "noExperts": "No hay expertos disponibles en este momento.",
+    "unnamedExpert": "Experto sin nombre",
+    "privacyExpert": "Experto en protección de datos",
+    "typeLegal": "Jurídico",
+    "typeTechnical": "Técnico",
+    "typeDeployment": "Despliegue",
+    "contact": {
+      "title": "Contactar con {name}",
+      "description": "Envía un mensaje a este experto. Responderá directamente a tu correo electrónico.",
+      "requestSent": "Solicitud enviada",
+      "requestSentBody": "Tu mensaje ha sido enviado a {name}. Responderá directamente a tu correo electrónico.",
+      "nameLabel": "Nombre *",
+      "emailLabel": "Correo electrónico *",
+      "companyLabel": "Empresa",
+      "subjectLabel": "Asunto *",
+      "subjectPlaceholder": "p. ej., consulta sobre cumplimiento del RGPD",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Describe brevemente en qué necesitas ayuda...",
+      "errorMessage": "Ha ocurrido un error al enviar tu solicitud. Inténtalo de nuevo o contacta con nosotros directamente por correo electrónico.",
+      "sendRequest": "Enviar solicitud"
+    }
+  },
+  "deploymentCta": {
+    "heading": "¿Quieres alojar DPO Central en tu infraestructura?",
+    "body": "Expertos en despliegue pueden ayudarte a configurar y mantener tu propia instancia.",
+    "findExpert": "Buscar experto",
+    "dismiss": "Cerrar"
+  },
+  "security": {
+    "badge": "Defensa en profundidad",
+    "title": "Seguridad de los datos",
+    "subtitle": "DPO Central se ha construido con defensa en profundidad en cada capa. Como plataforma de gestión de privacidad que maneja resultados de evaluaciones, registros de incidentes, contratos con proveedores y solicitudes de interesados, la seguridad es un requisito fundamental, no algo secundario.",
+    "stats": {
+      "layers": "Capas de seguridad",
+      "headers": "Cabeceras HTTP",
+      "roles": "Niveles de rol",
+      "hsts": "HSTS máximo"
+    },
+    "categories": {
+      "identityAccess": "Identidad y acceso",
+      "identityAccessDesc": "Autenticación, autorización y gestión de sesiones",
+      "appSecurity": "Seguridad de la aplicación",
+      "appSecurityDesc": "Tratamiento de entradas, protección de API y prevención de abusos",
+      "dataProtection": "Protección de datos",
+      "dataProtectionDesc": "Seguridad del transporte, registro de auditoría, minimización y pagos",
+      "infrastructure": "Infraestructura",
+      "infrastructureDesc": "Alojamiento, cifrado y aislamiento de entornos"
+    },
+    "controlsLabel": "Controles de seguridad",
+    "sections": {
+      "authentication": "Autenticación",
+      "authorization": "Autorización y control de acceso",
+      "inputValidation": "Validación y saneamiento de entradas",
+      "apiSecurity": "Seguridad de la API",
+      "rateLimiting": "Limitación de tasa y prevención de abusos",
+      "transport": "Seguridad del transporte y del navegador",
+      "audit": "Registro de auditoría",
+      "minimization": "Minimización de datos",
+      "payment": "Seguridad de pagos",
+      "hosting": "Alojamiento y entorno"
+    },
+    "badges": {
+      "zeroKnowledge": "Conocimiento cero",
+      "fiveTierRbac": "RBAC 5 niveles",
+      "perEndpoint": "Por endpoint",
+      "sixHeaders": "6 cabeceras",
+      "stripeVerified": "Verificado por Stripe",
+      "edgeNetwork": "Red perimetral"
+    },
+    "items": {
+      "auth1": "Inicio de sesión multifactor mediante Google OAuth y enlaces mágicos por correo electrónico",
+      "auth2": "Sesiones JWT sin estado — sin estado de sesión en el servidor que pueda comprometerse",
+      "auth3": "Los tokens OAuth nunca se almacenan en la base de datos",
+      "auth4": "Aislamiento de cuentas — cada método de inicio de sesión se mantiene separado",
+      "auth5": "SSO entre aplicaciones mediante cookies de sesión seguras y con alcance definido",
+      "authHighlight": "No se almacenan contraseñas. La autenticación se delega en proveedores de identidad de confianza o en enlaces mágicos firmados criptográficamente.",
+      "authz1": "Multitenencia estricta — cada consulta está limitada a vuestra organización",
+      "authz2": "Jerarquía de roles en cinco niveles: Propietario, Administrador, Delegado de Protección de Datos, Miembro, Lector",
+      "authz3": "Control de acceso basado en roles en todas las operaciones de creación, actualización y eliminación",
+      "authz4": "Acciones destructivas restringidas exclusivamente a Administradores y Propietarios",
+      "authz5": "Sin SQL directo — todo el acceso mediante consultas ORM parametrizadas",
+      "authzHighlight": "Todo el acceso a la base de datos utiliza consultas ORM parametrizadas. La inyección SQL se previene estructuralmente, no solo se mitiga.",
+      "input1": "Validación de esquema en cada endpoint de la API",
+      "input2": "Saneamiento de HTML en todas las entradas de cara al público",
+      "input3": "Las consultas parametrizadas a la base de datos previenen la inyección SQL",
+      "input4": "Los detalles de errores de validación se ocultan en producción",
+      "api1": "Verificación de claves API con tiempo constante en los endpoints administrativos",
+      "api2": "Validación del tamaño de las cargas útiles en operaciones por lotes",
+      "api3": "Control de caducidad de tokens en todas las operaciones de cuestionarios a proveedores",
+      "api4": "El portal público de DSAR valida la configuración activa antes de aceptar solicitudes",
+      "apiHighlight": "Las comparaciones de claves API utilizan algoritmos de tiempo constante para prevenir ataques de temporización en los endpoints administrativos.",
+      "rate1": "Endpoints de autenticación limitados contra ataques de relleno de credenciales",
+      "rate2": "Rutas de pago y facturación protegidas contra fraude",
+      "rate3": "Endpoints de envío público limitados para prevenir spam",
+      "rate4": "Respuestas 429 correctas con cabeceras Retry-After",
+      "transport1": "HSTS con duración de 2 años, subdominios y precarga",
+      "transport2": "Política de Seguridad de Contenidos con nonces por solicitud",
+      "transport3": "Protección contra clickjacking mediante X-Frame-Options: DENY",
+      "transport4": "Prevención de detección de tipo MIME y política de referencia estricta",
+      "transport5": "Cámara, micrófono y geolocalización deshabilitados por política",
+      "transportHighlight": "Los nonces CSP se generan por solicitud, previniendo la inyección de scripts en línea incluso si un atacante encuentra un vector XSS.",
+      "audit1": "Registro exhaustivo de todas las operaciones de creación, actualización y eliminación",
+      "audit2": "Acciones administrativas registradas con metadatos completos",
+      "audit3": "Registro de producción estructurado sin trazas de pila ni contexto sensible",
+      "min1": "Las respuestas de la API devuelven solo los campos necesarios para la interfaz",
+      "min2": "Las claves sensibles se enmascaran en las vistas administrativas",
+      "min3": "Los dominios de correo electrónico públicos se bloquean para la membresía automática en organizaciones",
+      "pay1": "Verificación de firma de webhooks de Stripe mediante HMAC-SHA256",
+      "pay2": "Proceso de pago del lado del servidor que impide la manipulación de precios del lado del cliente",
+      "pay3": "Los derechos se suspenden automáticamente en caso de fallo en el pago",
+      "infra1": "Alojado en Vercel con TLS automático y red perimetral global",
+      "infra2": "Base de datos PostgreSQL con conexiones cifradas",
+      "infra3": "Los secretos del entorno se excluyen de los paquetes del cliente",
+      "infra4": "Los endpoints exclusivos de desarrollo están protegidos por comprobaciones del entorno de ejecución"
+    },
+    "disclosure": {
+      "title": "Divulgación responsable",
+      "body": "Si descubrís una vulnerabilidad de seguridad, os rogamos que la comuniquéis de forma responsable. No abráis una incidencia pública. Poneos en contacto directamente con nosotros a través de la dirección de correo electrónico indicada en el repositorio."
+    }
+  },
+  "errors": {
+    "generic": "Se ha producido un error. Por favor, inténtalo de nuevo.",
+    "notFound": "No encontrado",
+    "unauthorized": "No tienes autorización para realizar esta acción.",
+    "sessionExpired": "Tu sesión ha caducado. Por favor, inicia sesión de nuevo.",
+    "networkError": "Error de conexión. Por favor, comprueba tu conexión a internet."
+  }
+}

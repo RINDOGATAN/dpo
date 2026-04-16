@@ -1,0 +1,247 @@
+# Privacy Program Quickstart
+
+DPO Central's **Quickstart** feature helps new organizations bootstrap a complete privacy program in minutes instead of hours. It's available at **Dashboard > Get Started** (or directly at `/privacy/quickstart`) and offers two complementary approaches that can be used independently or combined.
+
+---
+
+## Overview
+
+| Approach | Direction | What it does | Pricing |
+|----------|-----------|--------------|---------|
+| **Vendor Import** | Bottom-up | Select vendors you already use; auto-generates data assets, elements, processing activities, and data transfers from each vendor's known data profile | Requires **Vendor Catalog** entitlement |
+| **Industry Template** | Top-down | Choose your industry; get a pre-built scaffold of internal data assets, processing activities, and data flows | Free (AGPL core) |
+
+Both approaches are **non-destructive** — they only create new records and never modify or delete existing ones. Duplicate names are automatically skipped.
+
+---
+
+## Bottom-Up: Vendor Import
+
+### How it works
+
+1. User searches the Vendor Catalog (700+ pre-audited SaaS vendors)
+2. Selects the vendors their organization actually uses (multi-select, up to 20)
+3. For each vendor, the system looks up the vendor's **catalog category** and maps it to a predefined data profile
+4. A preview shows exactly what will be created per vendor
+5. On confirmation, a single database transaction creates all records
+
+### What gets created per vendor
+
+| Record type | Example (for a "Digital Analytics" vendor like Google Analytics) |
+|-------------|---------------------------------------------------------------|
+| **Vendor** | Google Analytics, status: Prospective, categories: ["Digital Analytics"] |
+| **Data Asset** | "Google Analytics (Analytics & BI)", type: CLOUD_SERVICE |
+| **Data Elements** | IP Address, Device Fingerprint, Page Views, Session Duration, Click Events, Referral Source, Browser & OS, Geolocation |
+| **Processing Activity** | "Website/App Analytics — Google Analytics", legal basis: Legitimate Interests |
+| **Data Transfers** | Auto-created for each non-EU data location with Standard Contractual Clauses |
+
+### Category mapping groups
+
+Vendor catalog categories are mapped into 20 groups, each with a tailored data profile. Groups accept both the new VW canonical category names and legacy freeform names for backwards compatibility.
+
+| Group | VW Canonical Categories | Typical elements |
+|-------|------------------------|------------------|
+| Analytics & BI | Analytics & BI, Personalization & Engagement | IP Address, Device Fingerprint, Page Views, Session Data, Click Events |
+| Marketing & Advertising | Marketing Automation, Advertising | Email, Name, Company, Marketing Preferences, Campaign Interactions, Cookies |
+| CRM & Sales | CRM & Sales | Name, Email, Phone, Company & Job Title, Deal Data, Communication History |
+| Customer Data Platform | Customer Data Platform | Unified Profile, Cross-device IDs, Behavioral Segments, Transaction History |
+| Cloud Infrastructure | Cloud Infrastructure, Data Warehouse & Integration | Application Data, Server Logs, Stored Records, Backups |
+| Content & E-commerce | Content Management, E-commerce | User Accounts, Orders, Shipping Address, Content Interactions |
+| Customer Support | Customer Support, Communication | Name, Email, Phone, Ticket Content, Call Recordings |
+| AI & Machine Learning | AI & Machine Learning | User Prompts, Chat Transcripts, User Identifiers, AI Model Outputs |
+| Surveys & Feedback | Surveys & Research | Respondent Email, Survey Responses, NPS Scores |
+| Payment Processing | Payment Processing | Cardholder Name, Payment Card Data, Billing Address, Transaction Records |
+| HR & People | HR & People | Employee Name, National ID, Salary, Employment History, Performance Records |
+| Developer Tools | Developer Tools | Server Logs, Error Stack Traces, User Session Context, IP Addresses |
+| Security & Identity | Security & Identity | User Credentials, Access Logs, IP Addresses, Security Events |
+| Privacy & Consent | Privacy & Consent | Consent Records, Cookie Preferences, Data Subject Requests |
+| Productivity & Collaboration | Productivity & Collaboration | User Profiles, Messages, Shared Files, Activity Logs |
+| Legal & Compliance | Legal & Compliance | Signatory Info, Contract Content, Digital Signatures, Audit Trail |
+| Design & Creative | Design & Creative | User Accounts, Creative Assets, Collaboration Data |
+| Events & Webinars | *(legacy only)* | Attendee Name, Email, Company, Dietary Requirements |
+| Tag Management | *(Developer Tools > Tag Management subcategory)* | Page URLs, Event Data, Cookie Data, User Agent |
+| Communication & Messaging | *(legacy only)* | Contact Info, Message Content, Video Recordings |
+
+Vendors whose category doesn't match any group get a **generic "Third-Party Service"** mapping with basic identifiers and usage data elements.
+
+### Data transfer detection
+
+When a vendor's `dataLocations` includes countries outside the EU/EEA adequacy list, the system automatically creates **DataTransfer** records with:
+- Mechanism: Standard Contractual Clauses (SCCs)
+- Safeguards: "SCCs with supplementary measures"
+- Linked to the vendor's processing activity
+
+The adequacy list includes all EU/EEA member states plus countries with active EU adequacy decisions (UK, Japan, South Korea, Switzerland, Canada, Argentina, etc.).
+
+### Entitlement gating
+
+Vendor import requires the **Vendor Catalog** entitlement (`com.nel.dpocentral.vendor-catalog`) or the **Complete** package. Organizations without access see the vendor card as locked with a "Premium" badge.
+
+---
+
+## Top-Down: Industry Template
+
+### How it works
+
+1. User selects from 6 industry templates
+2. An expandable preview shows all assets, activities, and flows in the template
+3. Items that already exist in the organization are marked and automatically skipped
+4. On confirmation, a single transaction creates all records with correct cross-references
+
+### Available templates
+
+#### E-commerce
+For online retail with customer accounts, orders, payments, and marketing.
+
+- **Assets (5):** Customer Database, Order Management System, Marketing Platform, Web Analytics, Payment Gateway
+- **Activities (4):** Customer Account Management, Order Processing & Fulfillment, Marketing & Promotions, Website Analytics & Optimization
+- **Flows (3):** Customer to Orders, Orders to Payment, Customer to Marketing
+
+#### SaaS / Technology
+For software-as-a-service platforms with user accounts, usage tracking, and support.
+
+- **Assets (5):** User Database, Application Logs, Support Ticketing System, Billing System, Product Analytics
+- **Activities (5):** User Account Provisioning, Service Delivery & Processing, Subscription Billing, Customer Support, Product Analytics & Improvement
+- **Flows (3):** User Actions to Logs, User to Billing, User to Analytics
+
+#### Healthcare
+For healthcare providers or health-tech with patient data, EHR, and regulatory compliance.
+
+- **Assets (4):** Electronic Health Records (EHR), Patient Portal, Billing & Insurance System, Staff HR System
+- **Activities (3):** Patient Care & Treatment, Medical Billing & Insurance, Staff Employment Management
+- **Flows (2):** EHR to Patient Portal, EHR to Billing
+
+#### Fintech
+For financial technology with KYC, transaction processing, and regulatory reporting.
+
+- **Assets (4):** KYC/Identity Verification System, Transaction Ledger, Customer Account System, Regulatory Reporting System
+- **Activities (3):** Customer Onboarding & KYC, Transaction Processing, AML Monitoring & Regulatory Reporting
+- **Flows (2):** KYC to Account, Transactions to Monitoring
+
+#### Media / Publishing
+For digital media, news, or content platforms with subscriptions and advertising.
+
+- **Assets (4):** Subscriber Database, Content Management System, Ad Tech Platform, Newsletter Platform
+- **Activities (4):** Subscription Management, Programmatic Advertising, Newsletter Distribution, Content Personalization
+- **Flows (2):** Subscribers to Ad Platform, Subscribers to Newsletter
+
+#### Professional Services
+For consulting, legal, accounting, or agency with client data and project management.
+
+- **Assets (4):** Client Database, Project Management System, HR & Payroll System, Document Management
+- **Activities (3):** Client Relationship Management, Service Delivery & Project Work, Employee HR & Payroll
+- **Flows (2):** Client to Projects, Projects to Documents
+
+---
+
+## Wizard Flow
+
+The quickstart page (`/privacy/quickstart`) walks users through a multi-step wizard:
+
+```
+Step 1: Choose Path
+  Select "Import from Vendor Catalog" and/or "Start from Industry Template"
+
+Step 2A: Vendor Selection (if vendor path chosen)
+  Search catalog, multi-select vendors, see live preview of what will be created
+
+Step 2B: Industry Selection (if industry path chosen)
+  Pick template from grid, expand to preview all assets/activities/flows
+
+Step 3: Review & Confirm
+  Summary counts (X assets, Y elements, Z activities...)
+  Non-destructive notice
+  "Build My Privacy Program" button
+
+Success Screen
+  Links to Data Inventory, Processing Activities, Vendors, Dashboard
+```
+
+If both paths are selected, the wizard flows: Choose > Vendors > Industry > Review.
+
+---
+
+## Vendor.Watch Integration
+
+Users who have built a vendor portfolio in Vendor.Watch get a seamless onboarding experience.
+
+### How it works
+
+1. DPO Central and Vendor.Watch share the same Neon PostgreSQL database and NextAuth session (SSO via `.todo.law` cookies)
+2. `VwPortfolioVendor.accountId` maps to the shared `User.id` from the NextAuth users table
+3. When a user arrives at the DPO Central dashboard, the system queries their VW portfolio
+4. If a portfolio is detected and the org has few records, a tailored card appears showing the portfolio vendors and a "Build Now" button
+5. Clicking the button navigates to `/privacy/quickstart?from=vendorwatch`
+6. The quickstart wizard shows a **Welcome step** with the portfolio listed, offering three choices:
+   - "Yes, build my privacy program" — proceeds straight to vendor review
+   - "Yes, and also add an industry template" — enables both paths
+   - "Let me choose manually" — falls through to the normal wizard
+
+### Dashboard detection
+
+When the org is fresh (few records), the dashboard shows one of two cards:
+
+```
+If portfolio exists → VW-specific card with vendor names and "Build Now" button
+If no portfolio    → Generic quickstart card with "Get Started" button
+```
+
+Both cards use the same condition:
+```
+showQuickstart = totalAssets <= 2 AND totalActivities <= 1 AND activeVendors <= 1
+```
+
+### Portfolio pre-selection
+
+When arriving via `?from=vendorwatch`, the wizard automatically:
+- Fetches the user's VW portfolio via `quickstart.getPortfolio`
+- Pre-selects all non-imported vendor slugs
+- If no portfolio is found, falls back to the normal "choose" step
+
+---
+
+## Dashboard Integration
+
+A quickstart card appears at the top of the Privacy Dashboard (`/privacy`) when the organization has few records. The card variant depends on whether the user has a Vendor.Watch portfolio (see above).
+
+The card disappears automatically once the organization has populated its privacy program.
+
+---
+
+## Technical Details
+
+### API Endpoints
+
+All endpoints require authentication and organization membership (`organizationProcedure`).
+
+| Endpoint | Type | Description |
+|----------|------|-------------|
+| `quickstart.getPortfolio` | Query | Detects VW portfolio for the current user, returns vendor list with dedup info |
+| `quickstart.listTemplates` | Query | Returns lightweight list of all 6 industry templates with counts |
+| `quickstart.previewVendorImport` | Query | Returns preview of what vendor import would create, including dedup info |
+| `quickstart.previewIndustryTemplate` | Query | Returns full template preview with existing-record detection |
+| `quickstart.execute` | Mutation | Creates all records in a single `$transaction()` |
+
+### Deduplication
+
+Before creating any record, the execute mutation checks for existing records by name within the organization:
+- Existing **vendors** (by name) are skipped entirely
+- Existing **data assets** (by name) are skipped but their IDs are still resolved for activity linking
+- Existing **processing activities** (by name) are skipped
+
+### Audit Trail
+
+All records created by quickstart are tagged in the audit log:
+- `action: "CREATE"`
+- `metadata: { source: "quickstart" }`
+- `changes` includes `source: "quickstart"` and the template ID or catalog slug
+
+### Source Files
+
+| File | Purpose |
+|------|---------|
+| `src/config/vendor-data-mappings.ts` | Category-to-data-profile mappings, EU adequacy list |
+| `src/config/industry-templates.ts` | 6 industry template definitions |
+| `src/server/routers/privacy/quickstart.ts` | tRPC router with preview + execute endpoints |
+| `src/app/(dashboard)/privacy/quickstart/page.tsx` | Multi-step wizard UI |
+| `src/app/(dashboard)/privacy/page.tsx` | Dashboard with conditional quickstart card |

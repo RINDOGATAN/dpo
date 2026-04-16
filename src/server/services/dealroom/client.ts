@@ -1,0 +1,318 @@
+import {
+  mockExperts,
+  specializations,
+  expertTypes,
+  countryNames,
+  languageNames,
+  type ExpertProfile,
+} from "./mock-data";
+import { logger } from "@/lib/logger";
+
+const RAW_DEALROOM_URL = process.env.DEALROOM_API_URL ?? "";
+const DEALROOM_API_KEY = process.env.DEALROOM_API_KEY;
+
+// Normalize: env var may include path prefix (e.g. ".../api/v1/experts") — strip to base domain
+const DEALROOM_API_URL = RAW_DEALROOM_URL.replace(/\/api\/v1\/experts\/?$/, "").replace(/\/+$/, "");
+
+const useMock = !DEALROOM_API_URL || !DEALROOM_API_KEY;
+
+export type { ExpertProfile };
+
+export interface ExpertSearchParams {
+  query?: string;
+  specialization?: string;
+  country?: string; // ISO 3166-1 alpha-2
+  language?: string; // ISO 639-1
+  expertType?: "legal" | "technical" | "deployment";
+  excludeType?: string; // Exclude experts whose ONLY type matches (e.g. "deployment")
+  limit?: number;
+  offset?: number;
+}
+
+export interface ExpertSearchResult {
+  results: ExpertProfile[];
+  total: number;
+  offset: number;
+}
+
+function filterMockExperts(params: ExpertSearchParams): ExpertSearchResult {
+  let results = [...mockExperts];
+
+  if (params.query) {
+    const q = params.query.toLowerCase();
+    results = results.filter(
+      (e) =>
+        (e.name?.toLowerCase().includes(q) ?? false) ||
+        (e.firm?.toLowerCase().includes(q) ?? false) ||
+        (e.bio?.toLowerCase().includes(q) ?? false) ||
+        e.specializations.some((s) => s.toLowerCase().includes(q))
+    );
+  }
+
+  if (params.specialization) {
+    results = results.filter((e) =>
+      e.specializations.some(
+        (s) => s.toLowerCase() === params.specialization!.toLowerCase()
+      )
+    );
+  }
+
+  if (params.country) {
+    results = results.filter(
+      (e) =>
+        e.location.country?.toLowerCase() === params.country!.toLowerCase()
+    );
+  }
+
+  if (params.language) {
+    results = results.filter((e) =>
+      e.languages.some(
+        (l) => l.toLowerCase() === params.language!.toLowerCase()
+      )
+    );
+  }
+
+  if (params.expertType) {
+    results = results.filter((e) => e.expertTypes.includes(params.expertType!));
+  }
+
+  // Exclude experts whose only type matches excludeType (e.g. deployment-only)
+  if (params.excludeType) {
+    const exc = params.excludeType.toLowerCase();
+    results = results.filter(
+      (e) => !(e.expertTypes.length === 1 && e.expertTypes[0].toLowerCase() === exc)
+    );
+  }
+
+  // Sort by profileCompleteness descending (best profiles first)
+  results.sort((a, b) => b.profileCompleteness - a.profileCompleteness);
+
+  const total = results.length;
+  const offset = params.offset ?? 0;
+  const limit = params.limit ?? 20;
+  results = results.slice(offset, offset + limit);
+
+  return { results, total, offset };
+}
+
+export async function searchExperts(
+  params: ExpertSearchParams
+): Promise<ExpertSearchResult> {
+  if (useMock) {
+    return filterMockExperts(params);
+  }
+
+  const res = await fetch(`${DEALROOM_API_URL}/api/v1/experts/search`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${DEALROOM_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      query: params.query,
+      specialization: params.specialization,
+      country: params.country,
+      language: params.language,
+      expertType: params.expertType,
+      limit: params.limit ?? 20,
+      offset: params.offset ?? 0,
+    }),
+    next: { revalidate: 300 }, // 5-minute cache
+  });
+
+  if (!res.ok) {
+    const errorBody = await res.text().catch(() => "");
+    logger.error("Dealroom search failed — falling back to mock", undefined, {
+      status: res.status,
+      url: `${DEALROOM_API_URL}/api/v1/experts/search`,
+      error: errorBody.slice(0, 300),
+    });
+    return filterMockExperts(params); // Fallback to mock
+  }
+
+  const data: ExpertSearchResult = await res.json();
+
+  // Client-side exclude filter (Dealroom API doesn't support excludeType)
+  if (params.excludeType) {
+    const exc = params.excludeType.toLowerCase();
+    data.results = data.results.filter(
+      (e) => !(e.expertTypes.length === 1 && e.expertTypes[0].toLowerCase() === exc)
+    );
+    data.total = data.results.length;
+  }
+
+  return data;
+}
+
+export async function getExpertById(
+  id: string
+): Promise<ExpertProfile | null> {
+  if (useMock) {
+    return mockExperts.find((e) => e.id === id) ?? null;
+  }
+
+  const res = await fetch(`${DEALROOM_API_URL}/api/v1/experts/${id}`, {
+    headers: {
+      Authorization: `Bearer ${DEALROOM_API_KEY}`,
+    },
+    next: { revalidate: 3600 }, // 1-hour cache
+  });
+
+  if (!res.ok) {
+    return mockExperts.find((e) => e.id === id) ?? null;
+  }
+
+  return res.json();
+}
+
+export function getSpecializations(): string[] {
+  return specializations;
+}
+
+export function getCountries(): { code: string; name: string }[] {
+  if (useMock) {
+    const codes = [
+      ...new Set(
+        mockExperts
+          .map((e) => e.location.country)
+          .filter((c): c is string => c != null)
+      ),
+    ].sort();
+    return codes.map((code) => ({
+      code,
+      name: countryNames[code] ?? code,
+    }));
+  }
+  // When using real API, return all known countries
+  return Object.entries(countryNames)
+    .map(([code, name]) => ({ code, name }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function getLanguages(): { code: string; name: string }[] {
+  if (useMock) {
+    const codes = [
+      ...new Set(mockExperts.flatMap((e) => e.languages)),
+    ].sort();
+    return codes.map((code) => ({
+      code,
+      name: languageNames[code] ?? code,
+    }));
+  }
+  return Object.entries(languageNames)
+    .map(([code, name]) => ({ code, name }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export function getExpertTypes() {
+  return expertTypes;
+}
+
+export interface ContactExpertParams {
+  expertId: string;
+  requesterName: string;
+  requesterEmail: string;
+  requesterCompany?: string;
+  subject: string;
+  message?: string;
+  governingLaw?: string;
+}
+
+export interface ContactExpertResult {
+  requestId: string;
+  status: string;
+  createdAt: string;
+}
+
+export async function contactExpert(
+  params: ContactExpertParams
+): Promise<ContactExpertResult> {
+  if (useMock) {
+    // Validate the expert exists in mock data
+    const expert = mockExperts.find((e) => e.id === params.expertId);
+    if (!expert) {
+      logger.warn("Contact request for unknown mock expert", { expertId: params.expertId });
+    }
+    return {
+      requestId: `req-mock-${Date.now()}`,
+      status: "pending",
+      createdAt: new Date().toISOString(),
+    };
+  }
+
+  const { expertId, ...body } = params;
+
+  let res: Response;
+  try {
+    res = await fetch(
+      `${DEALROOM_API_URL}/api/v1/experts/${expertId}/contact`,
+      {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${DEALROOM_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      }
+    );
+  } catch (err) {
+    logger.error("Dealroom contact request network error", err);
+    // Fall back to mock response so the user isn't blocked
+    return {
+      requestId: `req-fallback-${Date.now()}`,
+      status: "pending",
+      createdAt: new Date().toISOString(),
+    };
+  }
+
+  if (!res.ok) {
+    const text = await res.text().catch(() => "");
+    logger.error("Dealroom contact request failed", undefined, { status: res.status, body: text.slice(0, 200) });
+    // Fall back to mock response rather than throwing
+    return {
+      requestId: `req-fallback-${Date.now()}`,
+      status: "pending",
+      createdAt: new Date().toISOString(),
+    };
+  }
+
+  return res.json();
+}
+
+export interface ContactRequestResult {
+  requestId: string;
+  expertId: string;
+  expertName: string;
+  subject: string;
+  status: string;
+  message: string | null;
+  requesterName: string;
+  requesterEmail: string;
+  requesterCompany: string | null;
+  governingLaw: string | null;
+  respondedAt: string | null;
+  createdAt: string;
+}
+
+export async function getContactRequest(
+  requestId: string
+): Promise<ContactRequestResult | null> {
+  if (useMock) {
+    return null;
+  }
+
+  const res = await fetch(
+    `${DEALROOM_API_URL}/api/v1/experts/requests/${requestId}`,
+    {
+      headers: {
+        Authorization: `Bearer ${DEALROOM_API_KEY}`,
+      },
+    }
+  );
+
+  if (!res.ok) {
+    return null;
+  }
+
+  return res.json();
+}
