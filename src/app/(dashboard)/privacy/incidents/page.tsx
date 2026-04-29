@@ -1,0 +1,310 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  AlertTriangle,
+  Plus,
+  Search,
+  Clock,
+  AlertCircle,
+  Download,
+  FileSpreadsheet,
+  FileText,
+} from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
+import { ListPageSkeleton } from "@/components/skeletons/list-page-skeleton";
+import { trpc } from "@/lib/trpc";
+import { useOrganization } from "@/lib/organization-context";
+import { useDebounce } from "@/hooks/use-debounce";
+import { ExpertHelpCta } from "@/components/privacy/expert-help-cta";
+import { useTranslations } from "next-intl";
+
+const severityColors: Record<string, string> = {
+  LOW: "border-primary text-primary",
+  MEDIUM: "border-muted-foreground text-muted-foreground",
+  HIGH: "border-muted-foreground bg-muted-foreground/20 text-foreground",
+  CRITICAL: "border-muted-foreground bg-muted-foreground text-foreground",
+};
+
+const statusColors: Record<string, string> = {
+  REPORTED: "border-primary text-primary",
+  INVESTIGATING: "border-primary text-primary",
+  CONTAINED: "border-muted-foreground text-muted-foreground",
+  ERADICATED: "border-primary text-primary",
+  RECOVERING: "border-muted-foreground text-muted-foreground",
+  CLOSED: "border-primary bg-primary text-primary-foreground",
+  FALSE_POSITIVE: "border-muted-foreground text-muted-foreground",
+};
+
+const OPEN_STATUSES = ["REPORTED", "INVESTIGATING", "CONTAINED", "ERADICATED", "RECOVERING"];
+
+export default function IncidentsPage() {
+  const t = useTranslations("pages.incidents");
+  const [searchQuery, setSearchQuery] = useState("");
+  const debouncedSearch = useDebounce(searchQuery);
+  const [activeTab, setActiveTab] = useState("all");
+  const { organization } = useOrganization();
+
+  const {
+    data: incidentsPages,
+    isLoading,
+    hasNextPage,
+    fetchNextPage,
+    isFetchingNextPage,
+  } = trpc.incident.list.useInfiniteQuery(
+    { organizationId: organization?.id ?? "", search: debouncedSearch || undefined, limit: 100 },
+    {
+      enabled: !!organization?.id,
+      getNextPageParam: (lastPage) => lastPage.nextCursor,
+    }
+  );
+
+  useEffect(() => {
+    if (hasNextPage && !isFetchingNextPage) fetchNextPage();
+  }, [hasNextPage, isFetchingNextPage, fetchNextPage]);
+
+  const incidentsData = { incidents: incidentsPages?.pages.flatMap((p) => p.incidents) ?? [] };
+
+  const { data: statsData } = trpc.incident.getStats.useQuery(
+    { organizationId: organization?.id ?? "" },
+    { enabled: !!organization?.id }
+  );
+
+  const incidents = incidentsData?.incidents ?? [];
+  const bySeverity = statsData?.bySeverity as Record<string, number> | undefined;
+  const stats = {
+    total: statsData?.total ?? 0,
+    open: statsData?.open ?? 0,
+    critical: bySeverity?.CRITICAL ?? 0,
+    pendingNotification: statsData?.overdueNotifications ?? 0,
+  };
+
+  const filteredIncidents = (() => {
+    switch (activeTab) {
+      case "open":
+        return incidents.filter((i) => OPEN_STATUSES.includes(i.status));
+      case "critical":
+        return incidents.filter((i) => i.severity === "CRITICAL");
+      case "closed":
+        return incidents.filter((i) => i.status === "CLOSED" || i.status === "FALSE_POSITIVE");
+      default:
+        return incidents;
+    }
+  })();
+
+  return (
+    <div className="space-y-4 sm:space-y-6">
+      {/* Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div>
+          <h1 className="text-xl sm:text-2xl font-semibold">{t("title")}</h1>
+          <p className="text-sm text-muted-foreground">{t("subtitle")}</p>
+        </div>
+        <div className="flex gap-2">
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" size="icon" aria-label={t("exportRegister")} className="shrink-0 sm:size-auto sm:px-4 sm:py-2">
+                <Download className="w-4 h-4 sm:mr-2" />
+                <span className="hidden sm:inline">{t("exportRegister")}</span>
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuItem onClick={() => window.open(`/api/export/breach-register?organizationId=${organization?.id}`, "_blank")}>
+                <FileText className="w-4 h-4 mr-2" />
+                {t("exportPdf")}
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => window.open(`/api/export/breach-register?organizationId=${organization?.id}&format=csv`, "_blank")}>
+                <FileSpreadsheet className="w-4 h-4 mr-2" />
+                {t("exportCsv")}
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <Link href="/privacy/incidents/new">
+            <Button className="w-full sm:w-auto">
+              <Plus className="w-4 h-4 mr-2" />
+              {t("reportIncident")}
+            </Button>
+          </Link>
+        </div>
+      </div>
+
+      {/* Stats */}
+      <div className="grid gap-3 grid-cols-2 lg:grid-cols-4">
+        <Card>
+          <CardContent className="p-4 sm:pt-6">
+            <div className="text-xl sm:text-2xl font-bold text-foreground">{stats.total}</div>
+            <p className="text-xs sm:text-sm text-muted-foreground">{t("stats.total")}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 sm:pt-6">
+            <div className="text-xl sm:text-2xl font-bold text-foreground">{stats.open}</div>
+            <p className="text-xs sm:text-sm text-muted-foreground">{t("stats.open")}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 sm:pt-6">
+            <div className={`text-xl sm:text-2xl font-bold ${stats.critical > 0 ? "text-amber-400" : "text-foreground"}`}>
+              {stats.critical}
+            </div>
+            <p className="text-xs sm:text-sm text-muted-foreground mt-1">{t("stats.critical")}</p>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="p-4 sm:pt-6">
+            <div className="text-xl sm:text-2xl font-bold text-foreground">{stats.pendingNotification}</div>
+            <p className="text-xs sm:text-sm text-muted-foreground">{t("stats.pendingDpa")}</p>
+          </CardContent>
+        </Card>
+      </div>
+
+      {/* Search */}
+      <div className="relative">
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+        <Input
+          placeholder={t("search")}
+          className="pl-9"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
+      </div>
+
+      {/* Tabs */}
+      <Tabs value={activeTab} onValueChange={setActiveTab}>
+        <TabsList>
+          <TabsTrigger value="all">{t("tabs.all")}</TabsTrigger>
+          <TabsTrigger value="open">{t("tabs.open")}</TabsTrigger>
+          <TabsTrigger value="critical">{t("tabs.critical")}</TabsTrigger>
+          <TabsTrigger value="closed">{t("tabs.closed")}</TabsTrigger>
+        </TabsList>
+      </Tabs>
+
+      {/* Incident List */}
+      {isLoading ? (
+        <ListPageSkeleton />
+      ) : filteredIncidents.length > 0 ? (
+        <div className="flex flex-col gap-4">
+          {filteredIncidents.map((incident) => (
+            <Link key={incident.id} href={`/privacy/incidents/${incident.id}`} className="block rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+              <Card className="hover:border-primary/50 transition-colors cursor-pointer">
+                <CardContent className="p-4">
+                  {/* Mobile Layout - Stacked */}
+                  <div className="flex flex-col gap-3 sm:hidden">
+                    <div className="flex items-start justify-between gap-2">
+                      <span className="font-medium font-mono text-primary text-sm">{incident.publicId}</span>
+                      <Badge variant="outline" className={`text-xs shrink-0 ${severityColors[incident.severity] || ""}`}>
+                        {t(`severity.${incident.severity}`)}
+                      </Badge>
+                    </div>
+                    <p className="text-sm text-muted-foreground line-clamp-2">
+                      {incident.title}
+                    </p>
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <Badge variant="outline" className="text-xs">{t(`type.${incident.type}`)}</Badge>
+                      <Badge variant="outline" className={`text-xs ${statusColors[incident.status] || ""}`}>
+                        {t(`status.${incident.status}`)}
+                      </Badge>
+                    </div>
+                    <div className="flex items-center justify-between text-xs text-muted-foreground">
+                      <span>{t("card.recordsShort", { count: incident.affectedRecords ?? 0 })}</span>
+                      <span>
+                        <Clock className="inline h-3 w-3 mr-1" />
+                        {new Date(incident.discoveredAt).toLocaleDateString()}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Desktop Layout - Horizontal */}
+                  <div className="hidden sm:flex items-center gap-6">
+                    <div className={`w-10 h-10 flex items-center justify-center border-2 shrink-0 ${
+                      incident.severity === "CRITICAL" ? "border-muted-foreground bg-muted-foreground/30" :
+                      incident.severity === "HIGH" ? "border-muted-foreground bg-muted-foreground/20" :
+                      incident.severity === "MEDIUM" ? "border-muted-foreground" :
+                      "border-primary"
+                    }`}>
+                      {incident.severity === "CRITICAL" || incident.severity === "HIGH" ? (
+                        <AlertTriangle className="w-5 h-5 text-foreground" />
+                      ) : (
+                        <AlertCircle className={`w-5 h-5 ${
+                          incident.severity === "MEDIUM" ? "text-muted-foreground" : "text-primary"
+                        }`} />
+                      )}
+                    </div>
+
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 flex-wrap">
+                        <span className="font-medium font-mono text-primary">{incident.publicId}</span>
+                        <Badge variant="outline">{t(`type.${incident.type}`)}</Badge>
+                        <Badge variant="outline" className={severityColors[incident.severity] || ""}>
+                          {t(`severity.${incident.severity}`)}
+                        </Badge>
+                        <Badge variant="outline" className={statusColors[incident.status] || ""}>
+                          {t(`status.${incident.status}`)}
+                        </Badge>
+                      </div>
+                      <p className="text-sm text-muted-foreground truncate mt-1">
+                        {incident.title}
+                      </p>
+                    </div>
+
+                    <div className="text-center shrink-0">
+                      <p className="text-lg font-semibold text-primary">
+                        {incident.affectedRecords?.toLocaleString() ?? 0}
+                      </p>
+                      <p className="text-xs text-muted-foreground">{t("card.records")}</p>
+                    </div>
+
+                    <div className="text-right shrink-0">
+                      <p className="text-sm text-muted-foreground">
+                        <Clock className="inline w-3 h-3 mr-1" />
+                        {new Date(incident.discoveredAt).toLocaleDateString()}
+                      </p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          ))}
+        </div>
+      ) : activeTab === "all" ? (
+        <Card>
+          <CardContent className="py-8 text-center text-muted-foreground">
+            <AlertTriangle className="w-12 h-12 mx-auto mb-4 opacity-50" />
+            <p>{t("emptyAll.title")}</p>
+            <p className="text-sm mb-4">{t("emptyAll.subtitle")}</p>
+            <Link href="/privacy/incidents/new">
+              <Button>
+                <Plus className="w-4 h-4 mr-2" />
+                {t("reportIncident")}
+              </Button>
+            </Link>
+          </CardContent>
+        </Card>
+      ) : (
+        <Card>
+          <CardContent className="py-8 text-center text-muted-foreground">
+            <AlertTriangle className="w-12 h-12 mx-auto mb-4 opacity-50" />
+            <p>
+              {activeTab === "open" && t("emptyOpen")}
+              {activeTab === "critical" && t("emptyCritical")}
+              {activeTab === "closed" && t("emptyClosed")}
+            </p>
+          </CardContent>
+        </Card>
+      )}
+
+      <ExpertHelpCta context="incident" />
+    </div>
+  );
+}

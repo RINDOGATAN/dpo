@@ -1,0 +1,2887 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "import": "Importar",
+    "submit": "Enviar",
+    "confirm": "Confirmar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "close": "Cerrar",
+    "yes": "Sí",
+    "no": "No",
+    "all": "Todo",
+    "none": "Ninguno",
+    "actions": "Acciones",
+    "status": "Estado",
+    "name": "Nombre",
+    "description": "Descripción",
+    "date": "Fecha",
+    "type": "Tipo",
+    "details": "Detalles",
+    "notes": "Notas",
+    "more": "Más",
+    "less": "Menos",
+    "showAll": "Mostrar todo",
+    "viewDetails": "Ver detalles"
+  },
+  "pages": {
+    "newVendor": {
+      "title": "Añadir proveedor",
+      "titleCatalog": "Añadir desde el catálogo",
+      "subtitle": "Registra un nuevo proveedor externo",
+      "subtitleCatalog": "Busca proveedores preauditados y autocompleta los datos de cumplimiento",
+      "catalog": {
+        "title": "Búsqueda en el catálogo de proveedores",
+        "subtitle": "Busca entre más de 700 proveedores MarTech, IA y SaaS preauditados con datos de cumplimiento",
+        "verified": "Verificado",
+        "website": "Sitio web",
+        "privacyPolicy": "Política de privacidad",
+        "dpa": "DPA",
+        "trustCenter": "Centro de confianza",
+        "autoFilled": "Los campos del formulario se han rellenado a partir del catálogo. Revisa y edita lo que necesites.",
+        "searchPlaceholder": "Busca proveedores (p. ej., Google Analytics, Mailchimp, HubSpot)...",
+        "searching": "Buscando en el catálogo...",
+        "noResults": "No se han encontrado proveedores para \"{query}\"",
+        "noResultsHint": "Prueba otro término o añádelo manualmente más abajo",
+        "petsCount": "{count} PETs",
+        "cantFind": "¿No encuentras el proveedor? Rellena el formulario manualmente.",
+        "skipCatalog": "Saltar búsqueda en el catálogo"
+      },
+      "info": {
+        "title": "Información del proveedor",
+        "subtitle": "Datos básicos del proveedor",
+        "name": "Nombre del proveedor *",
+        "namePlaceholder": "p. ej., Acme Cloud Services",
+        "website": "Sitio web",
+        "websitePlaceholder": "https://example.com",
+        "description": "Descripción",
+        "descriptionPlaceholder": "Describe el proveedor y los servicios ofrecidos...",
+        "contactName": "Nombre del contacto",
+        "contactNamePlaceholder": "Juan Pérez",
+        "contactEmail": "Correo del contacto",
+        "contactEmailPlaceholder": "contacto@proveedor.com"
+      },
+      "categoriesRisk": {
+        "title": "Categorías y riesgo",
+        "subtitle": "Clasifica al proveedor y evalúa su nivel de riesgo",
+        "serviceCategories": "Categorías de servicio",
+        "riskTier": "Nivel de riesgo",
+        "selectRisk": "Selecciona el nivel de riesgo"
+      },
+      "dataProcessing": {
+        "title": "Tratamiento de datos",
+        "subtitle": "¿Qué datos trata este proveedor?",
+        "dataCategories": "Categorías de datos tratados",
+        "countries": "Países (transferencia de datos)",
+        "countriesPlaceholder": "p. ej., Estados Unidos",
+        "addCountry": "Añadir"
+      },
+      "compliance": {
+        "title": "Información de cumplimiento",
+        "fromCatalog": "Del catálogo",
+        "subtitle": "Datos de cumplimiento preauditados del catálogo de proveedores",
+        "certifications": "Certificaciones",
+        "privacyPolicyUrl": "URL de la política de privacidad",
+        "dpaUrl": "URL del DPA",
+        "trustCenterUrl": "URL del centro de confianza"
+      },
+      "errorPrefix": "Error: {message}",
+      "creating": "Creando...",
+      "submit": "Crear proveedor",
+      "category": {
+        "CLOUD_SERVICES": "Servicios en la nube",
+        "DATA_PROCESSING": "Tratamiento de datos",
+        "ANALYTICS": "Analítica",
+        "MARKETING": "Marketing",
+        "HR_SERVICES": "Servicios de RR. HH.",
+        "PAYMENT_PROCESSING": "Procesamiento de pagos",
+        "CUSTOMER_SUPPORT": "Atención al cliente",
+        "IT_SECURITY": "Seguridad informática",
+        "LEGAL": "Jurídico",
+        "OTHER": "Otros"
+      },
+      "riskTierOption": {
+        "LOW": "Bajo",
+        "MEDIUM": "Medio",
+        "HIGH": "Alto",
+        "CRITICAL": "Crítico"
+      },
+      "dataCategory": {
+        "IDENTIFIERS": "Identificadores",
+        "DEMOGRAPHICS": "Demográficos",
+        "FINANCIAL": "Financieros",
+        "HEALTH": "Salud",
+        "LOCATION": "Ubicación",
+        "BEHAVIORAL": "Comportamiento",
+        "EMPLOYMENT": "Empleo"
+      }
+    },
+    "newAssessment": {
+      "title": "Nueva evaluación",
+      "subtitleChoose": "Elige un tipo de evaluación para comenzar",
+      "subtitleCreating": "Creando {name}",
+      "fallbackName": "Evaluación",
+      "selectType": "Selecciona el tipo de evaluación",
+      "selectTypeSubtitle": "Elige el tipo de evaluación que necesitas realizar",
+      "comingSoon": "Próximamente",
+      "active": "Activo",
+      "perMonth": "/mes",
+      "included": "Incluido",
+      "clickToEnable": "Haz clic para activar",
+      "contactToEnable": "Contacta con {name} para activarlo",
+      "selectTemplate": "Selecciona una plantilla",
+      "selectTemplateSubtitle": "Hay varias plantillas disponibles para {name}",
+      "changeType": "Cambiar tipo",
+      "system": "Sistema",
+      "sectionsCount": "{count, plural, one {# sección} other {# secciones}}",
+      "noTemplatesTitle": "No hay plantillas disponibles",
+      "noTemplatesBody": "No se ha encontrado una plantilla para {name}. Ejecuta el seed de plantillas o crea una plantilla primero.",
+      "chooseDifferent": "Elegir otro tipo",
+      "details": "Datos de la evaluación",
+      "usingTemplate": "Plantilla: {name}",
+      "name": "Nombre de la evaluación *",
+      "namePlaceholder": "p. ej., {type} - 1T 2026",
+      "description": "Descripción",
+      "descriptionPlaceholder": "Breve descripción del alcance de esta evaluación...",
+      "linkActivity": "Vincular a actividad de tratamiento",
+      "selectActivity": "Selecciona una actividad (opcional)",
+      "linkVendor": "Vincular a proveedor",
+      "linkVendorOptional": "Vincular a proveedor (opcional)",
+      "selectVendor": "Selecciona un proveedor (opcional)",
+      "errorPrefix": "Error: {message}",
+      "creating": "Creando...",
+      "submit": "Iniciar evaluación",
+      "type": {
+        "LIA": "Evaluación de interés legítimo",
+        "LIA_short": "LIA",
+        "LIA_desc": "Equilibra los intereses legítimos frente a los derechos del interesado conforme al artículo 6(1)(f) del RGPD.",
+        "CUSTOM": "Evaluación personalizada",
+        "CUSTOM_short": "Personalizada",
+        "CUSTOM_desc": "Plantilla de evaluación flexible para revisiones y evaluaciones de privacidad personalizadas.",
+        "DPIA": "Evaluación de impacto sobre la protección de datos",
+        "DPIA_short": "DPIA",
+        "DPIA_desc": "Evaluación exhaustiva para actividades de tratamiento de alto riesgo conforme al artículo 35 del RGPD.",
+        "PIA": "Evaluación de impacto en la privacidad",
+        "PIA_short": "PIA",
+        "PIA_desc": "Evalúa los riesgos e impactos de privacidad de proyectos, sistemas o procesos.",
+        "TIA": "Evaluación de impacto en transferencias",
+        "TIA_short": "TIA",
+        "TIA_desc": "Evalúa los riesgos de las transferencias internacionales y las medidas complementarias necesarias.",
+        "VENDOR": "Evaluación de riesgo del proveedor",
+        "VENDOR_short": "Proveedor",
+        "VENDOR_desc": "Evalúa los riesgos de privacidad y seguridad asociados a proveedores externos."
+      }
+    },
+    "newIncident": {
+      "title": "Notificar incidente",
+      "subtitle": "Documenta un incidente de seguridad o brecha de datos",
+      "highSeverityTitle": "Severidad alta/crítica seleccionada",
+      "highSeverityBody": "Este incidente puede requerir notificación reglamentaria en un plazo de 72 horas (RGPD) u otros plazos.",
+      "details": "Datos del incidente",
+      "detailsSubtitle": "Describe el incidente y cómo se descubrió",
+      "incidentTitle": "Título del incidente *",
+      "titlePlaceholder": "Breve descripción del incidente",
+      "type": "Tipo de incidente *",
+      "typePlaceholder": "Selecciona el tipo",
+      "severity": "Severidad *",
+      "severityPlaceholder": "Selecciona la severidad",
+      "description": "Descripción completa",
+      "descriptionPlaceholder": "Proporciona información detallada sobre lo ocurrido...",
+      "discovery": "Información del descubrimiento",
+      "discoverySubtitle": "¿Cuándo y cómo se descubrió el incidente?",
+      "discoveredAt": "Fecha de descubrimiento *",
+      "discoveryMethod": "Método de descubrimiento",
+      "discoveryMethodPlaceholder": "¿Cómo se descubrió?",
+      "discoveredBy": "Descubierto por",
+      "discoveredByPlaceholder": "Nombre o rol de la persona/sistema que lo descubrió",
+      "impact": "Evaluación del impacto",
+      "impactSubtitle": "Estima el alcance y la naturaleza de los datos afectados",
+      "affectedRecords": "Registros afectados estimados",
+      "affectedRecordsPlaceholder": "p. ej., 1000",
+      "dataCategoriesLabel": "Categorías de datos afectadas",
+      "errorPrefix": "Error: {message}",
+      "reporting": "Notificando...",
+      "submit": "Notificar incidente",
+      "incidentType": {
+        "DATA_BREACH": "Brecha de datos",
+        "UNAUTHORIZED_ACCESS": "Acceso no autorizado",
+        "DATA_LOSS": "Pérdida de datos",
+        "SYSTEM_COMPROMISE": "Sistema comprometido",
+        "PHISHING": "Phishing",
+        "RANSOMWARE": "Ransomware",
+        "INSIDER_THREAT": "Amenaza interna",
+        "PHYSICAL_SECURITY": "Seguridad física",
+        "VENDOR_INCIDENT": "Incidente de proveedor",
+        "OTHER": "Otro"
+      },
+      "severityOption": {
+        "LOW": "Baja",
+        "LOW_desc": "Impacto mínimo, sin exposición de datos",
+        "MEDIUM": "Media",
+        "MEDIUM_desc": "Impacto limitado, algunos datos en riesgo",
+        "HIGH": "Alta",
+        "HIGH_desc": "Impacto significativo, datos sensibles expuestos",
+        "CRITICAL": "Crítica",
+        "CRITICAL_desc": "Impacto severo, brecha mayor"
+      },
+      "dataCategory": {
+        "IDENTIFIERS": "Identificadores (nombre, correo, ID)",
+        "DEMOGRAPHICS": "Datos demográficos",
+        "FINANCIAL": "Datos financieros",
+        "HEALTH": "Información de salud",
+        "BIOMETRIC": "Datos biométricos",
+        "LOCATION": "Datos de ubicación",
+        "BEHAVIORAL": "Datos de comportamiento",
+        "EMPLOYMENT": "Datos laborales",
+        "CRIMINAL": "Antecedentes penales",
+        "OTHER": "Otros"
+      },
+      "discoveryMethodOption": {
+        "INTERNAL_MONITORING": "Monitorización interna",
+        "EMPLOYEE_REPORT": "Notificación de empleado",
+        "CUSTOMER_REPORT": "Notificación de cliente",
+        "THIRD_PARTY": "Notificación de tercero",
+        "SECURITY_AUDIT": "Auditoría de seguridad",
+        "LAW_ENFORCEMENT": "Cuerpos de seguridad",
+        "OTHER": "Otro"
+      }
+    },
+    "newAsset": {
+      "title": "Añadir activo de datos",
+      "subtitle": "Registra un nuevo sistema o almacén de datos",
+      "details": "Datos del activo",
+      "detailsSubtitle": "Proporciona información sobre el activo de datos",
+      "name": "Nombre del activo *",
+      "namePlaceholder": "p. ej., Base de datos de clientes",
+      "type": "Tipo de activo *",
+      "typePlaceholder": "Selecciona el tipo",
+      "description": "Descripción",
+      "descriptionPlaceholder": "Describe el activo y su finalidad...",
+      "owner": "Responsable / Departamento",
+      "ownerPlaceholder": "p. ej., Ingeniería",
+      "location": "Ubicación",
+      "locationPlaceholder": "p. ej., AWS eu-west-1",
+      "hosting": "Tipo de alojamiento",
+      "hostingPlaceholder": "Selecciona el tipo de alojamiento",
+      "vendor": "Proveedor (si aplica)",
+      "vendorPlaceholder": "p. ej., AWS, Salesforce",
+      "production": "Entorno de producción",
+      "errorPrefix": "Error: {message}",
+      "creating": "Creando...",
+      "submit": "Crear activo",
+      "assetType": {
+        "DATABASE": "Base de datos",
+        "APPLICATION": "Aplicación",
+        "CLOUD_SERVICE": "Servicio en la nube",
+        "FILE_SYSTEM": "Sistema de archivos",
+        "THIRD_PARTY": "Tercero",
+        "PHYSICAL": "Físico",
+        "OTHER": "Otro"
+      },
+      "hostingType": {
+        "ON_PREMISE": "On-premise",
+        "CLOUD": "Nube",
+        "HYBRID": "Híbrido",
+        "SAAS": "SaaS"
+      }
+    },
+    "newDsar": {
+      "title": "Nueva solicitud DSAR",
+      "subtitle": "Registra una solicitud del interesado",
+      "type": {
+        "title": "Tipo de solicitud",
+        "subtitle": "Selecciona el tipo de solicitud del interesado",
+        "ACCESS": "Acceso",
+        "ACCESS_desc": "Derecho a obtener una copia de los datos personales",
+        "RECTIFICATION": "Rectificación",
+        "RECTIFICATION_desc": "Derecho a corregir datos inexactos",
+        "ERASURE": "Supresión",
+        "ERASURE_desc": "Derecho de supresión (derecho al olvido)",
+        "PORTABILITY": "Portabilidad",
+        "PORTABILITY_desc": "Derecho a recibir los datos en un formato portable",
+        "OBJECTION": "Oposición",
+        "OBJECTION_desc": "Derecho a oponerse al tratamiento",
+        "RESTRICTION": "Limitación",
+        "RESTRICTION_desc": "Derecho a la limitación del tratamiento"
+      },
+      "requester": {
+        "title": "Datos del solicitante",
+        "subtitle": "Datos del interesado que realiza la solicitud",
+        "name": "Nombre completo *",
+        "namePlaceholder": "p. ej., Juan Pérez",
+        "email": "Correo electrónico *",
+        "emailPlaceholder": "p. ej., juan@example.com",
+        "phone": "Teléfono",
+        "phonePlaceholder": "p. ej., +34 600 000 000",
+        "relationship": "Relación",
+        "relationshipPlaceholder": "Selecciona la relación",
+        "relationshipOptions": {
+          "Customer": "Cliente",
+          "Employee": "Empleado",
+          "Former Employee": "Ex empleado",
+          "Job Applicant": "Candidato",
+          "Contractor": "Contratista",
+          "Website Visitor": "Visitante del sitio web",
+          "Other": "Otro"
+        },
+        "address": "Dirección",
+        "addressPlaceholder": "p. ej., Calle Mayor 123, Madrid, España"
+      },
+      "details": {
+        "title": "Detalles de la solicitud",
+        "subtitle": "Información adicional sobre la solicitud",
+        "description": "Descripción",
+        "descriptionPlaceholder": "Describe la solicitud en detalle...",
+        "requestedData": "Datos solicitados",
+        "requestedDataPlaceholder": "p. ej., Todas las comunicaciones de marketing, registros del CRM, historial de facturación..."
+      },
+      "submit": "Crear solicitud"
+    },
+    "assessmentDetail": {
+      "notFound": "Evaluación no encontrada",
+      "back": "Volver a evaluaciones",
+      "riskBadge": "Riesgo {level}",
+      "exportPdf": "Exportar PDF",
+      "submitApprove": "Enviar y aprobar",
+      "submitReview": "Enviar a revisión",
+      "progress": {
+        "answered": "{answered} de {total} preguntas respondidas"
+      },
+      "stats": {
+        "sections": "Secciones",
+        "questions": "Preguntas",
+        "mitigations": "Mitigaciones",
+        "riskScore": "Puntuación de riesgo",
+        "riskScoreScale": "0–25 Bajo · 26–50 Medio · 51–75 Alto · 76–100 Crítico",
+        "noScore": "-"
+      },
+      "tabs": {
+        "questions": "Preguntas",
+        "mitigationsWithCount": "Mitigaciones ({count})",
+        "approvalsWithCount": "Aprobaciones ({count})",
+        "history": "Histórico"
+      },
+      "question": {
+        "optional": "(Opcional)",
+        "saved": "Guardado",
+        "yes": "Sí",
+        "no": "No",
+        "chooseOne": "Elige una",
+        "selectOption": "Selecciona una opción...",
+        "selectAllApply": "Selecciona todas las que apliquen",
+        "responsePlaceholder": "Escribe tu respuesta aquí...",
+        "notesPlaceholder": "Notas adicionales (opcional)...",
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "notes": "Notas:",
+        "emptyTitle": "No hay preguntas en esta evaluación"
+      },
+      "vendorPets": {
+        "title": "Tecnologías de privacidad del proveedor",
+        "intro": "{name} implementa estas PETs:",
+        "footer": "Pueden referenciarse como medidas mitigadoras en tu evaluación.",
+        "suggest": "Sugerir como mitigaciones",
+        "vendorTitle": "Tecnologías de privacidad de {name}",
+        "implements": "Implementadas por el proveedor",
+        "addresses": "Aborda: {risks}",
+        "accept": "Aceptar"
+      },
+      "mitigations": {
+        "priorityBadge": "Prioridad {value}",
+        "owner": "Responsable: {name}",
+        "evidence": "Evidencia:",
+        "update": "Actualizar",
+        "add": "Añadir mitigación",
+        "empty": "No se han identificado mitigaciones"
+      },
+      "approvals": {
+        "level": "Aprobación de nivel {n}",
+        "approver": "Aprobador: {name}",
+        "comments": "Comentarios: {value}",
+        "approve": "Aprobar",
+        "reject": "Rechazar",
+        "request": "Solicitar aprobación",
+        "empty": "No se han solicitado aprobaciones"
+      },
+      "history": {
+        "version": "Versión {n}",
+        "empty": "Sin historial de versiones"
+      },
+      "addDialog": {
+        "title": "Añadir mitigación",
+        "subtitle": "Añade una medida mitigadora para abordar los riesgos identificados.",
+        "tabs": {
+          "manual": "Manual",
+          "suggested": "Sugeridas"
+        },
+        "noSuggestions": "Aún no hay sugerencias. Responde a las preguntas de la evaluación para obtener recomendaciones basadas en PETs.",
+        "submit": "Añadir mitigación"
+      },
+      "requestApproval": {
+        "title": "Solicitar aprobación",
+        "subtitle": "Selecciona a un miembro de la organización para aprobar esta evaluación.",
+        "approver": "Aprobador",
+        "selectApprover": "Selecciona un aprobador",
+        "submit": "Solicitar aprobación"
+      },
+      "rejectDialog": {
+        "title": "Rechazar evaluación",
+        "subtitle": "Indica el motivo del rechazo de esta evaluación.",
+        "commentsLabel": "Comentarios",
+        "commentsPlaceholder": "Motivo del rechazo...",
+        "submit": "Rechazar evaluación"
+      },
+      "updateMitigation": {
+        "title": "Actualizar mitigación",
+        "statusLabel": "Estado",
+        "ownerLabel": "Responsable",
+        "ownerPlaceholder": "Persona responsable",
+        "dueDateLabel": "Fecha límite",
+        "evidenceLabel": "Evidencia",
+        "evidencePlaceholder": "Evidencia de implementación (documentos, enlaces, capturas...)",
+        "submit": "Guardar cambios"
+      },
+      "mitigationStatus": {
+        "IDENTIFIED": "Identificada",
+        "PLANNED": "Planificada",
+        "IN_PROGRESS": "En curso",
+        "IMPLEMENTED": "Implementada",
+        "VERIFIED": "Verificada",
+        "NOT_REQUIRED": "No requerida"
+      },
+      "mitigationForm": {
+        "titleLabel": "Título *",
+        "titlePlaceholder": "p. ej., Implementar pseudonimización en los registros de clientes",
+        "descLabel": "Descripción",
+        "descPlaceholder": "Describe la medida mitigadora y cómo aborda el riesgo...",
+        "priorityLabel": "Prioridad",
+        "priority1": "1 - Crítica",
+        "priority2": "2 - Alta",
+        "priority3": "3 - Media",
+        "priority4": "4 - Baja",
+        "priority5": "5 - Mínima",
+        "ownerLabel": "Responsable",
+        "ownerPlaceholder": "Persona responsable",
+        "dueDateLabel": "Fecha límite"
+      }
+    },
+    "assetDetail": {
+      "notFound": "Activo no encontrado",
+      "back": "Volver al inventario",
+      "production": "Producción",
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "overview": {
+        "title": "Resumen",
+        "noDescription": "No se ha proporcionado descripción",
+        "owner": "Responsable",
+        "location": "Ubicación",
+        "hosting": "Alojamiento",
+        "vendor": "Proveedor",
+        "notSpecified": "No especificado",
+        "na": "N/D"
+      },
+      "stats": {
+        "title": "Estadísticas",
+        "elements": "Elementos de datos",
+        "activities": "Actividades de tratamiento",
+        "lastUpdated": "Última actualización"
+      },
+      "tabs": {
+        "elements": "Elementos de datos",
+        "activities": "Actividades de tratamiento",
+        "flows": "Flujos de datos"
+      },
+      "elements": {
+        "title": "Elementos de datos",
+        "subtitle": "Campos y puntos de datos almacenados en este activo",
+        "addElement": "Añadir elemento",
+        "personalData": "Datos personales",
+        "emptyTitle": "Aún no hay elementos de datos definidos",
+        "emptySub": "Añade elementos para documentar qué datos se almacenan"
+      },
+      "activities": {
+        "title": "Actividades de tratamiento vinculadas",
+        "subtitle": "Actividades que utilizan datos de este activo",
+        "manage": "Gestionar actividades",
+        "elementCount": "{used, plural, one {# elemento} other {# elementos}}",
+        "elementCountFiltered": "{used}/{total} {used, plural, one {elemento} other {elementos}}",
+        "notLinked": "+{count} sin vincular",
+        "empty": "No hay actividades de tratamiento vinculadas"
+      },
+      "addElement": {
+        "title": "Añadir elemento de datos",
+        "subtitle": "Añade un nuevo campo o elemento de datos a este activo",
+        "nameLabel": "Nombre del elemento *",
+        "namePlaceholder": "p. ej., email_address, phone_number",
+        "descLabel": "Descripción",
+        "descPlaceholder": "Breve descripción de este elemento de datos",
+        "categoryLabel": "Categoría *",
+        "sensitivityLabel": "Sensibilidad *",
+        "retentionLabel": "Periodo de conservación (días)",
+        "retentionPlaceholder": "p. ej., 365",
+        "isPersonal": "Es dato personal",
+        "isSpecial": "Es categoría especial",
+        "errorPrefix": "Error: {message}",
+        "adding": "Añadiendo...",
+        "submit": "Añadir elemento"
+      },
+      "linkActivities": {
+        "title": "Vincular actividades de tratamiento",
+        "subtitle": "Selecciona qué actividades usan datos de este activo y qué elementos tratan.",
+        "elements": "Elementos",
+        "hide": "Ocultar",
+        "allElements": "Todos los elementos",
+        "empty": "Aún no hay actividades de tratamiento en esta organización",
+        "selectedCount": "{count, plural, one {# actividad seleccionada} other {# actividades seleccionadas}}",
+        "save": "Guardar"
+      },
+      "category": {
+        "IDENTIFIERS": "Identificadores",
+        "DEMOGRAPHICS": "Demográficos",
+        "FINANCIAL": "Financieros",
+        "HEALTH": "Salud",
+        "BIOMETRIC": "Biométricos",
+        "LOCATION": "Ubicación",
+        "BEHAVIORAL": "Comportamiento",
+        "EMPLOYMENT": "Empleo",
+        "EDUCATION": "Educación",
+        "POLITICAL": "Políticos",
+        "RELIGIOUS": "Religiosos",
+        "GENETIC": "Genéticos",
+        "SEXUAL_ORIENTATION": "Orientación sexual",
+        "CRIMINAL": "Antecedentes penales",
+        "OTHER": "Otros"
+      },
+      "sensitivity": {
+        "PUBLIC": "Público",
+        "INTERNAL": "Interno",
+        "CONFIDENTIAL": "Confidencial",
+        "RESTRICTED": "Restringido",
+        "SPECIAL_CATEGORY": "Categoría especial"
+      }
+    },
+    "incidentDetail": {
+      "notFound": "Incidente no encontrado",
+      "back": "Volver a incidentes",
+      "close": "Cerrar incidente",
+      "updateStatus": "Actualizar estado",
+      "notifBanner": {
+        "title": "Notificación reglamentaria obligatoria",
+        "deadline": "Fecha límite: {date}",
+        "overdue": "VENCIDA — debía notificarse el {date}",
+        "create": "Crear notificación"
+      },
+      "stats": {
+        "discovered": "Descubierto",
+        "affectedRecords": "Registros afectados",
+        "unknown": "Desconocido",
+        "affectedSubjects": "Interesados afectados",
+        "subjectTypesCount": "{count, plural, one {# tipo} other {# tipos}}",
+        "notifications": "Notificaciones"
+      },
+      "tabs": {
+        "details": "Detalles",
+        "timelineWithCount": "Cronología ({count})",
+        "tasksWithCount": "Tareas ({count})",
+        "notificationsWithCount": "Notificaciones ({count})",
+        "documents": "Documentos"
+      },
+      "details": {
+        "description": "Descripción",
+        "noDescription": "No se ha proporcionado descripción",
+        "discovery": "Descubrimiento",
+        "discoveredBy": "Descubierto por:",
+        "discoveryMethod": "Método de descubrimiento:",
+        "notSpecified": "No especificado",
+        "dataCategories": "Categorías de datos afectadas",
+        "dataCategoriesEmpty": "No se han especificado categorías",
+        "rootCause": "Causa raíz",
+        "lessonsLearned": "Lecciones aprendidas"
+      },
+      "timeline": {
+        "addEntry": "Añadir entrada",
+        "empty": "Aún no hay entradas en la cronología",
+        "createdBy": " por {name}"
+      },
+      "tasks": {
+        "addTask": "Añadir tarea",
+        "empty": "No hay tareas asignadas",
+        "priority": "Prioridad {value}"
+      },
+      "notifications": {
+        "due": "Vence: {date}",
+        "overdue": "VENCIDA",
+        "empty": "No se han creado notificaciones",
+        "createDpa": "Crear notificación a la AEPD"
+      },
+      "documents": {
+        "title": "Próximamente: subida de documentos",
+        "subtitle": "Adjunta pruebas, informes y comunicaciones al incidente."
+      },
+      "statusDialog": {
+        "title": "Actualizar estado del incidente",
+        "subtitle": "Avanza el incidente por el flujo de respuesta. Se registrará una entrada en la cronología.",
+        "newStatus": "Nuevo estado",
+        "selectStatus": "Selecciona un estado",
+        "submit": "Actualizar"
+      },
+      "timelineDialog": {
+        "title": "Añadir entrada a la cronología",
+        "subtitle": "Registra una observación, acción o decisión tomada durante la respuesta al incidente.",
+        "entryType": "Tipo de entrada",
+        "titleLabel": "Título",
+        "titlePlaceholder": "Resumen breve de la entrada",
+        "descLabel": "Descripción",
+        "descPlaceholder": "Detalles: qué ocurrió, quién intervino, qué evidencia",
+        "submit": "Añadir entrada",
+        "type": {
+          "OBSERVATION": "Observación",
+          "ACTION": "Acción realizada",
+          "EVIDENCE": "Evidencia",
+          "COMMUNICATION": "Comunicación",
+          "DECISION": "Decisión",
+          "NOTE": "Nota"
+        }
+      },
+      "taskDialog": {
+        "title": "Añadir tarea",
+        "subtitle": "Crea una tarea de respuesta para hacer seguimiento del trabajo de remediación.",
+        "titleLabel": "Título",
+        "titlePlaceholder": "Qué hay que hacer",
+        "descLabel": "Descripción",
+        "descPlaceholder": "Detalles opcionales",
+        "priority": "Prioridad",
+        "dueDate": "Fecha límite",
+        "submit": "Crear tarea",
+        "priorities": {
+          "LOW": "Baja",
+          "MEDIUM": "Media",
+          "HIGH": "Alta",
+          "URGENT": "Urgente"
+        }
+      },
+      "notifDialog": {
+        "title": "Crear notificación reglamentaria",
+        "subtitle": "La fecha límite se calcula a partir del plazo de notificación de la jurisdicción.",
+        "jurisdiction": "Jurisdicción",
+        "selectJurisdiction": "Selecciona una jurisdicción",
+        "jurisdictionWindow": "{name} (plazo de {hours}h)",
+        "noJurisdictions": "No hay jurisdicciones aplicadas a esta organización",
+        "recipient": "Tipo de destinatario",
+        "recipientType": {
+          "DPA": "Autoridad de Protección de Datos (AEPD)",
+          "DATA_SUBJECT": "Interesados afectados",
+          "LAW_ENFORCEMENT": "Cuerpos de seguridad",
+          "INTERNAL": "Partes interesadas internas"
+        },
+        "submit": "Crear"
+      }
+    },
+    "vendorDetail": {
+      "notFound": "Proveedor no encontrado",
+      "back": "Volver a proveedores",
+      "delete": "Eliminar",
+      "edit": "Editar proveedor",
+      "riskBadge": "Riesgo {level}",
+      "noCategories": "Sin categorías",
+      "info": {
+        "website": "Sitio web",
+        "contact": "Contacto",
+        "email": "Correo",
+        "added": "Añadido",
+        "empty": "-"
+      },
+      "tabs": {
+        "overview": "Resumen",
+        "contractsWithCount": "Contratos ({count})",
+        "assessments": "Evaluaciones",
+        "reviews": "Revisiones"
+      },
+      "overview": {
+        "description": "Descripción",
+        "dataProcessing": "Tratamiento de datos",
+        "dataProcessingDesc": "Categorías de datos que trata este proveedor",
+        "dataEmpty": "No se han especificado categorías de datos",
+        "countries": "Países",
+        "countriesDesc": "Ubicaciones de transferencia de datos",
+        "countriesEmpty": "No se han especificado países",
+        "certifications": "Certificaciones",
+        "certificationsDesc": "Certificaciones de seguridad y cumplimiento",
+        "certificationsEmpty": "No hay certificaciones registradas",
+        "privacyTech": "Tecnologías de privacidad",
+        "privacyTechDesc": "Tecnologías de privacidad que utiliza este proveedor"
+      },
+      "contracts": {
+        "add": "Añadir contrato",
+        "start": "Inicio: {date}",
+        "endSuffix": " — Fin: {date}",
+        "open": "Abrir",
+        "noDocument": "Sin documento",
+        "empty": "No hay contratos registrados"
+      },
+      "assessments": {
+        "empty": "No hay evaluaciones del proveedor completadas",
+        "start": "Iniciar evaluación"
+      },
+      "reviews": {
+        "empty": "No hay revisiones programadas",
+        "schedule": "Programar revisión"
+      },
+      "editDialog": {
+        "title": "Editar proveedor",
+        "subtitle": "Actualiza los datos principales del proveedor.",
+        "nameLabel": "Nombre *",
+        "descLabel": "Descripción",
+        "websiteLabel": "Sitio web",
+        "websitePlaceholder": "https://…",
+        "statusLabel": "Estado",
+        "riskLabel": "Nivel de riesgo",
+        "riskNotSet": "Sin definir",
+        "contactLabel": "Contacto principal",
+        "emailLabel": "Correo de contacto",
+        "save": "Guardar"
+      },
+      "contractDialog": {
+        "title": "Añadir contrato",
+        "subtitle": "Registra un contrato, DPA o CCT para este proveedor.",
+        "nameLabel": "Nombre *",
+        "namePlaceholder": "p. ej., Contrato marco de servicios 2026",
+        "typeLabel": "Tipo *",
+        "type": {
+          "DPA": "DPA (Acuerdo de tratamiento de datos)",
+          "SCC": "CCT (Cláusulas contractuales tipo)",
+          "MSA": "MSA (Contrato marco de servicios)",
+          "NDA": "NDA",
+          "OTHER": "Otro"
+        },
+        "descLabel": "Descripción",
+        "urlLabel": "URL del documento",
+        "urlPlaceholder": "https://…",
+        "startLabel": "Fecha de inicio",
+        "endLabel": "Fecha de fin",
+        "submit": "Añadir"
+      },
+      "reviewDialog": {
+        "title": "Programar revisión",
+        "subtitle": "Asigna un revisor y una fecha para la próxima revisión del proveedor.",
+        "reviewerLabel": "Revisor *",
+        "reviewerPlaceholder": "Selecciona un revisor",
+        "typeLabel": "Tipo de revisión",
+        "type": {
+          "PERIODIC": "Periódica",
+          "INITIAL": "Inicial",
+          "INCIDENT_TRIGGERED": "Por incidente",
+          "CONTRACT_RENEWAL": "Renovación de contrato"
+        },
+        "dateLabel": "Fecha programada *",
+        "submit": "Programar"
+      }
+    },
+    "dsarDetail": {
+      "notFound": "Solicitud no encontrada",
+      "back": "Volver a DSAR",
+      "complete": "Completar",
+      "progress": {
+        "title": "Progreso",
+        "tasksCompleted": "{completed} de {total} tareas completadas"
+      },
+      "sla": {
+        "title": "Estado del SLA",
+        "overdue": "VENCIDA",
+        "completed": "COMPLETADA",
+        "daysShort": "{count, plural, one {# día} other {# días}}",
+        "closed": "Cerrada el",
+        "due": "Vence"
+      },
+      "requester": {
+        "title": "Datos del solicitante",
+        "name": "Nombre",
+        "email": "Correo",
+        "phone": "Teléfono",
+        "relationship": "Relación",
+        "details": "Detalles de la solicitud",
+        "empty": "-"
+      },
+      "tabs": {
+        "tasks": "Tareas ({count})",
+        "communications": "Comunicaciones ({count})",
+        "audit": "Registro de auditoría"
+      },
+      "tasks": {
+        "title": "Tareas de recopilación",
+        "subtitle": "Tareas para cada fuente de datos",
+        "autoGenerate": "Generar automáticamente",
+        "addTask": "Añadir tarea",
+        "assignedTo": "Asignada a: {name}",
+        "unassigned": "Sin asignar",
+        "empty": "Aún no hay tareas",
+        "emptySub": "Añade tareas o genéralas automáticamente a partir de los activos de datos",
+        "status": {
+          "PENDING": "Pendiente",
+          "IN_PROGRESS": "En curso",
+          "COMPLETED": "Completada",
+          "BLOCKED": "Bloqueada",
+          "NOT_APPLICABLE": "N/A"
+        }
+      },
+      "comms": {
+        "title": "Comunicaciones",
+        "subtitle": "Historial de mensajes con el solicitante",
+        "send": "Enviar mensaje",
+        "team": "Equipo de privacidad",
+        "sent": "Enviado",
+        "received": "Recibido",
+        "empty": "Aún no hay comunicaciones"
+      },
+      "audit": {
+        "title": "Registro de auditoría",
+        "subtitle": "Historial completo de las acciones realizadas",
+        "empty": "No hay entradas de auditoría"
+      },
+      "addTask": {
+        "title": "Añadir tarea",
+        "subtitle": "Crear una nueva tarea de recopilación de datos",
+        "titleLabel": "Título de la tarea *",
+        "titlePlaceholder": "p. ej., Buscar en el CRM de marketing",
+        "descLabel": "Descripción",
+        "descPlaceholder": "Detalles de la tarea...",
+        "submit": "Añadir tarea"
+      },
+      "sendMessage": {
+        "title": "Enviar mensaje",
+        "subtitle": "Envía un mensaje a {name}",
+        "subjectLabel": "Asunto",
+        "subjectPlaceholder": "Asunto del mensaje",
+        "messageLabel": "Mensaje *",
+        "messagePlaceholder": "Escribe tu mensaje...",
+        "submit": "Enviar"
+      }
+    },
+    "aiSystemDetail": {
+      "notFound": "Sistema de IA no encontrado",
+      "back": "Atrás",
+      "linked": "Vinculado a AI Sentinel",
+      "embeddedModels": "Modelos de IA integrados ({count})",
+      "details": {
+        "title": "Detalles del sistema",
+        "description": "Descripción",
+        "purpose": "Finalidad",
+        "category": "Categoría",
+        "modelType": "Tipo de modelo",
+        "provider": "Proveedor",
+        "deployer": "Implementador",
+        "vendor": "Proveedor",
+        "euAiActRole": "Rol según el Reglamento de IA",
+        "euAiActCompliant": "Cumple el Reglamento de IA",
+        "iso42001": "Certificación ISO 42001",
+        "yes": "Sí",
+        "no": "No"
+      },
+      "compliance": {
+        "title": "Cumplimiento y supervisión",
+        "humanOversight": "Supervisión humana",
+        "transparency": "Medidas de transparencia",
+        "trainingData": "Fuentes de datos de entrenamiento",
+        "capabilities": "Capacidades de IA",
+        "techniques": "Técnicas de IA",
+        "technicalDoc": "Documentación técnica"
+      },
+      "sentinel": {
+        "linkedTitle": "Vinculado con AI Sentinel",
+        "linkedBody": "Este sistema está sincronizado con AI Sentinel para una gobernanza de IA en profundidad.",
+        "lastSynced": "Última sincronización: {date}",
+        "openInSentinel": "Abrir en AI Sentinel"
+      },
+      "unacceptableTitle": "Sistema de IA prohibido",
+      "unacceptableBody": "Este sistema de IA se ha clasificado como de riesgo inaceptable según el Reglamento de IA de la UE. Debe ser retirado antes de agosto de 2026.",
+      "highRiskTitle": "Obligaciones de IA de alto riesgo",
+      "highRiskItems": {
+        "riskMgmt": "Se requiere un sistema de gestión de riesgos",
+        "dataGovernance": "Las medidas de gobernanza de datos deben documentarse",
+        "technicalDoc": "La documentación técnica debe mantenerse",
+        "recordKeeping": "Se requiere registro y trazabilidad",
+        "oversight": "Deben existir mecanismos de supervisión humana",
+        "accuracy": "Estándares de precisión, robustez y ciberseguridad"
+      }
+    },
+    "quickstart": {
+      "back": "Panel",
+      "title": "Asistente del programa de privacidad",
+      "subtitle": "Inicia rápidamente tu programa de privacidad",
+      "steps": {
+        "choose": "Elegir camino",
+        "vendors": "Seleccionar proveedores",
+        "yourVendors": "Tus proveedores",
+        "industry": "Plantilla sectorial",
+        "review": "Revisar y confirmar"
+      },
+      "welcome": {
+        "allImportedTitle": "¡Tus proveedores ya están importados!",
+        "vwTitle": "¡Te damos la bienvenida desde Vendor.Watch!",
+        "allImportedBody": "Los <b>{count, plural, one {# proveedor} other {# proveedores}}</b> de tu cartera de Vendor.Watch ya se han importado. Aún puedes añadir una plantilla sectorial para completar las actividades de tratamiento y los flujos de datos.",
+        "vwBody": "Hemos encontrado <b>{count, plural, one {# proveedor} other {# proveedores}}</b> en tu cartera{newCount, select, none {} other { ({newCount} nuevos)}}. ¿Quieres que construyamos tu programa de privacidad a partir de tu cartera inicial de proveedores?",
+        "vwAddMore": "Más adelante podrás añadir más proveedores y actividades de tratamiento.",
+        "addIndustry": "Añadir una plantilla sectorial",
+        "backToDashboard": "Volver al panel",
+        "yesBuild": "Sí, construye mi programa de privacidad",
+        "yesAndIndustry": "Sí, y añade también una plantilla sectorial",
+        "manual": "Prefiero elegir manualmente",
+        "portfolioFrom": "Cartera importada desde",
+        "verified": "Verificado",
+        "highCriticality": "Criticidad alta",
+        "alreadyImported": "Ya importado",
+        "vendorMeta": "{category} — {label} — {count, plural, one {# elemento de datos} other {# elementos de datos}}"
+      },
+      "choose": {
+        "intro": "Elige cómo quieres iniciar tu programa de privacidad. Puedes usar ambas opciones a la vez.",
+        "best": "Recomendado",
+        "or": "o elige una opción",
+        "vendorCardTitle": "Importar desde el catálogo de proveedores",
+        "vendorCardDesc": "Selecciona los proveedores que utilizas y genera automáticamente activos de datos, elementos y actividades de tratamiento a partir de su perfil de datos conocido.",
+        "industryCardTitle": "Comenzar con una plantilla sectorial",
+        "industryCardDesc": "Elige tu sector y obtén un programa de privacidad preconfigurado con activos de datos, actividades de tratamiento y flujos de datos habituales.",
+        "tagAssets": "Activos de datos",
+        "tagElements": "Elementos de datos",
+        "tagActivities": "Actividades de tratamiento",
+        "tagTransfers": "Transferencias de datos",
+        "tagFlows": "Flujos de datos",
+        "free": "Gratis",
+        "fiveFree": "5 gratis",
+        "continue": "Continuar"
+      },
+      "vendors": {
+        "title": "Seleccionar proveedores",
+        "subtitle": "Busca en el catálogo de proveedores y selecciona las herramientas que utiliza tu organización.",
+        "back": "Atrás",
+        "selectedSuffix": "{count} seleccionados",
+        "searchPlaceholder": "Buscar proveedores (p. ej., Google Analytics, Salesforce, Stripe...)",
+        "searching": "Buscando...",
+        "noResults": "No se han encontrado proveedores para \"{query}\"",
+        "verified": "Verificado",
+        "gdpr": "RGPD",
+        "previewTitle": "Vista previa de importación",
+        "previewSummary": "{vendors} proveedores, {assets} activos, {elements} elementos, {activities} actividades",
+        "previewSummaryWithTransfers": "{vendors} proveedores, {assets} activos, {elements} elementos, {activities} actividades, {transfers} transferencias de datos",
+        "alreadyExists": "Ya existe",
+        "highRisk": "Riesgo alto",
+        "willCreate": "Se creará:",
+        "assetCount": "{count, plural, one {# activo} other {# activos}}",
+        "elementCount": "{count, plural, one {# elemento} other {# elementos}}",
+        "activityCount": "{count, plural, one {# actividad} other {# actividades}}",
+        "transferCount": "{count, plural, one {# transferencia} other {# transferencias}}",
+        "privacyTech": "Tecnologías de privacidad:",
+        "continueToIndustry": "Continuar al sector",
+        "reviewBtn": "Revisar"
+      },
+      "industry": {
+        "title": "Seleccionar sector",
+        "subtitle": "Elige la plantilla que mejor se adapte a tu organización.",
+        "back": "Atrás",
+        "templateAssets": "{count, plural, one {# activo} other {# activos}}",
+        "templateActivities": "{count, plural, one {# actividad} other {# actividades}}",
+        "templateFlows": "{count, plural, one {# flujo} other {# flujos}}",
+        "previewTitle": "Vista previa de la plantilla {name}",
+        "previewSummary": "{assets} activos, {elements} elementos, {activities} actividades, {flows} flujos",
+        "collapse": "Contraer",
+        "expand": "Expandir",
+        "dataAssets": "Activos de datos",
+        "exists": "Existe",
+        "elementsList": "{count, plural, one {# elemento} other {# elementos}}: {list}",
+        "processingActivities": "Actividades de tratamiento",
+        "dataFlows": "Flujos de datos",
+        "review": "Revisar"
+      },
+      "review": {
+        "title": "Revisar y confirmar",
+        "subtitle": "Revisa lo que se va a crear y construye tu programa de privacidad.",
+        "back": "Atrás",
+        "stats": {
+          "vendors": "Proveedores",
+          "assets": "Activos de datos",
+          "elements": "Elementos de datos",
+          "activities": "Actividades",
+          "flows": "Flujos de datos",
+          "transfers": "Transferencias",
+          "aiSystems": "Sistemas de IA"
+        },
+        "nondestructiveTitle": "Operación no destructiva",
+        "nondestructiveBody": "Solo se crearán registros nuevos. Los activos, proveedores y actividades de tratamiento existentes no se modificarán. Los duplicados se omiten automáticamente.",
+        "vendorImport": "Importación de proveedores",
+        "vendorMeta": "{count, plural, one {# elemento} other {# elementos}}, 1 actividad",
+        "vendorMetaWithTransfers": "{count, plural, one {# elemento} other {# elementos}}, 1 actividad, {transfers, plural, one {# transferencia} other {# transferencias}}",
+        "vendorMetaWithAi": "{count, plural, one {# elemento} other {# elementos}}, 1 actividad, 1 sistema de IA",
+        "vendorMetaFull": "{count, plural, one {# elemento} other {# elementos}}, 1 actividad, {transfers, plural, one {# transferencia} other {# transferencias}}, 1 sistema de IA",
+        "templateSuffix": "Plantilla {name}",
+        "templateAssetMeta": "{count, plural, one {# elemento} other {# elementos}}",
+        "building": "Construyendo...",
+        "build": "Construir mi programa de privacidad",
+        "aiTooltip": "Proveedor con capacidades de IA — se creará un registro de sistema de IA"
+      },
+      "success": {
+        "alreadySetTitle": "¡Todo está ya configurado!",
+        "createdTitle": "¡Programa de privacidad creado!",
+        "alreadySetBody": "Todos los registros seleccionados ya existen en tu programa de privacidad. ¡Listo para empezar!",
+        "createdBody": "Hemos puesto en marcha tu programa de privacidad. Explora los nuevos registros y personalízalos según necesites.",
+        "cardDataInventory": "Inventario de datos",
+        "cardDataInventoryDesc": "Ver activos y elementos",
+        "cardActivities": "Actividades de tratamiento",
+        "cardActivitiesDesc": "Ver actividades y RAT",
+        "cardVendors": "Proveedores",
+        "cardVendorsDesc": "Gestionar la lista de proveedores",
+        "cardAiSystems": "Sistemas de IA",
+        "cardAiSystemsDesc": "{count, plural, one {# sistema de IA creado} other {# sistemas de IA creados}}",
+        "cardDashboard": "Panel",
+        "cardDashboardDesc": "Volver al resumen"
+      }
+    },
+    "reports": {
+      "title": "Panel de cumplimiento",
+      "subtitle": "Postura de cumplimiento del programa de privacidad",
+      "saveSnapshot": "Guardar instantánea",
+      "regulatoryReport": "Informe regulatorio",
+      "score": {
+        "title": "Puntuación global de cumplimiento",
+        "subtitle": "Puntuación agregada de todos los módulos de privacidad, ponderada por importancia.",
+        "strong": "Sólida",
+        "moderate": "Moderada",
+        "needsAttention": "Requiere atención",
+        "trendUp": "+{points} pts",
+        "trendDown": "{points} pts",
+        "vsLastMonth": "vs el mes pasado",
+        "outOf": "/ 100"
+      },
+      "breakdown": {
+        "heading": "Desglose de cumplimiento por módulo",
+        "weight": "Peso: {value}",
+        "compliantOf": "{compliant} de {total} cumplen",
+        "ropa": "Completitud del RAT",
+        "assessments": "Evaluaciones",
+        "dsarSla": "SLA de DSAR",
+        "incidentResponse": "Respuesta a incidentes",
+        "vendorReviews": "Revisiones de proveedores"
+      },
+      "risk": {
+        "title": "Indicadores de riesgo",
+        "subtitle": "Aspectos que requieren atención",
+        "noneTitle": "No se han detectado indicadores de riesgo. ¡Buen trabajo!"
+      },
+      "modules": {
+        "heading": "Detalles de los módulos",
+        "dataInventory": "Inventario de datos",
+        "assets": "Activos",
+        "elements": "Elementos",
+        "activities": "Actividades",
+        "flows": "Flujos",
+        "dsarTitle": "Solicitudes DSAR",
+        "dsarTotal": "Total",
+        "dsarOpen": "Abiertas",
+        "dsarOverdue": "Vencidas",
+        "dsarAvgResolution": "Resolución media",
+        "daysShort": "{days}d",
+        "assessmentsTitle": "Evaluaciones",
+        "assessmentTotal": "Total",
+        "assessmentApproved": "Aprobadas",
+        "assessmentInProgress": "En curso",
+        "assessmentHighRisk": "Riesgo alto",
+        "incidentsTitle": "Incidentes",
+        "incidentTotal": "Total",
+        "incidentOpen": "Abiertos",
+        "incidentCritical": "Críticos",
+        "incidentAvgResolution": "Resolución media",
+        "vendorsTitle": "Proveedores",
+        "vendorTotal": "Total",
+        "vendorActive": "Activos",
+        "vendorHighRisk": "Riesgo alto",
+        "vendorNoReview": "Sin revisión",
+        "scoreHistory": "Histórico de puntuación",
+        "noSnapshots": "Aún no hay instantáneas. Guarda una para comenzar a hacer seguimiento."
+      }
+    },
+    "regulations": {
+      "title": "Centro de regulaciones",
+      "subtitle": "Sigue las regulaciones de privacidad aplicables y los requisitos de cumplimiento",
+      "exportReport": "Exportar informe",
+      "wizard": "Asistente de aplicabilidad",
+      "tabs": {
+        "catalog": "Catálogo de jurisdicciones",
+        "appliedWithCount": "Aplicadas ({count})"
+      },
+      "search": "Buscar regulaciones...",
+      "category": {
+        "label": "Categoría",
+        "all": "Todas las categorías",
+        "comprehensive": "Integral",
+        "sectoral": "Sectorial",
+        "ai_governance": "Gobernanza de IA",
+        "emerging": "Emergente"
+      },
+      "card": {
+        "applied": "Aplicada",
+        "primary": "Principal",
+        "dsarShort": "DSAR: {days}d",
+        "breachShort": "Brecha: {hours}h",
+        "appliedSummary": "{region} | DSAR: {days, plural, one {# día} other {# días}} | Brecha: {hours}h",
+        "moreItems": "+{count} más",
+        "apply": "Aplicar"
+      },
+      "applied": {
+        "emptyTitle": "No hay jurisdicciones aplicadas",
+        "emptySubtitle": "Utiliza el Asistente de aplicabilidad para determinar qué regulaciones aplican a tu organización",
+        "startWizard": "Iniciar asistente"
+      },
+      "checklist": {
+        "headingPrefix": "Lista de acciones",
+        "summary": "{satisfied}/{total} completadas",
+        "satisfied": "Hecho",
+        "partial": "En curso",
+        "missing": "Pendiente",
+        "takeAction": "Acción",
+        "reqRopa": "Mantén un Registro de Actividades de Tratamiento (RAT)",
+        "reqRopaDesc": "Documenta todas las actividades de tratamiento de tu organización, incluyendo finalidad, base jurídica y categorías de datos.",
+        "reqDpia": "Realiza DPIAs para tratamientos de alto riesgo",
+        "reqDpiaDesc": "Documenta una Evaluación de Impacto para todo tratamiento que pueda suponer un alto riesgo para los interesados.",
+        "reqDsarPortal": "Ofrece un canal público para solicitudes del interesado",
+        "reqDsarPortalDesc": "Configura un formulario de recepción para que los interesados puedan presentar solicitudes de acceso, rectificación, supresión, etc.",
+        "reqIncidentResponse": "Establece un proceso de respuesta a brechas",
+        "reqIncidentResponseDesc": "Documenta un flujo de respuesta a incidentes para poder triarlos, contenerlos y notificarlos dentro de los plazos legales.",
+        "reqVendorDpas": "Firma DPAs con todos los encargados del tratamiento",
+        "reqVendorDpasDesc": "Mantén un Acuerdo de Tratamiento de Datos con cada proveedor activo que trate datos personales por cuenta de tu organización.",
+        "reqTransferTia": "Completa una TIA para cada transferencia internacional",
+        "reqTransferTiaDesc": "Cuando los datos personales salen del territorio regulado, se requiere una Evaluación de Impacto de Transferencia (Schrems II) para destinos sin decisión de adecuación.",
+        "reqAiSystemRegister": "Mantén un registro de sistemas de IA",
+        "reqAiSystemRegisterDesc": "Documenta cada sistema de IA en uso, clasifica su nivel de riesgo y haz seguimiento de las obligaciones del proveedor/implementador."
+      }
+    },
+    "aiSystems": {
+      "title": "Registro de gobernanza de IA",
+      "subtitle": "Registra y clasifica los sistemas de IA conforme al Reglamento de IA de la UE",
+      "register": "Registrar sistema de IA",
+      "search": "Buscar sistemas de IA...",
+      "filter": {
+        "riskLevel": "Nivel de riesgo",
+        "status": "Estado",
+        "allRisks": "Todos los riesgos",
+        "allStatus": "Todos los estados"
+      },
+      "stats": {
+        "total": "Sistemas totales",
+        "unacceptable": "Inaceptable",
+        "highRisk": "Riesgo alto",
+        "limited": "Riesgo limitado",
+        "minimal": "Riesgo mínimo"
+      },
+      "riskLevel": {
+        "UNACCEPTABLE": "Inaceptable",
+        "HIGH_RISK": "Riesgo alto",
+        "LIMITED": "Riesgo limitado",
+        "MINIMAL": "Riesgo mínimo"
+      },
+      "status": {
+        "DRAFT": "Borrador",
+        "REGISTERED": "Registrado",
+        "UNDER_REVIEW": "En revisión",
+        "COMPLIANT": "Conforme",
+        "NON_COMPLIANT": "No conforme",
+        "DECOMMISSIONED": "Retirado"
+      },
+      "card": {
+        "provider": "Proveedor: {value}",
+        "type": "Tipo: {value}",
+        "vendor": "Proveedor: {value}",
+        "category": "Categoría: {value}"
+      },
+      "empty": {
+        "title": "No hay sistemas de IA registrados",
+        "subtitle": "Comienza registrando los sistemas de IA que tu organización usa o despliega"
+      },
+      "sentinel": {
+        "send": "Enviar a AI Sentinel",
+        "title": "Enviar a AI Sentinel",
+        "description": "Envía los sistemas de IA a AI Sentinel para una gobernanza más detallada. Los sistemas ya sincronizados pueden reenviarse para actualizar su estado.",
+        "noSystems": "Aún no hay sistemas de IA registrados.",
+        "allSynced": "Todos los sistemas ya están sincronizados. Reenviarlos actualizará su estado más reciente.",
+        "alreadySynced": "Ya sincronizado",
+        "sending": "Enviando…",
+        "sendCount": "Enviar {count, plural, one {# sistema} other {# sistemas}}"
+      }
+    },
+    "incidents": {
+      "title": "Gestión de incidentes",
+      "subtitle": "Supervisa incidentes de seguridad y brechas",
+      "exportRegister": "Exportar registro",
+      "exportPdf": "Descargar como PDF",
+      "exportCsv": "Descargar como CSV",
+      "reportIncident": "Notificar incidente",
+      "search": "Buscar incidentes...",
+      "stats": {
+        "total": "Total",
+        "open": "Abiertos",
+        "critical": "Críticos",
+        "pendingDpa": "Pendientes AEPD"
+      },
+      "tabs": {
+        "all": "Todos",
+        "open": "Abiertos",
+        "critical": "Críticos",
+        "closed": "Cerrados"
+      },
+      "card": {
+        "records": "Registros",
+        "recordsShort": "{count, plural, one {# registro} other {# registros}}"
+      },
+      "type": {
+        "DATA_BREACH": "Brecha de datos",
+        "UNAUTHORIZED_ACCESS": "Acceso no autorizado",
+        "DATA_LOSS": "Pérdida de datos",
+        "SYSTEM_COMPROMISE": "Sistema comprometido",
+        "PHISHING": "Phishing",
+        "RANSOMWARE": "Ransomware",
+        "INSIDER_THREAT": "Amenaza interna",
+        "PHYSICAL_SECURITY": "Seguridad física",
+        "VENDOR_INCIDENT": "Incidente de proveedor",
+        "OTHER": "Otro"
+      },
+      "status": {
+        "REPORTED": "Notificado",
+        "INVESTIGATING": "En investigación",
+        "CONTAINED": "Contenido",
+        "ERADICATED": "Erradicado",
+        "RECOVERING": "En recuperación",
+        "CLOSED": "Cerrado",
+        "FALSE_POSITIVE": "Falso positivo"
+      },
+      "severity": {
+        "LOW": "Bajo",
+        "MEDIUM": "Medio",
+        "HIGH": "Alto",
+        "CRITICAL": "Crítico"
+      },
+      "emptyAll": {
+        "title": "No hay incidentes notificados",
+        "subtitle": "Notifica aquí los incidentes de seguridad y brechas de datos"
+      },
+      "emptyOpen": "No hay incidentes abiertos",
+      "emptyCritical": "No hay incidentes críticos",
+      "emptyClosed": "No hay incidentes cerrados"
+    },
+    "vendors": {
+      "title": "Gestión de proveedores",
+      "subtitle": "Gestiona proveedores externos y encargados del tratamiento",
+      "exportRegister": "Exportar registro",
+      "exportPdf": "Descargar como PDF",
+      "exportCsv": "Descargar como CSV",
+      "questionnaires": "Cuestionarios",
+      "addVendor": "Añadir proveedor",
+      "addVendorShort": "Añadir",
+      "search": "Buscar proveedores...",
+      "stats": {
+        "total": "Proveedores totales",
+        "active": "Proveedores activos",
+        "highRisk": "Riesgo alto",
+        "pendingReview": "Revisión pendiente"
+      },
+      "tabs": {
+        "all": "Todos",
+        "active": "Activos",
+        "review": "En revisión",
+        "highRisk": "Riesgo alto"
+      },
+      "catalog": {
+        "title": "Catálogo de proveedores",
+        "subtitle": "Busca entre más de 700 proveedores MarTech, IA y SaaS preauditados",
+        "lockedSubtitle": "Accede a más de 700 proveedores preauditados con datos de cumplimiento, certificaciones y enlaces a DPA",
+        "active": "Activo",
+        "addFromCatalog": "Añadir desde el catálogo",
+        "perMonth": "/mes",
+        "enable": "Activar",
+        "contactUs": "Contáctanos",
+        "modalDescription": "Accede a más de 700 proveedores preauditados con datos de cumplimiento, certificaciones y enlaces a DPA."
+      },
+      "card": {
+        "noCategories": "Sin categorías",
+        "dataProcessed": "Datos tratados",
+        "moreItems": "+{count} más",
+        "added": "Añadido: {date}",
+        "riskBadge": "Riesgo {level}"
+      },
+      "status": {
+        "PROSPECTIVE": "Prospectivo",
+        "ACTIVE": "Activo",
+        "UNDER_REVIEW": "En revisión",
+        "SUSPENDED": "Suspendido",
+        "TERMINATED": "Finalizado"
+      },
+      "riskTier": {
+        "LOW": "Bajo",
+        "MEDIUM": "Medio",
+        "HIGH": "Alto",
+        "CRITICAL": "Crítico"
+      },
+      "emptyAll": {
+        "title": "Aún no hay proveedores",
+        "subtitle": "Añade tu primer proveedor para gestionar el riesgo de terceros"
+      },
+      "emptyActive": "No hay proveedores activos",
+      "emptyReview": "No hay proveedores en revisión",
+      "emptyHighRisk": "No hay proveedores de riesgo alto"
+    },
+    "assessments": {
+      "title": "Evaluaciones",
+      "subtitle": "Evaluaciones de impacto de privacidad y evaluaciones de proveedores",
+      "exportPortfolio": "Exportar cartera",
+      "templates": "Plantillas",
+      "newAssessment": "Nueva evaluación",
+      "newAssessmentShort": "Nueva",
+      "stats": {
+        "total": "Evaluaciones totales",
+        "inProgress": "En curso",
+        "pendingReview": "Revisión pendiente",
+        "highRisk": "Riesgo alto"
+      },
+      "search": "Buscar evaluaciones...",
+      "tabs": {
+        "all": "Todas",
+        "dpia": "DPIA",
+        "vendor": "Proveedor",
+        "tia": "TIA"
+      },
+      "card": {
+        "responses": "Respuestas",
+        "responsesShort": "{count, plural, one {# respuesta} other {# respuestas}}",
+        "templateUnknown": "Desconocida",
+        "templatePrefix": "Plantilla: {name}",
+        "riskBadge": "Riesgo {level}"
+      },
+      "type": {
+        "DPIA": "DPIA",
+        "PIA": "PIA",
+        "TIA": "TIA",
+        "LIA": "LIA",
+        "VENDOR": "Proveedor",
+        "CUSTOM": "Personalizada"
+      },
+      "status": {
+        "DRAFT": "Borrador",
+        "IN_PROGRESS": "En curso",
+        "PENDING_REVIEW": "Revisión pendiente",
+        "PENDING_APPROVAL": "Aprobación pendiente",
+        "APPROVED": "Aprobada",
+        "REJECTED": "Rechazada"
+      },
+      "riskLevel": {
+        "LOW": "Bajo",
+        "MEDIUM": "Medio",
+        "HIGH": "Alto",
+        "CRITICAL": "Crítico"
+      },
+      "emptyAll": {
+        "title": "Aún no hay evaluaciones",
+        "subtitle": "Comienza tu primera evaluación de impacto"
+      },
+      "emptyDpia": "No hay evaluaciones DPIA",
+      "emptyVendor": "No hay evaluaciones de proveedores",
+      "emptyTia": "No hay evaluaciones TIA",
+      "quickStart": {
+        "title": "Plantillas de inicio rápido",
+        "subtitle": "Inicia una nueva evaluación desde una plantilla",
+        "premium": "Premium",
+        "sectionsCount": "{count, plural, one {# sección} other {# secciones}}",
+        "systemTemplate": "Plantilla del sistema",
+        "useTemplate": "Usar plantilla",
+        "lia": "Evaluación de interés legítimo",
+        "custom": "Evaluación personalizada",
+        "dpia": "Evaluación de impacto de protección de datos"
+      }
+    },
+    "dsar": {
+      "title": "Solicitudes del interesado",
+      "subtitle": "Gestiona y supervisa las DSAR",
+      "exportReport": "Exportar informe",
+      "settings": "Ajustes",
+      "comingSoon": "Próximamente",
+      "newRequest": "Nueva solicitud",
+      "newRequestShort": "Nueva",
+      "stats": {
+        "total": "Solicitudes totales",
+        "open": "Abiertas",
+        "overdue": "Vencidas",
+        "atRisk": "En riesgo"
+      },
+      "search": "Buscar solicitudes...",
+      "tabs": {
+        "all": "Todas",
+        "open": "Abiertas",
+        "overdue": "Vencidas",
+        "completed": "Completadas"
+      },
+      "card": {
+        "tasks": "Tareas",
+        "tasksShort": "{count, plural, one {# tarea} other {# tareas}}",
+        "completed": "Completada",
+        "rejected": "Rechazada",
+        "due": "Vence: {date}",
+        "naDate": "N/D",
+        "dueToday": "Vence hoy",
+        "daysLeft": "{count, plural, one {# día restante} other {# días restantes}}",
+        "daysLeftShort": "{count}d restantes",
+        "daysOverdue": "{count, plural, one {# día de retraso} other {# días de retraso}}",
+        "daysOverdueShort": "{count}d de retraso"
+      },
+      "type": {
+        "ACCESS": "Acceso",
+        "RECTIFICATION": "Rectificación",
+        "ERASURE": "Supresión",
+        "PORTABILITY": "Portabilidad",
+        "OBJECTION": "Oposición",
+        "RESTRICTION": "Limitación"
+      },
+      "status": {
+        "SUBMITTED": "Recibida",
+        "IDENTITY_PENDING": "Identidad pendiente",
+        "IDENTITY_VERIFIED": "Identidad verificada",
+        "IN_PROGRESS": "En curso",
+        "DATA_COLLECTED": "Datos recopilados",
+        "REVIEW_PENDING": "Revisión pendiente",
+        "COMPLETED": "Completada",
+        "REJECTED": "Rechazada"
+      },
+      "emptyAll": {
+        "title": "Aún no hay solicitudes del interesado",
+        "subtitle": "Crea una solicitud o configura un formulario de recepción público"
+      },
+      "emptyOpen": "No hay solicitudes abiertas",
+      "emptyOverdue": "No hay solicitudes vencidas",
+      "emptyCompleted": "No hay solicitudes completadas",
+      "publicPortal": {
+        "title": "Portal público de recepción",
+        "subtitle": "Comparte este enlace con los interesados",
+        "comingSoonSubtitle": "Un portal público para que los interesados presenten solicitudes RGPD. Actualmente en desarrollo.",
+        "open": "Abrir portal"
+      }
+    },
+    "dataInventory": {
+      "title": "Inventario de datos",
+      "subtitle": "Gestiona activos de datos y actividades de tratamiento",
+      "export": "Exportar",
+      "exportPrivacyProgram": "Informe del programa de privacidad",
+      "exportRopa": "Exportar RAT",
+      "addAsset": "Añadir activo",
+      "addAssetShort": "Añadir",
+      "addActivity": "Añadir actividad",
+      "addTransfer": "Añadir transferencia",
+      "search": "Buscar activos...",
+      "filters": "Filtros",
+      "tabs": {
+        "assets": "Activos ({count})",
+        "activities": "Actividades ({count})",
+        "flows": "Flujos de datos",
+        "transfers": "Transferencias",
+        "transfersWithCount": "Transferencias ({count})"
+      },
+      "asset": {
+        "ownerEmpty": "Sin responsable",
+        "elements": "{count, plural, one {# elemento} other {# elementos}}",
+        "activities": "{count, plural, one {# actividad} other {# actividades}}",
+        "locationEmpty": "Ubicación no especificada"
+      },
+      "activity": {
+        "noBasis": "Sin base",
+        "noSubjects": "Sin interesados",
+        "assetsCount": "{count, plural, one {# activo} other {# activos}}",
+        "details": "Detalles",
+        "viewDetails": "Ver detalles"
+      },
+      "loadMore": "Cargar más",
+      "emptyAssets": {
+        "title": "Aún no hay activos de datos",
+        "subtitle": "Comienza añadiendo tu primer activo de datos"
+      },
+      "emptyActivities": {
+        "title": "Aún no hay actividades de tratamiento",
+        "subtitle": "Documenta tus actividades de tratamiento para cumplir con el RAT"
+      },
+      "emptyTransfers": {
+        "title": "No hay transferencias internacionales registradas",
+        "subtitle": "Documenta las transferencias transfronterizas y sus salvaguardas (arts. 44–49 RGPD)"
+      },
+      "transfer": {
+        "tiaCompleted": "TIA completada",
+        "tiaPending": "TIA pendiente",
+        "tiaInProgress": "TIA en curso",
+        "startTia": "Iniciar TIA",
+        "continueTia": "Continuar TIA",
+        "viewTia": "Ver TIA"
+      },
+      "activityDialog": {
+        "title": "Añadir actividad de tratamiento",
+        "description": "Documenta una actividad de tratamiento para tu RAT (Registro de Actividades de Tratamiento).",
+        "nameLabel": "Nombre de la actividad",
+        "namePlaceholder": "p. ej., Alta de clientes",
+        "purposeLabel": "Finalidad",
+        "purposePlaceholder": "p. ej., Recopilar y verificar la identidad del cliente para crear su cuenta",
+        "legalBasisLabel": "Base jurídica",
+        "legalBasisPlaceholder": "Selecciona una base jurídica...",
+        "subjectsLabel": "Interesados",
+        "subjectsPlaceholder": "p. ej., Clientes, Empleados, Visitantes del sitio web",
+        "subjectsHelp": "Lista separada por comas"
+      },
+      "transferDialog": {
+        "title": "Añadir transferencia internacional",
+        "description": "Registra una transferencia transfronteriza de datos según los arts. 44–49 RGPD.",
+        "nameLabel": "Nombre de la transferencia",
+        "namePlaceholder": "p. ej., Datos de clientes al proveedor de analítica de EE. UU.",
+        "countryLabel": "País de destino",
+        "countryPlaceholder": "p. ej., US, IN, GB",
+        "orgLabel": "Organización receptora",
+        "orgPlaceholder": "p. ej., Stripe Inc.",
+        "mechanismLabel": "Mecanismo de transferencia",
+        "mechanismPlaceholder": "Selecciona un mecanismo...",
+        "safeguardsLabel": "Salvaguardas",
+        "safeguardsPlaceholder": "p. ej., CCT UE (2021) + medidas complementarias"
+      },
+      "legalBasis": {
+        "CONSENT": "Consentimiento",
+        "CONTRACT": "Contrato",
+        "LEGAL_OBLIGATION": "Obligación legal",
+        "VITAL_INTERESTS": "Intereses vitales",
+        "PUBLIC_TASK": "Misión pública",
+        "LEGITIMATE_INTERESTS": "Interés legítimo"
+      },
+      "mechanism": {
+        "ADEQUACY_DECISION": "Decisión de adecuación",
+        "STANDARD_CONTRACTUAL_CLAUSES": "CCT",
+        "BINDING_CORPORATE_RULES": "BCR",
+        "DEROGATION": "Derogación",
+        "CERTIFICATION": "Certificación",
+        "CODE_OF_CONDUCT": "Código de conducta",
+        "OTHER": "Otro"
+      }
+    },
+    "dashboard": {
+      "subtitle": "Panel de privacidad",
+      "exportReport": "Informe del programa de privacidad",
+      "exportReportShort": "Informe",
+      "switchOrg": "Cambiar",
+      "vwQuickstartTitle": "Crea tu programa de privacidad a partir de tu cartera de proveedores",
+      "vwQuickstartDesc": "Hemos encontrado {count, plural, one {<b>1 proveedor</b>} other {<b>{count} proveedores</b>}} en tu cartera de Vendor.Watch. Podemos generar automáticamente activos de datos, actividades de tratamiento y flujos de datos; podrás añadir más después.",
+      "vwQuickstartCta": "Construir ahora",
+      "moreVendors": "+{count} más",
+      "quickstartTitle": "Comienza con el asistente Quickstart",
+      "quickstartDesc": "Pon en marcha tu programa de privacidad en cuestión de minutos. Importa proveedores del catálogo o parte de una plantilla sectorial para generar automáticamente activos, actividades y flujos de datos.",
+      "quickstartCta": "Comenzar",
+      "stats": {
+        "dataInventory": "Inventario de datos",
+        "activitiesCount": "{count, plural, one {# actividad} other {# actividades}}",
+        "openDsars": "DSAR abiertas",
+        "overdueCount": "{count} vencidas",
+        "allOnTrack": "Todo al día",
+        "assessments": "Evaluaciones",
+        "inProgress": "En curso",
+        "incidents": "Incidentes",
+        "openCases": "Casos abiertos"
+      },
+      "dsarQueue": {
+        "title": "Cola de DSAR",
+        "subtitle": "Solicitudes de acceso del interesado",
+        "viewAll": "Ver todas",
+        "done": "Completada",
+        "overdue": "Vencida",
+        "daysShort": "{count}d",
+        "empty": "No hay DSAR abiertas"
+      },
+      "recentActivity": {
+        "title": "Actividad reciente",
+        "subtitle": "Últimas actualizaciones del programa de privacidad",
+        "empty": "Sin actividad reciente"
+      },
+      "quickActions": {
+        "title": "Acciones rápidas",
+        "subtitle": "Tareas habituales",
+        "addAsset": "Añadir activo de datos",
+        "newDsar": "Nueva DSAR",
+        "reportIncident": "Notificar incidente",
+        "addVendor": "Añadir proveedor",
+        "quickstart": "Asistente Quickstart"
+      },
+      "vendors": {
+        "title": "Proveedores",
+        "activeCount": "{count, plural, one {# proveedor activo} other {# proveedores activos}}",
+        "categoryFallback": "Proveedor",
+        "empty": "Añade proveedores para gestionar el riesgo de terceros"
+      },
+      "newOrgDialog": {
+        "title": "Nueva organización",
+        "nameLabel": "Nombre de la organización",
+        "namePlaceholder": "p. ej., Acme Corporation",
+        "creating": "Creando...",
+        "create": "Crear"
+      }
+    }
+  },
+  "confirms": {
+    "deleteAssetTitle": "¿Eliminar activo?",
+    "deleteAssetDesc": "Se eliminará el activo y todos sus elementos vinculados de forma permanente. Esta acción no se puede deshacer.",
+    "deleteElementTitle": "¿Eliminar elemento?",
+    "deleteElementDesc": "¿Eliminar \"{name}\"? Esta acción no se puede deshacer.",
+    "deleteVendorTitle": "¿Eliminar proveedor?",
+    "deleteVendorDesc": "Se eliminará el proveedor y se desvinculará de los activos o actividades asociados. Esta acción no se puede deshacer.",
+    "deleteFlowTitle": "¿Eliminar flujo de datos?",
+    "deleteFlowDesc": "¿Eliminar el flujo \"{name}\"? Esta acción no se puede deshacer.",
+    "deleteEntitlementTitle": "¿Eliminar habilitación?",
+    "deleteEntitlementDesc": "¿Eliminar esta habilitación ({name})? Las organizaciones vinculadas perderán el acceso de inmediato. Esta acción no se puede deshacer."
+  },
+  "auth": {
+    "signIn": "Iniciar sesión",
+    "signOut": "Cerrar sesión",
+    "signUp": "Registrarse",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "enterEmail": "Introduce tu correo para recibir un enlace mágico",
+    "continueWithEmail": "Continuar con correo",
+    "continueWithGoogle": "Continuar con Google",
+    "orContinueWith": "O continuar con",
+    "noPasswordNeeded": "No se necesita contraseña. Te enviaremos un enlace seguro.",
+    "checkEmail": "Revisa tu correo",
+    "magicLinkSent": "Hemos enviado un enlace mágico a {email}. Haz clic en el enlace del correo para iniciar sesión.",
+    "didntReceive": "¿No lo has recibido?",
+    "tryAgain": "Inténtalo de nuevo",
+    "sendingLink": "Enviando...",
+    "signingIn": "Iniciando sesión...",
+    "bySigningIn": "Al iniciar sesión, aceptas nuestros",
+    "termsOfUse": "Términos de uso",
+    "and": "y",
+    "privacyPolicy": "Política de privacidad",
+    "developmentMode": "Modo de desarrollo",
+    "devSignIn": "Inicio rápido (Dev)",
+    "termsOfService": "Términos del servicio",
+    "emailPlaceholder": "tú@empresa.com",
+    "devEmailPlaceholder": "dev@example.com",
+    "failedToSendLink": "No se ha podido enviar el enlace mágico. Inténtalo de nuevo.",
+    "unexpectedError": "Se ha producido un error inesperado.",
+    "devSignInFailed": "Error al iniciar sesión en modo dev.",
+    "error": {
+      "OAuthAccountNotLinked": "Este correo ya está asociado a otro método de inicio de sesión. Prueba con el enlace mágico.",
+      "OAuthCallback": "Error al iniciar sesión con Google. Inténtalo de nuevo.",
+      "OAuthSignin": "No se ha podido iniciar sesión con Google. Inténtalo de nuevo.",
+      "Default": "Error al iniciar sesión. Inténtalo de nuevo."
+    },
+    "authErrorPage": {
+      "title": "Error de autenticación",
+      "titleAccountExists": "La cuenta ya existe",
+      "body": "Algo ha ido mal durante el inicio de sesión. El enlace puede haber caducado o ya se ha utilizado.",
+      "bodyAccountExists": "Ya existe una cuenta con este correo electrónico que utiliza otro método de inicio de sesión. Inicia sesión con tu método original (enlace mágico por correo o Google) para acceder a tu cuenta.",
+      "bodyFallback": "Algo ha ido mal durante el inicio de sesión.",
+      "cta": "Intentar de nuevo",
+      "ctaAccountExists": "Iniciar sesión con el método original"
+    },
+    "verifyRequestPage": {
+      "body": "Se ha enviado un enlace de inicio de sesión a tu correo. Haz clic en el enlace para continuar."
+    }
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "dataInventory": "Inventario de datos",
+    "dsar": "DSAR",
+    "assessments": "Evaluaciones",
+    "incidents": "Incidentes",
+    "vendors": "Proveedores",
+    "settings": "Configuración",
+    "openMenu": "Abrir menú",
+    "findExpert": "Buscar experto",
+    "myClients": "Mis clientes",
+    "feedback": "Comentarios",
+    "signOut": "Cerrar sesión",
+    "reports": "Informes",
+    "regulations": "Regulaciones",
+    "aiSystems": "Sistemas de IA",
+    "more": "Más",
+    "newOrganization": "Nueva organización"
+  },
+  "footer": {
+    "serviceBy": "{brandName} es un servicio de {companyName}.",
+    "userGuide": "Guía de usuario",
+    "billing": "Facturación",
+    "termsOfService": "Términos de servicio",
+    "privacyPolicy": "Política de privacidad",
+    "dataSecurity": "Seguridad de los datos",
+    "docs": "Documentación",
+    "howItWorks": "Cómo funciona",
+    "signIn": "Iniciar sesión"
+  },
+  "onboarding": {
+    "welcome": "Bienvenido a {brandName}",
+    "subtitle": "Configura tu cuenta para empezar con la gestión de protección de datos",
+    "howWillYouUse": "¿Cómo vas a utilizar {brandName}?",
+    "businessOwner": "Propietario de empresa",
+    "businessOwnerDesc": "Necesito cumplimiento en protección de datos para mi organización",
+    "privacyProfessional": "Profesional de privacidad",
+    "privacyProfessionalDesc": "Asesoro a varias organizaciones en protección de datos",
+    "orgName": "Nombre de la organización",
+    "orgNamePlaceholder": "ej., Acme Corporation",
+    "getStarted": "Comenzar",
+    "settingUp": "Configurando..."
+  },
+  "organization": {
+    "welcome": "Bienvenido a {brandName}",
+    "createOrg": "Crea tu organización para comenzar con la gestión de privacidad",
+    "orgName": "Nombre de la organización",
+    "orgNamePlaceholder": "ej., Acme Corporation",
+    "createOrganization": "Crear organización",
+    "creating": "Creando...",
+    "switchOrg": "Cambiar organización"
+  },
+  "quickstart": {
+    "recommended": "Recomendado: Configuración completa",
+    "recommendedDesc": "Importa tus proveedores y añade una plantilla de sector para el programa de protección de datos más completo."
+  },
+  "dashboard": {
+    "title": "Panel de privacidad",
+    "overview": "Resumen",
+    "recentActivity": "Actividad reciente",
+    "quickActions": "Acciones rápidas",
+    "metrics": {
+      "totalAssets": "Total de activos",
+      "activeRequests": "Solicitudes activas",
+      "pendingAssessments": "Evaluaciones pendientes",
+      "openIncidents": "Incidentes abiertos"
+    }
+  },
+  "dataInventory": {
+    "title": "Inventario de datos",
+    "assets": "Activos de datos",
+    "elements": "Elementos de datos",
+    "activities": "Actividades de tratamiento",
+    "flows": "Flujos de datos",
+    "transfers": "Transferencias de datos",
+    "newAsset": "Nuevo activo",
+    "newElement": "Nuevo elemento",
+    "newActivity": "Nueva actividad",
+    "assetType": "Tipo de activo",
+    "sensitivity": "Sensibilidad",
+    "owner": "Responsable",
+    "location": "Ubicación"
+  },
+  "dsar": {
+    "title": "Solicitudes de acceso de los interesados",
+    "newRequest": "Nueva solicitud",
+    "allRequests": "Todas las solicitudes",
+    "pending": "Pendiente",
+    "inProgress": "En curso",
+    "completed": "Completada",
+    "overdue": "Fuera de plazo",
+    "requesterName": "Nombre del solicitante",
+    "requesterEmail": "Correo del solicitante",
+    "requestType": "Tipo de solicitud",
+    "dueDate": "Fecha límite",
+    "receivedDate": "Fecha de recepción",
+    "types": {
+      "access": "Derecho de acceso",
+      "rectification": "Derecho de rectificación",
+      "erasure": "Derecho de supresión",
+      "portability": "Derecho a la portabilidad",
+      "objection": "Derecho de oposición",
+      "restriction": "Derecho a la limitación del tratamiento"
+    }
+  },
+  "assessments": {
+    "title": "Evaluaciones",
+    "newAssessment": "Nueva evaluación",
+    "templates": "Plantillas",
+    "draft": "Borrador",
+    "inProgress": "En curso",
+    "pendingReview": "Pendiente de revisión",
+    "approved": "Aprobada",
+    "types": {
+      "dpia": "Evaluación de impacto en protección de datos",
+      "pia": "Evaluación de impacto en la privacidad",
+      "tia": "Evaluación de impacto de transferencia",
+      "lia": "Evaluación de interés legítimo",
+      "vendor": "Evaluación de riesgo de proveedores",
+      "custom": "Evaluación personalizada"
+    },
+    "riskLevel": "Nivel de riesgo",
+    "startDate": "Fecha de inicio",
+    "completedDate": "Fecha de finalización"
+  },
+  "incidents": {
+    "title": "Incidentes",
+    "newIncident": "Nuevo incidente",
+    "reported": "Comunicado",
+    "investigating": "En investigación",
+    "contained": "Controlado",
+    "resolved": "Resuelto",
+    "severity": "Gravedad",
+    "severityLevels": {
+      "low": "Baja",
+      "medium": "Media",
+      "high": "Alta",
+      "critical": "Crítica"
+    },
+    "discoveredAt": "Fecha de detección",
+    "affectedRecords": "Registros afectados",
+    "notificationRequired": "Notificación requerida"
+  },
+  "vendors": {
+    "title": "Proveedores",
+    "newVendor": "Nuevo proveedor",
+    "active": "Activo",
+    "prospective": "Potencial",
+    "underReview": "En revisión",
+    "suspended": "Suspendido",
+    "riskTier": "Nivel de riesgo",
+    "contracts": "Contratos",
+    "questionnaires": "Cuestionarios",
+    "lastAssessed": "Última evaluación",
+    "nextReview": "Próxima revisión"
+  },
+  "premium": {
+    "accessRequired": "Acceso requerido",
+    "premiumFeature": "Función premium",
+    "upgradeRequired": "Esta función requiere una licencia premium.",
+    "contactUs": "Contáctanos",
+    "upgradeNow": "Actualizar ahora",
+    "premiumSuite": "Este tipo de evaluación forma parte de la suite premium de {brandName}. Actualiza tu plan para acceder a herramientas avanzadas de evaluación de privacidad."
+  },
+  "expertCta": {
+    "findExpert": "Buscar experto",
+    "quickstart": {
+      "heading": "¿Necesitas ayuda para configurar tu programa de privacidad?",
+      "body": "Contacta con un experto certificado en protección de datos que te guíe en el cumplimiento del RGPD y te ayude a personalizar tu programa."
+    },
+    "assessment": {
+      "heading": "¿Necesitas ayuda con tu evaluación?",
+      "body": "Los expertos en protección de datos pueden ayudarte a realizar EIPD, EIP y otras evaluaciones para garantizar un cumplimiento exhaustivo."
+    },
+    "incident": {
+      "heading": "¿Necesitas orientación experta sobre respuesta a incidentes?",
+      "body": "Un profesional de protección de datos puede ayudarte a gestionar notificaciones de brechas, comunicaciones con la AEPD y la remediación."
+    },
+    "emptyState": {
+      "heading": "¿No sabes por dónde empezar?",
+      "body": "Un experto en protección de datos puede ayudarte a construir tu inventario de datos y establecer procesos conformes desde el primer día."
+    },
+    "general": {
+      "heading": "Solicita ayuda profesional con tu programa de protección de datos",
+      "body": "Contacta con profesionales certificados en protección de datos que pueden ayudarte con el cumplimiento del RGPD, evaluaciones y más."
+    },
+    "vendor": {
+      "heading": "¿Necesitas ayuda con la diligencia debida de proveedores?",
+      "body": "Un experto en protección de datos puede revisar tus contratos con proveedores, los acuerdos de tratamiento de datos y ayudar a evaluar los riesgos de terceros."
+    },
+    "dsar": {
+      "heading": "¿Necesitas ayuda gestionando solicitudes de acceso?",
+      "body": "Los profesionales de protección de datos pueden ayudarte a establecer flujos de trabajo eficientes para las solicitudes de los interesados y garantizar respuestas oportunas y conformes."
+    },
+    "highRisk": {
+      "heading": "Tratamiento de alto riesgo detectado",
+      "body": "Tu selección incluye proveedores que tratan datos sensibles. Un especialista en EIPD puede ayudarte a evaluar y mitigar estos riesgos."
+    },
+    "transfer": {
+      "heading": "Transferencias internacionales detectadas",
+      "body": "Los datos que salen del EEE requieren garantías adecuadas. Un especialista en transferencias puede ayudarte con las ETI y las cláusulas contractuales tipo."
+    }
+  },
+  "experts": {
+    "title": "Buscar experto en protección de datos",
+    "subtitle": "Conecta con profesionales certificados en protección de datos que pueden ayudarte con tus necesidades de cumplimiento",
+    "searchPlaceholder": "Buscar por nombre, despacho o especialización...",
+    "specialization": "Especialización",
+    "allSpecializations": "Todas las especialidades",
+    "expertType": "Tipo de experto",
+    "allTypes": "Todos los tipos",
+    "country": "País",
+    "allCountries": "Todos los países",
+    "language": "Idioma",
+    "allLanguages": "Todos los idiomas",
+    "showing": "Mostrando {count} de {total} experto(s)",
+    "available": "Disponible",
+    "contactExpert": "Contactar experto",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "noResults": "No se han encontrado expertos que coincidan con los criterios. Prueba a ajustar los filtros.",
+    "noExperts": "No hay expertos disponibles en este momento.",
+    "unnamedExpert": "Experto sin nombre",
+    "privacyExpert": "Experto en protección de datos",
+    "typeLegal": "Jurídico",
+    "typeTechnical": "Técnico",
+    "typeDeployment": "Despliegue",
+    "engagements": {
+      "tabDirectory": "Directorio",
+      "tabHistory": "Historial de contactos",
+      "empty": "Aún no hay contactos con expertos. Contacta a alguno para comenzar el seguimiento.",
+      "contactedBy": "{name} · {date}",
+      "notes": "Notas",
+      "notesPlaceholder": "Anota resultados, honorarios, entregables, seguimiento…",
+      "addNotes": "Añadir notas",
+      "saveNotes": "Guardar",
+      "cancelNotes": "Cancelar",
+      "status": {
+        "CONTACTED": "Contactado",
+        "RESPONDED": "Respondió",
+        "ENGAGED": "Contratado",
+        "COMPLETED": "Completado",
+        "DECLINED": "Declinado"
+      }
+    },
+    "contact": {
+      "title": "Contactar con {name}",
+      "description": "Envía un mensaje a este experto. Responderá directamente a tu correo electrónico.",
+      "requestSent": "Solicitud enviada",
+      "requestSentBody": "Tu mensaje ha sido enviado a {name}. Responderá directamente a tu correo electrónico.",
+      "nameLabel": "Nombre *",
+      "emailLabel": "Correo electrónico *",
+      "companyLabel": "Empresa",
+      "subjectLabel": "Asunto *",
+      "subjectPlaceholder": "p. ej., consulta sobre cumplimiento del RGPD",
+      "messageLabel": "Mensaje",
+      "messagePlaceholder": "Describe brevemente en qué necesitas ayuda...",
+      "errorMessage": "Ha ocurrido un error al enviar tu solicitud. Inténtalo de nuevo o contacta con nosotros directamente por correo electrónico.",
+      "sendRequest": "Enviar solicitud"
+    }
+  },
+  "deploymentCta": {
+    "heading": "¿Quieres alojar DPO Central en tu infraestructura?",
+    "body": "Expertos en despliegue pueden ayudarte a configurar y mantener tu propia instancia.",
+    "findExpert": "Buscar experto",
+    "dismiss": "Cerrar"
+  },
+  "security": {
+    "badge": "Defensa en profundidad",
+    "title": "Seguridad de los datos",
+    "subtitle": "DPO Central se ha construido con defensa en profundidad en cada capa. Como plataforma de gestión de privacidad que maneja resultados de evaluaciones, registros de incidentes, contratos con proveedores y solicitudes de interesados, la seguridad es un requisito fundamental, no algo secundario.",
+    "stats": {
+      "layers": "Capas de seguridad",
+      "headers": "Cabeceras HTTP",
+      "roles": "Niveles de rol",
+      "hsts": "HSTS máximo"
+    },
+    "categories": {
+      "identityAccess": "Identidad y acceso",
+      "identityAccessDesc": "Autenticación, autorización y gestión de sesiones",
+      "appSecurity": "Seguridad de la aplicación",
+      "appSecurityDesc": "Tratamiento de entradas, protección de API y prevención de abusos",
+      "dataProtection": "Protección de datos",
+      "dataProtectionDesc": "Seguridad del transporte, registro de auditoría, minimización y pagos",
+      "infrastructure": "Infraestructura",
+      "infrastructureDesc": "Alojamiento, cifrado y aislamiento de entornos"
+    },
+    "controlsLabel": "Controles de seguridad",
+    "sections": {
+      "authentication": "Autenticación",
+      "authorization": "Autorización y control de acceso",
+      "inputValidation": "Validación y saneamiento de entradas",
+      "apiSecurity": "Seguridad de la API",
+      "rateLimiting": "Limitación de tasa y prevención de abusos",
+      "transport": "Seguridad del transporte y del navegador",
+      "audit": "Registro de auditoría",
+      "minimization": "Minimización de datos",
+      "payment": "Seguridad de pagos",
+      "hosting": "Alojamiento y entorno"
+    },
+    "badges": {
+      "zeroKnowledge": "Conocimiento cero",
+      "fiveTierRbac": "RBAC 5 niveles",
+      "perEndpoint": "Por endpoint",
+      "sixHeaders": "6 cabeceras",
+      "stripeVerified": "Verificado por Stripe",
+      "edgeNetwork": "Red perimetral"
+    },
+    "items": {
+      "auth1": "Inicio de sesión multifactor mediante Google OAuth y enlaces mágicos por correo electrónico",
+      "auth2": "Sesiones JWT sin estado — sin estado de sesión en el servidor que pueda comprometerse",
+      "auth3": "Los tokens OAuth nunca se almacenan en la base de datos",
+      "auth4": "Aislamiento de cuentas — cada método de inicio de sesión se mantiene separado",
+      "auth5": "SSO entre aplicaciones mediante cookies de sesión seguras y con alcance definido",
+      "authHighlight": "No se almacenan contraseñas. La autenticación se delega en proveedores de identidad de confianza o en enlaces mágicos firmados criptográficamente.",
+      "authz1": "Multitenencia estricta — cada consulta está limitada a vuestra organización",
+      "authz2": "Jerarquía de roles en cinco niveles: Propietario, Administrador, Delegado de Protección de Datos, Miembro, Lector",
+      "authz3": "Control de acceso basado en roles en todas las operaciones de creación, actualización y eliminación",
+      "authz4": "Acciones destructivas restringidas exclusivamente a Administradores y Propietarios",
+      "authz5": "Sin SQL directo — todo el acceso mediante consultas ORM parametrizadas",
+      "authzHighlight": "Todo el acceso a la base de datos utiliza consultas ORM parametrizadas. La inyección SQL se previene estructuralmente, no solo se mitiga.",
+      "input1": "Validación de esquema en cada endpoint de la API",
+      "input2": "Saneamiento de HTML en todas las entradas de cara al público",
+      "input3": "Las consultas parametrizadas a la base de datos previenen la inyección SQL",
+      "input4": "Los detalles de errores de validación se ocultan en producción",
+      "api1": "Verificación de claves API con tiempo constante en los endpoints administrativos",
+      "api2": "Validación del tamaño de las cargas útiles en operaciones por lotes",
+      "api3": "Control de caducidad de tokens en todas las operaciones de cuestionarios a proveedores",
+      "api4": "El portal público de DSAR valida la configuración activa antes de aceptar solicitudes",
+      "apiHighlight": "Las comparaciones de claves API utilizan algoritmos de tiempo constante para prevenir ataques de temporización en los endpoints administrativos.",
+      "rate1": "Endpoints de autenticación limitados contra ataques de relleno de credenciales",
+      "rate2": "Rutas de pago y facturación protegidas contra fraude",
+      "rate3": "Endpoints de envío público limitados para prevenir spam",
+      "rate4": "Respuestas 429 correctas con cabeceras Retry-After",
+      "transport1": "HSTS con duración de 2 años, subdominios y precarga",
+      "transport2": "Política de Seguridad de Contenidos con nonces por solicitud",
+      "transport3": "Protección contra clickjacking mediante X-Frame-Options: DENY",
+      "transport4": "Prevención de detección de tipo MIME y política de referencia estricta",
+      "transport5": "Cámara, micrófono y geolocalización deshabilitados por política",
+      "transportHighlight": "Los nonces CSP se generan por solicitud, previniendo la inyección de scripts en línea incluso si un atacante encuentra un vector XSS.",
+      "audit1": "Registro exhaustivo de todas las operaciones de creación, actualización y eliminación",
+      "audit2": "Acciones administrativas registradas con metadatos completos",
+      "audit3": "Registro de producción estructurado sin trazas de pila ni contexto sensible",
+      "min1": "Las respuestas de la API devuelven solo los campos necesarios para la interfaz",
+      "min2": "Las claves sensibles se enmascaran en las vistas administrativas",
+      "min3": "Los dominios de correo electrónico públicos se bloquean para la membresía automática en organizaciones",
+      "pay1": "Verificación de firma de webhooks de Stripe mediante HMAC-SHA256",
+      "pay2": "Proceso de pago del lado del servidor que impide la manipulación de precios del lado del cliente",
+      "pay3": "Los derechos se suspenden automáticamente en caso de fallo en el pago",
+      "infra1": "Alojado en Vercel con TLS automático y red perimetral global",
+      "infra2": "Base de datos PostgreSQL con conexiones cifradas",
+      "infra3": "Los secretos del entorno se excluyen de los paquetes del cliente",
+      "infra4": "Los endpoints exclusivos de desarrollo están protegidos por comprobaciones del entorno de ejecución"
+    },
+    "disclosure": {
+      "title": "Divulgación responsable",
+      "body": "Si descubrís una vulnerabilidad de seguridad, os rogamos que la comuniquéis de forma responsable. No abráis una incidencia pública. Poneos en contacto directamente con nosotros a través de la dirección de correo electrónico indicada en el repositorio."
+    }
+  },
+  "errors": {
+    "generic": "Se ha producido un error. Por favor, inténtalo de nuevo.",
+    "notFound": "No encontrado",
+    "unauthorized": "No tienes autorización para realizar esta acción.",
+    "sessionExpired": "Tu sesión ha caducado. Por favor, inicia sesión de nuevo.",
+    "networkError": "Error de conexión. Por favor, comprueba tu conexión a internet."
+  },
+  "toasts": {
+    "generic": {
+      "somethingWentWrong": "Algo ha ido mal. Inténtalo de nuevo."
+    },
+    "organization": {
+      "created": "Creada «{name}»",
+      "updated": "Organización actualizada",
+      "deleted": "Eliminada «{name}»"
+    },
+    "dataFlow": {
+      "created": "Flujo de datos creado",
+      "updated": "Flujo de datos actualizado",
+      "deleted": "Flujo de datos eliminado",
+      "createFailed": "No se ha podido crear el flujo de datos",
+      "updateFailed": "No se ha podido actualizar el flujo de datos",
+      "deleteFailed": "No se ha podido eliminar el flujo de datos"
+    },
+    "asset": {
+      "created": "Activo de datos creado",
+      "deleted": "Activo eliminado",
+      "elementAdded": "Elemento de datos añadido",
+      "elementDeleted": "Elemento eliminado",
+      "activitiesUpdated": "Actividades actualizadas",
+      "activitiesUpdatedWithFlows": "Actividades actualizadas — se {count, plural, one {ha generado # flujo de datos automáticamente} other {han generado # flujos de datos automáticamente}}"
+    },
+    "activity": {
+      "assetsLinked": "Activos enlazados actualizados",
+      "assetsLinkedWithFlows": "Activos enlazados — se {count, plural, one {ha generado # flujo de datos automáticamente} other {han generado # flujos de datos automáticamente}}",
+      "flowsGenerated": "Se {count, plural, one {ha generado # nuevo flujo de datos} other {han generado # nuevos flujos de datos}}",
+      "noNewFlows": "No hay nuevos flujos que generar: el grafo existente ya cubre esta actividad"
+    },
+    "vendor": {
+      "created": "Proveedor creado",
+      "updated": "Proveedor actualizado",
+      "deleted": "Proveedor eliminado",
+      "contractAdded": "Contrato añadido",
+      "reviewScheduled": "Revisión programada"
+    },
+    "incident": {
+      "created": "Incidencia registrada",
+      "statusUpdated": "Estado de la incidencia actualizado",
+      "timelineAdded": "Entrada de cronología añadida",
+      "taskCreated": "Tarea creada",
+      "notificationCreated": "Notificación creada",
+      "statusUpdateFailed": "No se ha podido actualizar el estado",
+      "timelineAddFailed": "No se ha podido añadir la entrada",
+      "taskCreateFailed": "No se ha podido crear la tarea",
+      "notificationCreateFailed": "No se ha podido crear la notificación"
+    },
+    "dsar": {
+      "created": "Solicitud DSAR creada",
+      "statusUpdated": "Estado de la solicitud actualizado",
+      "taskAdded": "Tarea añadida",
+      "taskUpdated": "Tarea actualizada",
+      "tasksGenerated": "Tareas generadas a partir de los activos de datos",
+      "messageSent": "Mensaje enviado"
+    },
+    "assessment": {
+      "created": "Evaluación creada",
+      "submittedForReview": "Evaluación enviada para revisión",
+      "submittedApproved": "Evaluación enviada y aprobada",
+      "approvalRequested": "Aprobación solicitada",
+      "approvalRecorded": "Decisión de aprobación registrada",
+      "mitigationAdded": "Mitigación añadida",
+      "mitigationUpdated": "Mitigación actualizada",
+      "templateCloned": "Plantilla clonada correctamente",
+      "autoFillAllSaved": "Evaluación creada con todas las respuestas rellenadas",
+      "autoFillPartialSaved": "Evaluación creada, pero solo se han guardado {saved} de {total} respuestas"
+    },
+    "aiSystem": {
+      "registered": "Sistema de IA registrado",
+      "sentToSentinel": "{count, plural, one {Enviado # sistema a AI Sentinel} other {Enviados # sistemas a AI Sentinel}}"
+    },
+    "reports": {
+      "snapshotSaved": "Instantánea de cumplimiento guardada",
+      "snapshotSaveFailed": "No se ha podido guardar la instantánea"
+    },
+    "quickstart": {
+      "noNewRecords": "Todos los registros ya existen: no hay nada nuevo que crear",
+      "selectAtLeastOne": "Selecciona al menos una opción",
+      "selectAtLeastOneVendor": "Selecciona al menos un proveedor",
+      "selectTemplate": "Selecciona una plantilla de sector",
+      "createdSummary": "Creado: {summary}",
+      "createdVendors": "{count, plural, one {# proveedor} other {# proveedores}}",
+      "createdAssets": "{count, plural, one {# activo} other {# activos}}",
+      "createdActivities": "{count, plural, one {# actividad} other {# actividades}}"
+    }
+  },
+  "pdf": {
+    "common": {
+      "brand": "DPO Central",
+      "brandUppercase": "DPO CENTRAL",
+      "confidential": "CONFIDENCIAL",
+      "generated": "Generado el {date}",
+      "confidentialBody": "CONFIDENCIAL — Este documento contiene información sensible sobre prácticas de protección de datos. Su distribución debe limitarse a personal autorizado y a las autoridades de control cuando lo requieran."
+    },
+    "enum": {
+      "assetType": {
+        "APPLICATION": "Aplicación",
+        "CLOUD_SERVICE": "Servicio cloud",
+        "DATABASE": "Base de datos",
+        "FILE_SYSTEM": "Sistema de archivos",
+        "THIRD_PARTY": "Tercero",
+        "PHYSICAL": "Físico",
+        "OTHER": "Otro"
+      },
+      "legalBasis": {
+        "CONSENT": "Consentimiento",
+        "CONTRACT": "Contrato",
+        "LEGAL_OBLIGATION": "Obligación legal",
+        "VITAL_INTERESTS": "Intereses vitales",
+        "PUBLIC_TASK": "Misión pública",
+        "LEGITIMATE_INTERESTS": "Interés legítimo"
+      },
+      "riskTier": {
+        "LOW": "Bajo",
+        "MEDIUM": "Medio",
+        "HIGH": "Alto",
+        "CRITICAL": "Crítico"
+      },
+      "aiRisk": {
+        "UNACCEPTABLE": "Inaceptable",
+        "HIGH_RISK": "Alto riesgo",
+        "LIMITED": "Limitado",
+        "MINIMAL": "Mínimo"
+      },
+      "vendorStatus": {
+        "PROSPECTIVE": "Potencial",
+        "ACTIVE": "Activo",
+        "UNDER_REVIEW": "En revisión",
+        "SUSPENDED": "Suspendido",
+        "TERMINATED": "Terminado"
+      },
+      "contractStatus": {
+        "DRAFT": "Borrador",
+        "ACTIVE": "En vigor",
+        "EXPIRED": "Vencido",
+        "TERMINATED": "Rescindido",
+        "PENDING": "Pendiente"
+      },
+      "aiSystemStatus": {
+        "DRAFT": "Borrador",
+        "REGISTERED": "Registrado",
+        "UNDER_REVIEW": "En revisión",
+        "COMPLIANT": "Conforme",
+        "NON_COMPLIANT": "No conforme",
+        "DECOMMISSIONED": "Retirado"
+      },
+      "dataCategory": {
+        "IDENTIFIERS": "Identificadores",
+        "DEMOGRAPHICS": "Demográficos",
+        "FINANCIAL": "Financieros",
+        "HEALTH": "Salud",
+        "BIOMETRIC": "Biométricos",
+        "LOCATION": "Ubicación",
+        "BEHAVIORAL": "Comportamiento",
+        "EMPLOYMENT": "Empleo",
+        "EDUCATION": "Educación",
+        "POLITICAL": "Opiniones políticas",
+        "RELIGIOUS": "Convicciones religiosas",
+        "GENETIC": "Genéticos",
+        "SEXUAL_ORIENTATION": "Orientación sexual",
+        "CRIMINAL": "Condenas e infracciones",
+        "OTHER": "Otros"
+      }
+    },
+    "privacyProgram": {
+      "title": "Informe del Programa de Privacidad",
+      "eyebrow": "Informe del Programa de Privacidad",
+      "coverSubtitle": "Postura de privacidad a nivel directivo",
+      "coverReference": "RGPD · Artículo 30 · Artículo 28 · Gobernanza de privacidad",
+      "wordmarkRight": "Documentación del programa de privacidad",
+      "cover": {
+        "keyFindings": "Conclusiones clave",
+        "dataEnrichmentCoverage": "Cobertura de enriquecimiento de datos",
+        "vendorCategories": "Categorías de proveedores",
+        "stats": {
+          "dataAssets": "Activos de datos",
+          "processingActivities": "Actividades de tratamiento",
+          "vendors": "Proveedores",
+          "dsarsOnTime": "DSARs a tiempo"
+        },
+        "coverage": {
+          "assetsClassified": "Activos clasificados",
+          "activitiesReviewed": "Actividades revisadas",
+          "vendorsWithDpa": "Proveedores con DPA"
+        },
+        "noFindings": "Sin hallazgos."
+      },
+      "inventory": {
+        "sectionNumber": "Sección 02",
+        "title": "Inventario de datos",
+        "lead": "Visión general de los activos de datos registrados, su densidad de clasificación y la proporción de datos personales y de categoría especial catalogados en el conjunto.",
+        "donutPersonal": "Datos personales",
+        "donutPersonalSub": "{count} de {total} elementos",
+        "donutSpecial": "Categoría especial",
+        "donutSpecialSub": "{count} de {total} elementos · Art. 9",
+        "assetsByType": "Activos por tipo",
+        "assetRegister": "Registro de activos",
+        "columns": {
+          "name": "Nombre",
+          "type": "Tipo",
+          "owner": "Responsable",
+          "location": "Ubicación",
+          "elements": "Elts",
+          "personal": "Personal",
+          "article9": "Art. 9"
+        },
+        "empty": "No se han registrado activos de datos."
+      },
+      "ropa": {
+        "sectionNumber": "Sección 03",
+        "title": "Registro de actividades de tratamiento",
+        "lead": "Resumen del artículo 30. Para el detalle con calidad de auditoría (sistemas, elementos de datos, garantías de transferencia), exporta el informe ROPA independiente.",
+        "byLegalBasis": "Por base jurídica",
+        "signals": "Señales",
+        "autoDecisions": "Decisiones aut.",
+        "intlTransfers": "Transferencias int.",
+        "overdueReview": "Revisión vencida",
+        "allActivities": "Todas las actividades",
+        "columns": {
+          "activity": "Actividad",
+          "legalBasis": "Base jurídica",
+          "systems": "Sistemas",
+          "transfers": "Transf.",
+          "adm": "ADM",
+          "nextReview": "Próx. revisión"
+        },
+        "empty": "No hay actividades de tratamiento registradas.",
+        "admYes": "SÍ"
+      },
+      "vendors": {
+        "sectionNumber": "Sección 04",
+        "title": "Proveedores y Encargados",
+        "lead": "Todos los encargados y subencargados sujetos a las obligaciones del artículo 28. Se resume la categorización de riesgo y el estado del DPA; el registro completo figura a continuación por categoría.",
+        "criticalityDistribution": "Distribución por criticidad",
+        "coverage": "Cobertura",
+        "coverageDpa": "DPA en vigor",
+        "coverageActive": "Activos",
+        "coverageCertified": "Certificados",
+        "columns": {
+          "vendor": "Proveedor",
+          "risk": "Riesgo",
+          "countries": "Países",
+          "certifications": "Certificaciones",
+          "dpa": "DPA",
+          "nextReview": "Próx. revisión"
+        },
+        "dpaYes": "SÍ",
+        "dpaMissing": "FALTA"
+      },
+      "ai": {
+        "sectionNumber": "Sección 05",
+        "title": "Gobernanza de la IA",
+        "lead": "Postura frente a la Ley de IA de la UE en los sistemas de IA registrados por la organización. La cobertura refleja solo los sistemas explícitamente catalogados; la IA inferida o en la sombra queda fuera del alcance.",
+        "donutCompliant": "Conforme con la Ley IA de la UE",
+        "donutSub": "{count} de {total} sistemas",
+        "riskDistribution": "Distribución de riesgo",
+        "stats": {
+          "registered": "Sistemas de IA registrados",
+          "highRisk": "Riesgo alto / inaceptable",
+          "certified": "Certificación ISO 42001"
+        },
+        "role": "Rol en la Ley IA de la UE",
+        "roleUnclassified": "Sin clasificar",
+        "inventory": "Inventario de sistemas de IA",
+        "columns": {
+          "name": "Nombre",
+          "category": "Categoría",
+          "risk": "Riesgo",
+          "role": "Rol",
+          "provider": "Proveedor",
+          "status": "Estado"
+        },
+        "statusCompliant": "CONFORME",
+        "statusNonCompliant": "NO CONFORME",
+        "empty": "No hay sistemas de IA registrados."
+      },
+      "flowMap": {
+        "sectionNumber": "Sección 06",
+        "title": "Mapa de flujos de datos",
+        "leadSingle": "Activos de producción que participan en al menos un flujo de datos o actividad de tratamiento. Los nodos están codificados por color según el tipo de activo; las aristas discontinuas se generan automáticamente a partir de enlaces actividad–activo, las aristas sólidas son flujos registrados explícitamente.",
+        "leadMulti": "Los flujos de datos integrales se dividen en {count} grupos de clústeres para mantener la legibilidad a esta escala. Cada página muestra un grupo de actividades de tratamiento.",
+        "showingCount": "Mostrando {filtered} de {original} activos",
+        "orphansDropped": "{count, plural, one {# huérfano filtrado} other {# huérfanos filtrados}} (sin flujos ni enlace a actividades)",
+        "assetTypes": "Tipos de activo",
+        "clusterOverview": "Visión general",
+        "clusterUnassigned": "Sin asignar",
+        "clusterMoreSuffix": "+{count} más"
+      },
+      "findings": {
+        "overdueDsars": "{count, plural, one {# solicitud de datos del interesado está} other {# solicitudes de datos del interesado están}} fuera del plazo legal de respuesta.",
+        "vendorsMissingDpa": "{count, plural, one {# proveedor activo ({pct}%) no tiene} other {# proveedores activos ({pct}%) no tienen}} un Acuerdo de Encargo de Tratamiento registrado.",
+        "highRiskVendors": "{count, plural, one {# proveedor está clasificado} other {# proveedores están clasificados}} como de riesgo alto o crítico — se recomienda revisión de gobernanza.",
+        "overdueReview": "{count, plural, one {# actividad de tratamiento está} other {# actividades de tratamiento están}} pendientes de revisión periódica.",
+        "specialCat": "{count, plural, one {# elemento de datos de categoría especial está} other {# elementos de datos de categoría especial están}} catalogados — se aplican las garantías del artículo 9.",
+        "intlTransfers": "{count, plural, one {# transferencia internacional está} other {# transferencias internacionales están}} documentadas en las actividades de tratamiento.",
+        "adm": "{count, plural, one {# actividad implica} other {# actividades implican}} decisiones automatizadas sujetas al artículo 22.",
+        "openIncidents": "{count, plural, one {# incidencia está} other {# incidencias están}} abiertas y en investigación.",
+        "healthyProgram": "No se han detectado hallazgos relevantes. El programa de privacidad se encuentra en estado estable en los pilares de inventario, tratamiento, proveedores y respuesta a incidencias."
+      }
+    },
+    "ropaReport": {
+      "eyebrow": "Registro de actividades",
+      "coverTitle": "Registro de Actividades de Tratamiento",
+      "coverSubtitle": "Registro del artículo 30",
+      "coverReference": "RGPD · Artículo 30",
+      "stats": {
+        "processingActivities": "Actividades de tratamiento",
+        "intlTransfers": "Transferencias int.",
+        "automatedDecisions": "Decisiones automatizadas",
+        "needingReview": "Pendientes de revisión"
+      },
+      "byLegalBasis": "Por base jurídica",
+      "dataFlowMap": "Mapa de flujos de datos",
+      "dataFlowMapLead": "Cada actividad de tratamiento se muestra como un clúster con borde que contiene los activos a los que accede. Las aristas discontinuas se generaron automáticamente a partir de los enlaces actividad-activo; las aristas sólidas son explícitas.",
+      "processingActivities": "Actividades de tratamiento",
+      "incomplete": "INCOMPLETA",
+      "activity": {
+        "purpose": "Finalidad",
+        "legalBasis": "Base jurídica",
+        "dataSubjects": "Interesados",
+        "dataCategories": "Categorías de datos",
+        "recipients": "Destinatarios",
+        "retentionPeriod": "Plazo de conservación",
+        "automatedDecisions": "Decisiones automatizadas",
+        "automatedYes": "Sí — {detail}",
+        "automatedNoDetails": "Sin detalles",
+        "automatedNo": "No",
+        "lastReviewed": "Última revisión",
+        "nextReview": "Próxima revisión",
+        "systems": "Sistemas / Activos",
+        "systemsColumns": {
+          "system": "Sistema",
+          "type": "Tipo",
+          "location": "Ubicación",
+          "elements": "Elementos"
+        },
+        "transfers": "Transferencias internacionales",
+        "transfersColumns": {
+          "destination": "Destino",
+          "organization": "Organización",
+          "mechanism": "Mecanismo",
+          "safeguards": "Garantías"
+        },
+        "warningPrefix": "Aviso: "
+      }
+    },
+    "assessmentReport": {
+      "coverGenerated": "Generado: {date}",
+      "coverConfidential": "CONFIDENCIAL — Este documento contiene información sensible sobre prácticas de protección de datos. Su distribución debe limitarse a personal autorizado y a las autoridades de control cuando lo requieran.",
+      "executiveSummary": "Resumen ejecutivo",
+      "stats": {
+        "riskLevel": "Nivel de riesgo",
+        "completion": "Completitud",
+        "questionsAnswered": "Preguntas respondidas",
+        "mitigations": "Mitigaciones",
+        "notAvailable": "N/D"
+      },
+      "meta": {
+        "assessmentType": "Tipo de evaluación",
+        "template": "Plantilla",
+        "status": "Estado",
+        "riskScore": "Puntuación de riesgo",
+        "started": "Iniciada",
+        "submitted": "Enviada",
+        "completed": "Completada",
+        "dueDate": "Fecha límite",
+        "linkedActivity": "Actividad vinculada",
+        "linkedVendor": "Proveedor vinculado"
+      },
+      "description": "Descripción",
+      "dpiaCalloutTitle": "RGPD Artículo 35(7) — Elementos requeridos en la DPIA",
+      "dpiaCallout1": "Descripción sistemática de las operaciones de tratamiento y sus finalidades",
+      "dpiaCallout2": "Evaluación de la necesidad y proporcionalidad",
+      "dpiaCallout3": "Evaluación de los riesgos para los derechos y libertades de los interesados",
+      "dpiaCallout4": "Medidas previstas para afrontar los riesgos y demostrar el cumplimiento",
+      "sectionProgress": "{answered} de {total} preguntas respondidas",
+      "sectionComplete": "Completa",
+      "questionRequired": "OBLIGATORIA",
+      "questionNumber": "P{n}.",
+      "notAnswered": "Aún sin responder",
+      "riskScoreLabel": "Puntuación de riesgo:",
+      "noteLabel": "Nota:",
+      "riskAssessmentSummary": "Resumen de evaluación de riesgos",
+      "stats2": {
+        "overallRiskLevel": "Nivel de riesgo general",
+        "riskScore": "Puntuación de riesgo",
+        "scoredQuestions": "Preguntas puntuadas"
+      },
+      "questionRiskScores": "Puntuaciones de riesgo por pregunta",
+      "riskColumns": {
+        "section": "Sección",
+        "question": "Pregunta",
+        "score": "Puntuación",
+        "level": "Nivel"
+      },
+      "mitigationsTitle": "Mitigaciones de riesgo",
+      "mitigationStats": {
+        "total": "Total",
+        "completed": "Completadas",
+        "outstanding": "Pendientes"
+      },
+      "mitigationColumns": {
+        "title": "Título",
+        "status": "Estado",
+        "priority": "Prioridad",
+        "owner": "Responsable",
+        "dueDate": "Fecha límite",
+        "evidence": "Evidencia"
+      },
+      "priorityCode": "P{n}",
+      "yes": "Sí",
+      "no": "No",
+      "mitigationDetails": "Detalle de mitigaciones",
+      "approvalHistory": "Historial de aprobaciones",
+      "approvalColumns": {
+        "level": "Nivel",
+        "approver": "Aprobador",
+        "status": "Estado",
+        "date": "Fecha",
+        "comments": "Comentarios"
+      },
+      "approvalLevel": "Nivel {n}",
+      "assessmentTypes": {
+        "DPIA": "Evaluación de Impacto en la Protección de Datos",
+        "PIA": "Evaluación de Impacto de Privacidad",
+        "TIA": "Evaluación de Impacto de Transferencia",
+        "LIA": "Evaluación de Interés Legítimo",
+        "VENDOR": "Evaluación de Riesgo de Proveedor",
+        "CUSTOM": "Evaluación personalizada"
+      },
+      "articleRefs": {
+        "DPIA": "RGPD Artículo 35(7)"
+      }
+    },
+    "assessmentPortfolio": {
+      "pageTitle": "Cartera de evaluaciones",
+      "coverTitle": "Cartera de Evaluaciones de Impacto",
+      "coverSubtitle": "Informe de estado de DPIA, LIA y evaluaciones de privacidad",
+      "coverGenerated": "Generado: {date}",
+      "coverConfidential": "CONFIDENCIAL — Este documento resume el programa de evaluaciones de impacto de privacidad de la organización. Está destinado a DPOs, responsables de privacidad y a las autoridades de control cuando lo requieran.",
+      "executiveSummary": "Resumen ejecutivo",
+      "stats": {
+        "total": "Evaluaciones totales",
+        "approved": "Aprobadas",
+        "highCriticalRisk": "Riesgo alto / crítico",
+        "avgCompletion": "Completitud media"
+      },
+      "meta": {
+        "organization": "Organización",
+        "reportDate": "Fecha del informe",
+        "typesUsed": "Tipos de evaluación utilizados",
+        "typesUsedNone": "Ninguno",
+        "totalMitigations": "Mitigaciones totales",
+        "mitigationsCompleted": "Mitigaciones completadas",
+        "mitigationsCompletedValue": "{done} de {total}",
+        "overdueAssessments": "Evaluaciones fuera de plazo",
+        "overdueNone": "Ninguna"
+      },
+      "gdprCalloutTitle": "RGPD Artículo 35 — Obligaciones de evaluación de impacto",
+      "gdprCalloutBody": "Los responsables del tratamiento deben realizar una DPIA antes de un tratamiento que pueda suponer un alto riesgo para los derechos y libertades de las personas físicas. La evaluación debe revisarse y actualizarse cuando cambien las operaciones de tratamiento.",
+      "overview": "Visión general de evaluaciones",
+      "byStatus": "Por estado",
+      "byStatusDesc": "Estado actual de todas las evaluaciones de la organización",
+      "statusColumns": {
+        "status": "Estado",
+        "count": "Nº",
+        "percentage": "Porcentaje"
+      },
+      "byType": "Por tipo",
+      "byTypeDesc": "Distribución por tipos de evaluación",
+      "typeColumns": {
+        "type": "Tipo de evaluación",
+        "count": "Nº",
+        "approved": "Aprobadas",
+        "highRisk": "Alto riesgo"
+      },
+      "byRiskLevel": "Por nivel de riesgo",
+      "byRiskLevelDesc": "Clasificación de riesgo de todas las actividades evaluadas",
+      "riskStats": {
+        "low": "Riesgo bajo",
+        "medium": "Riesgo medio",
+        "high": "Riesgo alto",
+        "critical": "Crítico"
+      },
+      "register": "Registro de evaluaciones",
+      "registerDesc": "Inventario completo de {count} evaluaciones con su estado actual, nivel de riesgo, completitud y actividades de tratamiento o proveedores vinculados.",
+      "registerColumns": {
+        "name": "Nombre",
+        "type": "Tipo",
+        "status": "Estado",
+        "risk": "Riesgo",
+        "completion": "Completitud",
+        "due": "Plazo"
+      },
+      "highRiskTitle": "Evaluaciones de riesgo alto y crítico",
+      "highRiskDesc": "Las siguientes evaluaciones se han clasificado como de riesgo alto o crítico y requieren atención prioritaria, medidas de mitigación y revisión periódica.",
+      "highRiskMeta": {
+        "type": "Tipo",
+        "riskScore": "Puntuación de riesgo",
+        "completion": "Completitud",
+        "linkedActivity": "Actividad vinculada",
+        "linkedVendor": "Proveedor vinculado",
+        "mitigations": "Mitigaciones",
+        "mitigationsValue": "{done}/{total} completadas",
+        "dueDate": "Fecha límite"
+      },
+      "overdueTitle": "Evaluaciones fuera de plazo",
+      "overdueColumns": {
+        "name": "Nombre",
+        "type": "Tipo",
+        "status": "Estado",
+        "dueDate": "Fecha límite",
+        "daysOverdue": "Días de retraso"
+      },
+      "mitigationOverview": "Visión general de las medidas de mitigación",
+      "mitigationStats": {
+        "total": "Mitigaciones totales",
+        "completed": "Completadas",
+        "outstanding": "Pendientes",
+        "completionRate": "Tasa de finalización",
+        "notAvailable": "N/D"
+      },
+      "mitigationDesc": "Las medidas de mitigación se controlan en todas las evaluaciones para asegurar que los riesgos identificados se afrontan con salvaguardias adecuadas. Las medidas con estado «Implementada» o «Verificada» se cuentan como completadas.",
+      "mitigationColumns": {
+        "assessment": "Evaluación",
+        "type": "Tipo",
+        "total": "Total",
+        "completed": "Completadas",
+        "rate": "Tasa"
+      },
+      "perTypeCount": "{type} ({count})",
+      "assessmentMeta": {
+        "completion": "Completitud:",
+        "completionValue": "{pct}% ({answered}/{total} preguntas)",
+        "activity": "Actividad:",
+        "vendor": "Proveedor:",
+        "mitigations": "Mitigaciones:",
+        "mitigationsValue": "{done}/{total} completadas",
+        "started": "Iniciada:",
+        "completed": "Completada:"
+      },
+      "assessmentTypes": {
+        "DPIA": "Evaluación de Impacto en la Protección de Datos",
+        "PIA": "Evaluación de Impacto de Privacidad",
+        "TIA": "Evaluación de Impacto de Transferencia",
+        "LIA": "Evaluación de Interés Legítimo",
+        "VENDOR": "Evaluación de Riesgo de Proveedor",
+        "CUSTOM": "Evaluación personalizada"
+      }
+    },
+    "regulatoryLandscape": {
+      "pageTitle": "Panorama regulatorio",
+      "coverTitle": "Informe del Panorama Regulatorio",
+      "coverSubtitle": "Análisis de cumplimiento y exposición del programa de privacidad",
+      "coverGenerated": "Generado: {date}",
+      "coverConfidential": "CONFIDENCIAL — Este documento ofrece una visión general de cumplimiento regulatorio para uso interno de los equipos de privacidad y legales. No debe distribuirse externamente sin autorización.",
+      "executiveSummary": "Resumen ejecutivo",
+      "stats": {
+        "appliedFrameworks": "Marcos aplicables",
+        "complianceScore": "Puntuación de cumplimiento",
+        "strictestDsar": "DSAR más estricto",
+        "strictestBreach": "Violación más estricta",
+        "totalDsars": "DSAR totales",
+        "onTimeRate": "Tasa a tiempo",
+        "avgResolution": "Resolución media",
+        "overdue": "Fuera de plazo",
+        "totalTransfers": "Transferencias totales",
+        "destinationCountries": "Países de destino",
+        "nonAdequate": "Sin adecuación",
+        "totalVendors": "Proveedores totales",
+        "operatingCountries": "Países de operación",
+        "highRiskVendors": "Proveedores de alto riesgo",
+        "notAvailable": "N/D"
+      },
+      "meta": {
+        "organization": "Organización",
+        "reportDate": "Fecha del informe",
+        "dataAssets": "Activos de datos",
+        "processingActivities": "Actividades de tratamiento",
+        "activeVendors": "Proveedores activos",
+        "internationalTransfers": "Transferencias internacionales",
+        "primaryJurisdiction": "Jurisdicción principal",
+        "primaryJurisdictionNotSet": "Sin definir"
+      },
+      "programHealth": "Indicadores de salud del programa",
+      "healthDsarOnTime": "Cumplimiento de DSAR a tiempo: {rate}%",
+      "healthOpenIncidents": "Incidencias abiertas: {open} ({critical} críticas)",
+      "healthOverdueDsars": "DSAR fuera de plazo: {count}",
+      "healthHighRiskVendors": "Proveedores de alto riesgo: {count}",
+      "healthAssessments": "Evaluaciones aprobadas: {approved} de {total}",
+      "appliedFrameworks": "Marcos regulatorios aplicables",
+      "appliedFrameworksDesc": "Se han identificado los siguientes {count} marcos regulatorios como aplicables a {org}. Los plazos reflejan los requisitos más estrictos; cuando concurren varias jurisdicciones, prevalece el plazo más corto.",
+      "frameworkColumns": {
+        "framework": "Marco",
+        "region": "Región",
+        "category": "Categoría",
+        "dsar": "DSAR",
+        "breach": "Violación",
+        "primary": "Principal"
+      },
+      "penaltyExposure": "Exposición a sanciones",
+      "penaltyDesc": "Resumen de las sanciones máximas por marco regulatorio aplicable. Las sanciones reales dependen de la naturaleza, gravedad y duración de la infracción, así como de la cooperación con las autoridades de control.",
+      "supervisoryAuthority": "Autoridad de control: {name}",
+      "deadlineCompliance": "Cumplimiento de plazos de respuesta",
+      "dsarByJurisdiction": "Plazos de DSAR por jurisdicción",
+      "dsarByJurisdictionDesc": "Los plazos de respuesta a solicitudes de los interesados varían según el marco",
+      "dsarStatusColumns": {
+        "framework": "Marco",
+        "deadline": "Plazo",
+        "status": "Estado"
+      },
+      "slaDays": "{days} días",
+      "statusMeeting": "Cumpliendo el plazo",
+      "statusAtRisk": "En riesgo",
+      "statusNoData": "Sin datos todavía",
+      "breachDeadlines": "Plazos de notificación de violaciones",
+      "breachDeadlinesDesc": "Tiempo máximo para notificar a las autoridades de control tras descubrir una violación",
+      "breachColumns": {
+        "framework": "Marco",
+        "deadline": "Plazo",
+        "authority": "Autoridad"
+      },
+      "transferExposure": "Exposición a transferencias internacionales",
+      "transferDesc": "Las transferencias de datos a países sin decisión de adecuación requieren garantías adicionales como Cláusulas Contractuales Tipo (CCT), Normas Corporativas Vinculantes (NCV) o mecanismos de certificación aprobados.",
+      "transferColumns": {
+        "country": "País",
+        "transfers": "Transferencias",
+        "adequacy": "Adecuación",
+        "mechanisms": "Mecanismos"
+      },
+      "yes": "Sí",
+      "no": "No",
+      "vendorFootprint": "Huella geográfica de proveedores",
+      "vendorFootprintDesc": "Las operaciones de los proveedores en varias jurisdicciones generan obligaciones regulatorias. Los proveedores de alto riesgo que operan en varias jurisdicciones requieren una diligencia debida reforzada y protecciones contractuales.",
+      "vendorColumns": {
+        "country": "País",
+        "vendors": "Proveedores",
+        "highRisk": "Alto riesgo"
+      },
+      "consolidatedRequirements": "Requisitos de cumplimiento consolidados",
+      "consolidatedDesc": "Los siguientes requisitos se agregan a partir de los {count} marcos aplicables. Los requisitos que aparecen en varios marcos indican áreas de convergencia regulatoria y deben priorizarse.",
+      "frameworksList": "Marcos: {codes} ({count, plural, one {# marco} other {# marcos}})",
+      "hours": "{hours} horas",
+      "days": "{days} días",
+      "dayOne": "1 día",
+      "noDeadline": "Sin plazo específico",
+      "category": {
+        "comprehensive": "Integral",
+        "sectoral": "Sectorial",
+        "ai_governance": "Gobernanza de la IA",
+        "emerging": "Emergente"
+      }
+    },
+    "dsarPerformance": {
+      "pageTitle": "Rendimiento de DSAR",
+      "coverTitle": "Informe de Rendimiento de DSAR",
+      "coverSubtitle": "Cumplimiento y métricas de solicitudes de los interesados",
+      "coverGenerated": "Generado: {date}",
+      "coverConfidential": "CONFIDENCIAL — Este informe contiene métricas agregadas de gestión de solicitudes de los interesados. No incluye datos personales individuales.",
+      "executiveSummary": "Resumen ejecutivo",
+      "stats": {
+        "totalRequests": "Solicitudes totales",
+        "onTimeRate": "Tasa a tiempo",
+        "avgResolution": "Resolución media",
+        "overdue": "Fuera de plazo",
+        "notAvailable": "N/D"
+      },
+      "meta": {
+        "organization": "Organización",
+        "reportDate": "Fecha del informe",
+        "primaryJurisdiction": "Jurisdicción principal",
+        "primaryJurisdictionNotSet": "Sin definir",
+        "defaultDeadline": "Plazo por defecto",
+        "defaultDeadlineDays": "{count} días",
+        "totalRequests": "Solicitudes totales",
+        "completed": "Completadas",
+        "currentlyOpen": "Abiertas actualmente",
+        "completedLast30Days": "Completadas (últimos 30 días)",
+        "autoRedacted": "Redactadas automáticamente"
+      },
+      "privacyByDesign": "Privacidad desde el diseño",
+      "privacyByDesignBody": "Este informe no contiene datos personales individuales. Todas las métricas son agregadas. Los registros de DSAR completados se redactan automáticamente tras el periodo de retención configurado para minimizar el riesgo de protección de datos.",
+      "requestAnalysis": "Análisis de solicitudes",
+      "byType": "Por tipo de solicitud",
+      "byTypeDesc": "Distribución de las solicitudes de los interesados por tipo de derecho ejercido",
+      "typeColumns": {
+        "type": "Tipo de solicitud",
+        "count": "Nº",
+        "percentage": "Porcentaje"
+      },
+      "byStatus": "Por estado",
+      "byStatusDesc": "Distribución por estado actual de todas las solicitudes",
+      "statusColumns": {
+        "status": "Estado",
+        "count": "Nº",
+        "percentage": "Porcentaje"
+      },
+      "slaCompliance": "Cumplimiento de SLA por jurisdicción",
+      "slaDesc": "Los plazos de respuesta a DSAR varían según la jurisdicción. Cuando concurren varias jurisdicciones, prevalece el plazo más estricto. El tiempo medio de resolución se compara con el plazo de cada marco.",
+      "slaColumns": {
+        "jurisdiction": "Jurisdicción",
+        "deadline": "Plazo",
+        "avgResolution": "Resolución media",
+        "status": "Estado"
+      },
+      "slaDays": "{days} días",
+      "monthlyTrend": "Tendencia mensual",
+      "monthlyTrendDesc": "Volumen de solicitudes y tasa de finalización en los últimos 12 meses. El seguimiento de tendencias ayuda a anticipar necesidades de recursos e identificar patrones estacionales.",
+      "monthlyColumns": {
+        "month": "Mes",
+        "received": "Recibidas",
+        "completed": "Completadas",
+        "backlog": "Pendientes"
+      },
+      "openRequestAging": "Antigüedad de solicitudes abiertas",
+      "agingDesc": "Las solicitudes que superan el plazo de la jurisdicción requieren atención inmediata. El análisis de antigüedad ayuda a priorizar la carga y a identificar cuellos de botella en la tramitación.",
+      "agingColumns": {
+        "band": "Rango de antigüedad",
+        "open": "Solicitudes abiertas",
+        "risk": "Nivel de riesgo"
+      },
+      "riskCritical": "Crítico — probablemente fuera de plazo",
+      "riskAtRisk": "En riesgo",
+      "riskOnTrack": "En plazo",
+      "dsarTypes": {
+        "ACCESS": "Acceso (Derecho de acceso)",
+        "ERASURE": "Supresión (Derecho al olvido)",
+        "RECTIFICATION": "Rectificación",
+        "PORTABILITY": "Portabilidad de datos",
+        "OBJECTION": "Oposición al tratamiento",
+        "RESTRICTION": "Limitación del tratamiento",
+        "WITHDRAW_CONSENT": "Retirada del consentimiento",
+        "AUTOMATED_DECISION": "Revisión de decisión automatizada",
+        "OTHER": "Otros"
+      }
+    },
+    "breachRegister": {
+      "pageTitle": "Registro de incidencias",
+      "coverTitle": "Registro de Violaciones / Incidencias",
+      "coverSubtitle": "RGPD Artículo 33(5)",
+      "summary": "Resumen",
+      "stats": {
+        "totalIncidents": "Incidencias totales",
+        "critical": "Críticas",
+        "high": "Altas",
+        "pendingNotifications": "Notificaciones a la AEPD pendientes"
+      },
+      "byStatus": "Por estado",
+      "allIncidents": "Todas las incidencias",
+      "unknown": "Desconocido",
+      "overviewColumns": {
+        "id": "ID",
+        "title": "Título",
+        "type": "Tipo",
+        "severity": "Severidad",
+        "status": "Estado",
+        "discovered": "Descubierta",
+        "affectedRecords": "Registros afectados"
+      },
+      "statusColumns": {
+        "status": "Estado",
+        "count": "Nº"
+      },
+      "meta": {
+        "incidentId": "ID de la incidencia",
+        "type": "Tipo",
+        "discovered": "Descubierta",
+        "discoveredBy": "Descubierta por",
+        "discoveryMethod": "Método de descubrimiento",
+        "affectedRecords": "Registros afectados",
+        "affectedSubjects": "Interesados afectados",
+        "dataCategories": "Categorías de datos",
+        "containedAt": "Contenida el",
+        "resolvedAt": "Resuelta el",
+        "notificationRequired": "¿Requiere notificación a la AC?",
+        "notificationDeadline": "Plazo de notificación",
+        "yes": "Sí",
+        "no": "No"
+      },
+      "subsections": {
+        "description": "Descripción",
+        "containmentActions": "Acciones de contención",
+        "rootCause": "Causa raíz",
+        "lessonsLearned": "Lecciones aprendidas",
+        "dpaNotifications": "Notificaciones a la AC",
+        "timeline": "Cronología"
+      },
+      "notificationColumns": {
+        "jurisdiction": "Jurisdicción",
+        "status": "Estado",
+        "date": "Fecha"
+      },
+      "timelineColumns": {
+        "timestamp": "Fecha y hora",
+        "event": "Evento",
+        "by": "Por"
+      },
+      "timelineSystem": "Sistema"
+    },
+    "vendorRegister": {
+      "eyebrow": "Registro de proveedores",
+      "coverTitle": "Registro de Proveedores",
+      "coverSubtitle": "Inventario de encargados y subencargados",
+      "coverReference": "RGPD · Artículo 28",
+      "stats": {
+        "totalVendors": "Proveedores totales",
+        "active": "Activos",
+        "highCritical": "Alto / Crítico",
+        "contractsExpiring": "Contratos que vencen en 30d"
+      },
+      "criticality": "Criticidad",
+      "coverage": "Cobertura",
+      "coverageDpa": "DPA en vigor",
+      "coverageCertified": "Certificados",
+      "certificationsTop": "Certificaciones — Más frecuentes",
+      "directory": "Directorio",
+      "directoryLead": "Todos los proveedores agrupados por categoría principal. El nivel de riesgo y el estado del DPA se muestran en línea; las certificaciones aparecen como chips.",
+      "columns": {
+        "vendor": "Proveedor",
+        "status": "Estado",
+        "risk": "Riesgo",
+        "countries": "Países",
+        "certifications": "Certificaciones",
+        "dpa": "DPA",
+        "nextReview": "Próx. revisión"
+      },
+      "dpaMissing": "FALTA"
+    }
+  }
+}

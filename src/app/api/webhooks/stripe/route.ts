@@ -1,0 +1,378 @@
+/**
+ * Stripe Webhook Handler
+ *
+ * Processes Stripe webhook events to create/update entitlements.
+ *
+ * AGPL-3.0 License - Part of the open-source core
+ */
+
+import { NextRequest, NextResponse } from "next/server";
+import { headers } from "next/headers";
+import Stripe from "stripe";
+import { Resend } from "resend";
+import prisma from "@/lib/prisma";
+import { verifyWebhookSignature, getSubscription } from "@/lib/stripe";
+import { features } from "@/config/features";
+import { brand, emailFrom, emailFooterHtml } from "@/config/brand";
+import { logger } from "@/lib/logger";
+
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
+
+/**
+ * Parse skill package IDs from metadata (supports both legacy single and new multi format)
+ */
+function parseSkillPackageIds(metadata: Record<string, string> | null): string[] {
+  if (!metadata) return [];
+  if (metadata.skillPackageIds) {
+    return metadata.skillPackageIds.split(",").filter(Boolean);
+  }
+  if (metadata.skillPackageId) {
+    return [metadata.skillPackageId];
+  }
+  return [];
+}
+
+export async function POST(request: NextRequest) {
+  // Check if Stripe is enabled
+  if (!features.stripeEnabled) {
+    return NextResponse.json(
+      { error: "Stripe is not enabled" },
+      { status: 403 }
+    );
+  }
+
+  try {
+    const body = await request.text();
+    const headersList = await headers();
+    const signature = headersList.get("stripe-signature");
+
+    if (!signature) {
+      return NextResponse.json(
+        { error: "Missing stripe-signature header" },
+        { status: 400 }
+      );
+    }
+
+    // Verify webhook signature
+    let event: Stripe.Event;
+    try {
+      event = verifyWebhookSignature(body, signature);
+    } catch (err) {
+      logger.error("Webhook signature verification failed", err);
+      return NextResponse.json(
+        { error: "Invalid signature" },
+        { status: 400 }
+      );
+    }
+
+    // Handle events
+    switch (event.type) {
+      case "checkout.session.completed":
+        await handleCheckoutCompleted(event.data.object as Stripe.Checkout.Session);
+        break;
+
+      case "customer.subscription.created":
+      case "customer.subscription.updated":
+        await handleSubscriptionChange(event.data.object as Stripe.Subscription);
+        break;
+
+      case "customer.subscription.deleted":
+        await handleSubscriptionDeleted(event.data.object as Stripe.Subscription);
+        break;
+
+      case "invoice.payment_failed":
+        await handlePaymentFailed(event.data.object as Stripe.Invoice);
+        break;
+
+      default:
+        logger.info("Unhandled Stripe event type", { type: event.type });
+    }
+
+    logger.info("Stripe webhook processed", { type: event.type, id: event.id });
+    return NextResponse.json({ received: true });
+  } catch (error) {
+    logger.error("Webhook error", error);
+    return NextResponse.json(
+      { error: "Webhook handler failed" },
+      { status: 500 }
+    );
+  }
+}
+
+/**
+ * Handle successful checkout session
+ */
+async function handleCheckoutCompleted(session: Stripe.Checkout.Session) {
+  const { organizationId, customerId } = session.metadata || {};
+  const skillPackageIds = parseSkillPackageIds(session.metadata as Record<string, string> | null);
+
+  if (!organizationId || !skillPackageIds.length) {
+    logger.error("Missing metadata in checkout session", undefined, { sessionId: session.id });
+    return;
+  }
+
+  // Get subscription details
+  if (!session.subscription) {
+    logger.error("No subscription in checkout session", undefined, { sessionId: session.id });
+    return;
+  }
+
+  const subscriptionId =
+    typeof session.subscription === "string"
+      ? session.subscription
+      : session.subscription.id;
+
+  const subscription = await getSubscription(subscriptionId);
+
+  // Find or create customer record
+  let customer = customerId
+    ? await prisma.customer.findUnique({ where: { id: customerId } })
+    : null;
+
+  if (!customer && session.customer_email) {
+    customer = await prisma.customer.findUnique({
+      where: { email: session.customer_email },
+    });
+  }
+
+  if (!customer) {
+    logger.error("Customer not found for checkout session", undefined, { sessionId: session.id });
+    return;
+  }
+
+  // Update Stripe customer ID if needed
+  const stripeCustomerId =
+    typeof session.customer === "string"
+      ? session.customer
+      : session.customer?.id;
+
+  if (stripeCustomerId && customer.stripeCustomerId !== stripeCustomerId) {
+    await prisma.customer.update({
+      where: { id: customer.id },
+      data: { stripeCustomerId },
+    });
+  }
+
+  // Ensure customer-organization link exists
+  await prisma.customerOrganization.upsert({
+    where: {
+      customerId_organizationId: {
+        customerId: customer.id,
+        organizationId,
+      },
+    },
+    update: {},
+    create: {
+      customerId: customer.id,
+      organizationId,
+    },
+  });
+
+  // Get current_period_end from subscription
+  const periodEnd = (subscription as unknown as { current_period_end?: number }).current_period_end;
+
+  // Create or update entitlement for each skill package
+  for (const skillPackageId of skillPackageIds) {
+    await prisma.skillEntitlement.upsert({
+      where: {
+        customerId_skillPackageId: {
+          customerId: customer.id,
+          skillPackageId,
+        },
+      },
+      update: {
+        status: "ACTIVE",
+        licenseType: "SUBSCRIPTION",
+        stripeSubscriptionId: subscriptionId,
+        expiresAt: periodEnd
+          ? new Date(periodEnd * 1000)
+          : null,
+      },
+      create: {
+        customerId: customer.id,
+        skillPackageId,
+        licenseType: "SUBSCRIPTION",
+        status: "ACTIVE",
+        stripeSubscriptionId: subscriptionId,
+        expiresAt: periodEnd
+          ? new Date(periodEnd * 1000)
+          : null,
+      },
+    });
+  }
+
+  logger.info("Created entitlements", { customerId: customer.id, skills: skillPackageIds });
+}
+
+/**
+ * Handle subscription changes (create, update)
+ */
+async function handleSubscriptionChange(subscription: Stripe.Subscription) {
+  const { organizationId } = subscription.metadata || {};
+  const skillPackageIds = parseSkillPackageIds(subscription.metadata as Record<string, string> | null);
+
+  if (!organizationId || !skillPackageIds.length) {
+    // Might be a subscription not related to our app
+    return;
+  }
+
+  // Find customer by Stripe customer ID
+  const stripeCustomerId =
+    typeof subscription.customer === "string"
+      ? subscription.customer
+      : subscription.customer.id;
+
+  const customer = await prisma.customer.findFirst({
+    where: { stripeCustomerId },
+  });
+
+  if (!customer) {
+    logger.error("Customer not found for Stripe customer", undefined, { stripeCustomerId });
+    return;
+  }
+
+  // Update entitlement status based on subscription status
+  let entitlementStatus: "ACTIVE" | "SUSPENDED" | "EXPIRED" = "ACTIVE";
+
+  if (subscription.status === "past_due" || subscription.status === "unpaid") {
+    entitlementStatus = "SUSPENDED";
+  } else if (
+    subscription.status === "canceled" ||
+    subscription.status === "incomplete_expired"
+  ) {
+    entitlementStatus = "EXPIRED";
+  }
+
+  // Get current_period_end from subscription (may be on different property depending on Stripe version)
+  const periodEnd = (subscription as unknown as { current_period_end?: number }).current_period_end;
+
+  for (const skillPackageId of skillPackageIds) {
+    await prisma.skillEntitlement.upsert({
+      where: {
+        customerId_skillPackageId: {
+          customerId: customer.id,
+          skillPackageId,
+        },
+      },
+      update: {
+        status: entitlementStatus,
+        stripeSubscriptionId: subscription.id,
+        expiresAt: periodEnd
+          ? new Date(periodEnd * 1000)
+          : null,
+      },
+      create: {
+        customerId: customer.id,
+        skillPackageId,
+        licenseType: "SUBSCRIPTION",
+        status: entitlementStatus,
+        stripeSubscriptionId: subscription.id,
+        expiresAt: periodEnd
+          ? new Date(periodEnd * 1000)
+          : null,
+      },
+    });
+  }
+}
+
+/**
+ * Handle subscription deletion
+ */
+async function handleSubscriptionDeleted(subscription: Stripe.Subscription) {
+  const skillPackageIds = parseSkillPackageIds(subscription.metadata as Record<string, string> | null);
+
+  if (!skillPackageIds.length) {
+    return;
+  }
+
+  const stripeCustomerId =
+    typeof subscription.customer === "string"
+      ? subscription.customer
+      : subscription.customer.id;
+
+  const customer = await prisma.customer.findFirst({
+    where: { stripeCustomerId },
+  });
+
+  if (!customer) {
+    return;
+  }
+
+  // Mark entitlements as expired (bulk)
+  await prisma.skillEntitlement.updateMany({
+    where: {
+      customerId: customer.id,
+      skillPackageId: { in: skillPackageIds },
+    },
+    data: {
+      status: "EXPIRED",
+    },
+  });
+
+  logger.info("Expired entitlements", { customerId: customer.id, skills: skillPackageIds });
+}
+
+/**
+ * Handle failed payment
+ */
+async function handlePaymentFailed(invoice: Stripe.Invoice) {
+  const stripeCustomerId =
+    typeof invoice.customer === "string"
+      ? invoice.customer
+      : invoice.customer?.id;
+
+  if (!stripeCustomerId) {
+    return;
+  }
+
+  const customer = await prisma.customer.findFirst({
+    where: { stripeCustomerId },
+  });
+
+  if (!customer) {
+    return;
+  }
+
+  // Suspend all entitlements for this customer
+  await prisma.skillEntitlement.updateMany({
+    where: {
+      customerId: customer.id,
+      status: "ACTIVE",
+    },
+    data: {
+      status: "SUSPENDED",
+    },
+  });
+
+  logger.info("Suspended entitlements due to payment failure", { customerId: customer.id });
+
+  // Send notification email to customer
+  if (resend && customer.email) {
+    try {
+      await resend.emails.send({
+        from: emailFrom(),
+        to: customer.email,
+        subject: `${brand.name} — Payment Failed`,
+        html: `
+          <div style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; max-width: 500px; margin: 0 auto; background: ${brand.colors.background}; border-radius: 12px; overflow: hidden;">
+            <div style="padding: 24px 24px 16px; border-bottom: 1px solid ${brand.colors.border};">
+              <span style="font-size: 20px; font-weight: 700; color: #ffffff; letter-spacing: 0.05em;">${brand.nameUppercase}</span>
+            </div>
+            <div style="padding: 32px 24px;">
+              <p style="color: ${brand.colors.foreground}; font-size: 15px; line-height: 1.6; margin: 0 0 16px;">We were unable to process your latest payment. Your premium features have been temporarily suspended.</p>
+              <p style="color: ${brand.colors.foreground}; font-size: 15px; line-height: 1.6; margin: 0 0 24px;">Please update your payment method to restore access.</p>
+              <a href="${process.env.NEXTAUTH_URL}/privacy/billing" style="display: inline-block; background: ${brand.colors.primary}; color: ${brand.colors.primaryForeground}; padding: 12px 28px; text-decoration: none; font-weight: 600; font-size: 14px; border-radius: 24px;">Update Payment Method</a>
+            </div>
+            <div style="padding: 16px 24px; border-top: 1px solid ${brand.colors.border};">
+              <p style="color: #666666; font-size: 11px; margin: 0;">${emailFooterHtml()}</p>
+            </div>
+          </div>
+        `,
+      });
+    } catch (emailErr) {
+      logger.error("Failed to send payment failure email", emailErr);
+    }
+  }
+}

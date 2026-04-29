@@ -1,0 +1,2887 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "import": "Import",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "close": "Close",
+    "yes": "Yes",
+    "no": "No",
+    "all": "All",
+    "none": "None",
+    "actions": "Actions",
+    "status": "Status",
+    "name": "Name",
+    "description": "Description",
+    "date": "Date",
+    "type": "Type",
+    "details": "Details",
+    "notes": "Notes",
+    "more": "More",
+    "less": "Less",
+    "showAll": "Show All",
+    "viewDetails": "View Details"
+  },
+  "pages": {
+    "newVendor": {
+      "title": "Add Vendor",
+      "titleCatalog": "Add from Vendor Catalog",
+      "subtitle": "Register a new third-party vendor",
+      "subtitleCatalog": "Search pre-audited vendors and auto-fill compliance data",
+      "catalog": {
+        "title": "Vendor Catalog Search",
+        "subtitle": "Search 700+ pre-audited MarTech, AI, and SaaS vendors with compliance data",
+        "verified": "Verified",
+        "website": "Website",
+        "privacyPolicy": "Privacy Policy",
+        "dpa": "DPA",
+        "trustCenter": "Trust Center",
+        "autoFilled": "Form fields have been auto-filled from catalog data. Review and edit as needed.",
+        "searchPlaceholder": "Search vendors (e.g., Google Analytics, Mailchimp, HubSpot)...",
+        "searching": "Searching catalog...",
+        "noResults": "No vendors found for \"{query}\"",
+        "noResultsHint": "Try a different search term or add manually below",
+        "petsCount": "{count} PETs",
+        "cantFind": "Can't find the vendor? Fill in the form below manually.",
+        "skipCatalog": "Skip catalog search"
+      },
+      "info": {
+        "title": "Vendor Information",
+        "subtitle": "Basic details about the vendor",
+        "name": "Vendor Name *",
+        "namePlaceholder": "e.g., Acme Cloud Services",
+        "website": "Website",
+        "websitePlaceholder": "https://example.com",
+        "description": "Description",
+        "descriptionPlaceholder": "Describe the vendor and services provided...",
+        "contactName": "Contact Name",
+        "contactNamePlaceholder": "John Smith",
+        "contactEmail": "Contact Email",
+        "contactEmailPlaceholder": "contact@vendor.com"
+      },
+      "categoriesRisk": {
+        "title": "Categories & Risk",
+        "subtitle": "Classify the vendor and assess risk level",
+        "serviceCategories": "Service Categories",
+        "riskTier": "Risk Tier",
+        "selectRisk": "Select risk tier"
+      },
+      "dataProcessing": {
+        "title": "Data Processing",
+        "subtitle": "What data does this vendor process?",
+        "dataCategories": "Data Categories Processed",
+        "countries": "Countries (Data Transfer)",
+        "countriesPlaceholder": "e.g., United States",
+        "addCountry": "Add"
+      },
+      "compliance": {
+        "title": "Compliance Information",
+        "fromCatalog": "From Catalog",
+        "subtitle": "Pre-audited compliance data from the vendor catalog",
+        "certifications": "Certifications",
+        "privacyPolicyUrl": "Privacy Policy URL",
+        "dpaUrl": "DPA URL",
+        "trustCenterUrl": "Trust Center URL"
+      },
+      "errorPrefix": "Error: {message}",
+      "creating": "Creating...",
+      "submit": "Create Vendor",
+      "category": {
+        "CLOUD_SERVICES": "Cloud Services",
+        "DATA_PROCESSING": "Data Processing",
+        "ANALYTICS": "Analytics",
+        "MARKETING": "Marketing",
+        "HR_SERVICES": "HR Services",
+        "PAYMENT_PROCESSING": "Payment Processing",
+        "CUSTOMER_SUPPORT": "Customer Support",
+        "IT_SECURITY": "IT Security",
+        "LEGAL": "Legal",
+        "OTHER": "Other"
+      },
+      "riskTierOption": {
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "High",
+        "CRITICAL": "Critical"
+      },
+      "dataCategory": {
+        "IDENTIFIERS": "Identifiers",
+        "DEMOGRAPHICS": "Demographics",
+        "FINANCIAL": "Financial",
+        "HEALTH": "Health",
+        "LOCATION": "Location",
+        "BEHAVIORAL": "Behavioral",
+        "EMPLOYMENT": "Employment"
+      }
+    },
+    "newAssessment": {
+      "title": "New Assessment",
+      "subtitleChoose": "Choose an assessment type to get started",
+      "subtitleCreating": "Creating {name}",
+      "fallbackName": "Assessment",
+      "selectType": "Select Assessment Type",
+      "selectTypeSubtitle": "Choose the type of assessment you need to perform",
+      "comingSoon": "Coming Soon",
+      "active": "Active",
+      "perMonth": "/mo",
+      "included": "Included",
+      "clickToEnable": "Click to enable",
+      "contactToEnable": "Contact {name} to enable",
+      "selectTemplate": "Select Template",
+      "selectTemplateSubtitle": "Multiple templates available for {name}",
+      "changeType": "Change type",
+      "system": "System",
+      "sectionsCount": "{count, plural, one {# section} other {# sections}}",
+      "noTemplatesTitle": "No templates available",
+      "noTemplatesBody": "No template found for {name}. Run the template seed script or create a template first.",
+      "chooseDifferent": "Choose a different type",
+      "details": "Assessment Details",
+      "usingTemplate": "Using template: {name}",
+      "name": "Assessment Name *",
+      "namePlaceholder": "e.g., {type} - Q1 2026",
+      "description": "Description",
+      "descriptionPlaceholder": "Brief description of what this assessment covers...",
+      "linkActivity": "Link to Processing Activity",
+      "selectActivity": "Select activity (optional)",
+      "linkVendor": "Link to Vendor",
+      "linkVendorOptional": "Link to Vendor (optional)",
+      "selectVendor": "Select vendor (optional)",
+      "errorPrefix": "Error: {message}",
+      "creating": "Creating...",
+      "submit": "Start Assessment",
+      "type": {
+        "LIA": "Legitimate Interest Assessment",
+        "LIA_short": "LIA",
+        "LIA_desc": "Balance legitimate interests against data subject rights under GDPR Article 6(1)(f).",
+        "CUSTOM": "Custom Assessment",
+        "CUSTOM_short": "Custom",
+        "CUSTOM_desc": "Flexible assessment template for custom privacy reviews and evaluations.",
+        "DPIA": "Data Protection Impact Assessment",
+        "DPIA_short": "DPIA",
+        "DPIA_desc": "Comprehensive assessment for high-risk processing activities under GDPR Article 35.",
+        "PIA": "Privacy Impact Assessment",
+        "PIA_short": "PIA",
+        "PIA_desc": "Evaluate privacy risks and impacts of projects, systems, or processes.",
+        "TIA": "Transfer Impact Assessment",
+        "TIA_short": "TIA",
+        "TIA_desc": "Assess risks of international data transfers and supplementary measures needed.",
+        "VENDOR": "Vendor Risk Assessment",
+        "VENDOR_short": "Vendor",
+        "VENDOR_desc": "Evaluate privacy and security risks associated with third-party vendors."
+      }
+    },
+    "newIncident": {
+      "title": "Report Incident",
+      "subtitle": "Document a security incident or data breach",
+      "highSeverityTitle": "High/Critical Severity Selected",
+      "highSeverityBody": "This incident may require regulatory notification within 72 hours (GDPR) or other timeframes.",
+      "details": "Incident Details",
+      "detailsSubtitle": "Describe the incident and its discovery",
+      "incidentTitle": "Incident Title *",
+      "titlePlaceholder": "Brief description of the incident",
+      "type": "Incident Type *",
+      "typePlaceholder": "Select type",
+      "severity": "Severity *",
+      "severityPlaceholder": "Select severity",
+      "description": "Full Description",
+      "descriptionPlaceholder": "Provide detailed information about what happened...",
+      "discovery": "Discovery Information",
+      "discoverySubtitle": "When and how was the incident discovered?",
+      "discoveredAt": "Discovery Date *",
+      "discoveryMethod": "Discovery Method",
+      "discoveryMethodPlaceholder": "How was it discovered?",
+      "discoveredBy": "Discovered By",
+      "discoveredByPlaceholder": "Name or role of person/system that discovered the incident",
+      "impact": "Impact Assessment",
+      "impactSubtitle": "Estimate the scope and nature of affected data",
+      "affectedRecords": "Estimated Affected Records",
+      "affectedRecordsPlaceholder": "e.g., 1000",
+      "dataCategoriesLabel": "Data Categories Affected",
+      "errorPrefix": "Error: {message}",
+      "reporting": "Reporting...",
+      "submit": "Report Incident",
+      "incidentType": {
+        "DATA_BREACH": "Data Breach",
+        "UNAUTHORIZED_ACCESS": "Unauthorized Access",
+        "DATA_LOSS": "Data Loss",
+        "SYSTEM_COMPROMISE": "System Compromise",
+        "PHISHING": "Phishing",
+        "RANSOMWARE": "Ransomware",
+        "INSIDER_THREAT": "Insider Threat",
+        "PHYSICAL_SECURITY": "Physical Security",
+        "VENDOR_INCIDENT": "Vendor Incident",
+        "OTHER": "Other"
+      },
+      "severityOption": {
+        "LOW": "Low",
+        "LOW_desc": "Minimal impact, no data exposed",
+        "MEDIUM": "Medium",
+        "MEDIUM_desc": "Limited impact, some data at risk",
+        "HIGH": "High",
+        "HIGH_desc": "Significant impact, sensitive data exposed",
+        "CRITICAL": "Critical",
+        "CRITICAL_desc": "Severe impact, major breach"
+      },
+      "dataCategory": {
+        "IDENTIFIERS": "Identifiers (Name, Email, ID)",
+        "DEMOGRAPHICS": "Demographics",
+        "FINANCIAL": "Financial Data",
+        "HEALTH": "Health Information",
+        "BIOMETRIC": "Biometric Data",
+        "LOCATION": "Location Data",
+        "BEHAVIORAL": "Behavioral Data",
+        "EMPLOYMENT": "Employment Data",
+        "CRIMINAL": "Criminal Records",
+        "OTHER": "Other"
+      },
+      "discoveryMethodOption": {
+        "INTERNAL_MONITORING": "Internal Monitoring",
+        "EMPLOYEE_REPORT": "Employee Report",
+        "CUSTOMER_REPORT": "Customer Report",
+        "THIRD_PARTY": "Third Party Notification",
+        "SECURITY_AUDIT": "Security Audit",
+        "LAW_ENFORCEMENT": "Law Enforcement",
+        "OTHER": "Other"
+      }
+    },
+    "newAsset": {
+      "title": "Add Data Asset",
+      "subtitle": "Register a new system or data store",
+      "details": "Asset Details",
+      "detailsSubtitle": "Provide information about the data asset",
+      "name": "Asset Name *",
+      "namePlaceholder": "e.g., Customer Database",
+      "type": "Asset Type *",
+      "typePlaceholder": "Select type",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe the asset and its purpose...",
+      "owner": "Owner/Department",
+      "ownerPlaceholder": "e.g., Engineering",
+      "location": "Location",
+      "locationPlaceholder": "e.g., AWS US-East-1",
+      "hosting": "Hosting Type",
+      "hostingPlaceholder": "Select hosting type",
+      "vendor": "Vendor (if applicable)",
+      "vendorPlaceholder": "e.g., AWS, Salesforce",
+      "production": "Production environment",
+      "errorPrefix": "Error: {message}",
+      "creating": "Creating...",
+      "submit": "Create Asset",
+      "assetType": {
+        "DATABASE": "Database",
+        "APPLICATION": "Application",
+        "CLOUD_SERVICE": "Cloud Service",
+        "FILE_SYSTEM": "File System",
+        "THIRD_PARTY": "Third Party",
+        "PHYSICAL": "Physical",
+        "OTHER": "Other"
+      },
+      "hostingType": {
+        "ON_PREMISE": "On-Premise",
+        "CLOUD": "Cloud",
+        "HYBRID": "Hybrid",
+        "SAAS": "SaaS"
+      }
+    },
+    "newDsar": {
+      "title": "New DSAR Request",
+      "subtitle": "Log a data subject access request",
+      "type": {
+        "title": "Request Type",
+        "subtitle": "Select the type of data subject request",
+        "ACCESS": "Access",
+        "ACCESS_desc": "Right to obtain a copy of personal data",
+        "RECTIFICATION": "Rectification",
+        "RECTIFICATION_desc": "Right to correct inaccurate data",
+        "ERASURE": "Erasure",
+        "ERASURE_desc": "Right to deletion (right to be forgotten)",
+        "PORTABILITY": "Portability",
+        "PORTABILITY_desc": "Right to receive data in a portable format",
+        "OBJECTION": "Objection",
+        "OBJECTION_desc": "Right to object to data processing",
+        "RESTRICTION": "Restriction",
+        "RESTRICTION_desc": "Right to restrict processing"
+      },
+      "requester": {
+        "title": "Requester Information",
+        "subtitle": "Details of the data subject making the request",
+        "name": "Full Name *",
+        "namePlaceholder": "e.g., John Doe",
+        "email": "Email Address *",
+        "emailPlaceholder": "e.g., john@example.com",
+        "phone": "Phone Number",
+        "phonePlaceholder": "e.g., +34 600 000 000",
+        "relationship": "Relationship",
+        "relationshipPlaceholder": "Select relationship",
+        "relationshipOptions": {
+          "Customer": "Customer",
+          "Employee": "Employee",
+          "Former Employee": "Former Employee",
+          "Job Applicant": "Job Applicant",
+          "Contractor": "Contractor",
+          "Website Visitor": "Website Visitor",
+          "Other": "Other"
+        },
+        "address": "Address",
+        "addressPlaceholder": "e.g., 123 Main St, City, Country"
+      },
+      "details": {
+        "title": "Request Details",
+        "subtitle": "Additional information about the request",
+        "description": "Description",
+        "descriptionPlaceholder": "Describe the request in detail...",
+        "requestedData": "Specific Data Requested",
+        "requestedDataPlaceholder": "e.g., All marketing communications, CRM records, billing history..."
+      },
+      "submit": "Create Request"
+    },
+    "assessmentDetail": {
+      "notFound": "Assessment not found",
+      "back": "Back to Assessments",
+      "riskBadge": "{level} Risk",
+      "exportPdf": "Export PDF",
+      "submitApprove": "Submit & Approve",
+      "submitReview": "Submit for Review",
+      "progress": {
+        "answered": "{answered} of {total} questions answered"
+      },
+      "stats": {
+        "sections": "Sections",
+        "questions": "Questions",
+        "mitigations": "Mitigations",
+        "riskScore": "Risk Score",
+        "riskScoreScale": "0–25 Low · 26–50 Medium · 51–75 High · 76–100 Critical",
+        "noScore": "-"
+      },
+      "tabs": {
+        "questions": "Questions",
+        "mitigationsWithCount": "Mitigations ({count})",
+        "approvalsWithCount": "Approvals ({count})",
+        "history": "History"
+      },
+      "question": {
+        "optional": "(Optional)",
+        "saved": "Saved",
+        "yes": "Yes",
+        "no": "No",
+        "chooseOne": "Choose one",
+        "selectOption": "Select an option...",
+        "selectAllApply": "Select all that apply",
+        "responsePlaceholder": "Type your response here...",
+        "notesPlaceholder": "Additional notes (optional)...",
+        "save": "Save",
+        "cancel": "Cancel",
+        "notes": "Notes:",
+        "emptyTitle": "No questions in this assessment"
+      },
+      "vendorPets": {
+        "title": "Vendor Privacy Technologies",
+        "intro": "{name} implements these PETs:",
+        "footer": "These can be referenced as mitigating measures in your assessment.",
+        "suggest": "Suggest as Mitigations",
+        "vendorTitle": "{name} Privacy Technologies",
+        "implements": "Vendor implements",
+        "addresses": "Addresses: {risks}",
+        "accept": "Accept"
+      },
+      "mitigations": {
+        "priorityBadge": "Priority {value}",
+        "owner": "Owner: {name}",
+        "evidence": "Evidence:",
+        "update": "Update",
+        "add": "Add Mitigation",
+        "empty": "No mitigations identified"
+      },
+      "approvals": {
+        "level": "Level {n} Approval",
+        "approver": "Approver: {name}",
+        "comments": "Comments: {value}",
+        "approve": "Approve",
+        "reject": "Reject",
+        "request": "Request Approval",
+        "empty": "No approvals requested"
+      },
+      "history": {
+        "version": "Version {n}",
+        "empty": "No version history"
+      },
+      "addDialog": {
+        "title": "Add Mitigation",
+        "subtitle": "Add a mitigating measure to address identified risks.",
+        "tabs": {
+          "manual": "Manual",
+          "suggested": "Suggested"
+        },
+        "noSuggestions": "No suggestions yet. Answer assessment questions to get PET-based recommendations.",
+        "submit": "Add Mitigation"
+      },
+      "requestApproval": {
+        "title": "Request Approval",
+        "subtitle": "Select an organization member to approve this assessment.",
+        "approver": "Approver",
+        "selectApprover": "Select an approver",
+        "submit": "Request Approval"
+      },
+      "rejectDialog": {
+        "title": "Reject Assessment",
+        "subtitle": "Please provide a reason for rejecting this assessment.",
+        "commentsLabel": "Comments",
+        "commentsPlaceholder": "Reason for rejection...",
+        "submit": "Reject Assessment"
+      },
+      "updateMitigation": {
+        "title": "Update Mitigation",
+        "statusLabel": "Status",
+        "ownerLabel": "Owner",
+        "ownerPlaceholder": "Person responsible",
+        "dueDateLabel": "Due Date",
+        "evidenceLabel": "Evidence",
+        "evidencePlaceholder": "Evidence of implementation (documents, links, screenshots...)",
+        "submit": "Save Changes"
+      },
+      "mitigationStatus": {
+        "IDENTIFIED": "Identified",
+        "PLANNED": "Planned",
+        "IN_PROGRESS": "In Progress",
+        "IMPLEMENTED": "Implemented",
+        "VERIFIED": "Verified",
+        "NOT_REQUIRED": "Not Required"
+      },
+      "mitigationForm": {
+        "titleLabel": "Title *",
+        "titlePlaceholder": "e.g., Implement pseudonymization for customer records",
+        "descLabel": "Description",
+        "descPlaceholder": "Describe the mitigation measure and how it addresses the risk...",
+        "priorityLabel": "Priority",
+        "priority1": "1 - Critical",
+        "priority2": "2 - High",
+        "priority3": "3 - Medium",
+        "priority4": "4 - Low",
+        "priority5": "5 - Minimal",
+        "ownerLabel": "Owner",
+        "ownerPlaceholder": "Person responsible",
+        "dueDateLabel": "Due Date"
+      }
+    },
+    "assetDetail": {
+      "notFound": "Asset not found",
+      "back": "Back to Inventory",
+      "production": "Production",
+      "edit": "Edit",
+      "delete": "Delete",
+      "overview": {
+        "title": "Overview",
+        "noDescription": "No description provided",
+        "owner": "Owner",
+        "location": "Location",
+        "hosting": "Hosting",
+        "vendor": "Vendor",
+        "notSpecified": "Not specified",
+        "na": "N/A"
+      },
+      "stats": {
+        "title": "Statistics",
+        "elements": "Data Elements",
+        "activities": "Processing Activities",
+        "lastUpdated": "Last Updated"
+      },
+      "tabs": {
+        "elements": "Data Elements",
+        "activities": "Processing Activities",
+        "flows": "Data Flows"
+      },
+      "elements": {
+        "title": "Data Elements",
+        "subtitle": "Fields and data points stored in this asset",
+        "addElement": "Add Element",
+        "personalData": "Personal Data",
+        "emptyTitle": "No data elements defined yet",
+        "emptySub": "Add data elements to document what data is stored"
+      },
+      "activities": {
+        "title": "Linked Processing Activities",
+        "subtitle": "Activities that use data from this asset",
+        "manage": "Manage Activities",
+        "elementCount": "{used, plural, one {# element} other {# elements}}",
+        "elementCountFiltered": "{used}/{total} {used, plural, one {element} other {elements}}",
+        "notLinked": "+{count} not linked",
+        "empty": "No linked processing activities"
+      },
+      "addElement": {
+        "title": "Add Data Element",
+        "subtitle": "Add a new data field or element to this asset",
+        "nameLabel": "Element Name *",
+        "namePlaceholder": "e.g., email_address, phone_number",
+        "descLabel": "Description",
+        "descPlaceholder": "Brief description of this data element",
+        "categoryLabel": "Category *",
+        "sensitivityLabel": "Sensitivity *",
+        "retentionLabel": "Retention Period (days)",
+        "retentionPlaceholder": "e.g., 365",
+        "isPersonal": "Is Personal Data",
+        "isSpecial": "Is Special Category",
+        "errorPrefix": "Error: {message}",
+        "adding": "Adding...",
+        "submit": "Add Element"
+      },
+      "linkActivities": {
+        "title": "Link Processing Activities",
+        "subtitle": "Select which activities use data from this asset, and which elements they process.",
+        "elements": "Elements",
+        "hide": "Hide",
+        "allElements": "All elements",
+        "empty": "No processing activities in this organization yet",
+        "selectedCount": "{count, plural, one {# activity selected} other {# activities selected}}",
+        "save": "Save"
+      },
+      "category": {
+        "IDENTIFIERS": "Identifiers",
+        "DEMOGRAPHICS": "Demographics",
+        "FINANCIAL": "Financial",
+        "HEALTH": "Health",
+        "BIOMETRIC": "Biometric",
+        "LOCATION": "Location",
+        "BEHAVIORAL": "Behavioral",
+        "EMPLOYMENT": "Employment",
+        "EDUCATION": "Education",
+        "POLITICAL": "Political",
+        "RELIGIOUS": "Religious",
+        "GENETIC": "Genetic",
+        "SEXUAL_ORIENTATION": "Sexual Orientation",
+        "CRIMINAL": "Criminal",
+        "OTHER": "Other"
+      },
+      "sensitivity": {
+        "PUBLIC": "Public",
+        "INTERNAL": "Internal",
+        "CONFIDENTIAL": "Confidential",
+        "RESTRICTED": "Restricted",
+        "SPECIAL_CATEGORY": "Special Category"
+      }
+    },
+    "incidentDetail": {
+      "notFound": "Incident not found",
+      "back": "Back to Incidents",
+      "close": "Close Incident",
+      "updateStatus": "Update Status",
+      "notifBanner": {
+        "title": "Regulatory Notification Required",
+        "deadline": "Deadline: {date}",
+        "overdue": "OVERDUE — was due {date}",
+        "create": "Create Notification"
+      },
+      "stats": {
+        "discovered": "Discovered",
+        "affectedRecords": "Affected Records",
+        "unknown": "Unknown",
+        "affectedSubjects": "Affected Subjects",
+        "subjectTypesCount": "{count, plural, one {# type} other {# types}}",
+        "notifications": "Notifications"
+      },
+      "tabs": {
+        "details": "Details",
+        "timelineWithCount": "Timeline ({count})",
+        "tasksWithCount": "Tasks ({count})",
+        "notificationsWithCount": "Notifications ({count})",
+        "documents": "Documents"
+      },
+      "details": {
+        "description": "Description",
+        "noDescription": "No description provided",
+        "discovery": "Discovery",
+        "discoveredBy": "Discovered By:",
+        "discoveryMethod": "Discovery Method:",
+        "notSpecified": "Not specified",
+        "dataCategories": "Data Categories Affected",
+        "dataCategoriesEmpty": "No categories specified",
+        "rootCause": "Root Cause",
+        "lessonsLearned": "Lessons Learned"
+      },
+      "timeline": {
+        "addEntry": "Add Entry",
+        "empty": "No timeline entries yet",
+        "createdBy": " by {name}"
+      },
+      "tasks": {
+        "addTask": "Add Task",
+        "empty": "No tasks assigned",
+        "priority": "Priority {value}"
+      },
+      "notifications": {
+        "due": "Due: {date}",
+        "overdue": "OVERDUE",
+        "empty": "No notifications created",
+        "createDpa": "Create DPA Notification"
+      },
+      "documents": {
+        "title": "Document uploads coming soon",
+        "subtitle": "Attach evidence, reports, and communications to incidents."
+      },
+      "statusDialog": {
+        "title": "Update Incident Status",
+        "subtitle": "Transition this incident through the response workflow. A timeline entry will be recorded.",
+        "newStatus": "New Status",
+        "selectStatus": "Select status",
+        "submit": "Update"
+      },
+      "timelineDialog": {
+        "title": "Add Timeline Entry",
+        "subtitle": "Record an observation, action, or decision taken during the incident response.",
+        "entryType": "Entry Type",
+        "titleLabel": "Title",
+        "titlePlaceholder": "Short summary of the entry",
+        "descLabel": "Description",
+        "descPlaceholder": "Details — what happened, who was involved, what evidence",
+        "submit": "Add Entry",
+        "type": {
+          "OBSERVATION": "Observation",
+          "ACTION": "Action Taken",
+          "EVIDENCE": "Evidence",
+          "COMMUNICATION": "Communication",
+          "DECISION": "Decision",
+          "NOTE": "Note"
+        }
+      },
+      "taskDialog": {
+        "title": "Add Task",
+        "subtitle": "Create a response task to track remediation work for this incident.",
+        "titleLabel": "Title",
+        "titlePlaceholder": "What needs to be done",
+        "descLabel": "Description",
+        "descPlaceholder": "Optional details",
+        "priority": "Priority",
+        "dueDate": "Due Date",
+        "submit": "Create Task",
+        "priorities": {
+          "LOW": "Low",
+          "MEDIUM": "Medium",
+          "HIGH": "High",
+          "URGENT": "Urgent"
+        }
+      },
+      "notifDialog": {
+        "title": "Create Regulatory Notification",
+        "subtitle": "The deadline is computed from the jurisdiction's breach notification window.",
+        "jurisdiction": "Jurisdiction",
+        "selectJurisdiction": "Select jurisdiction",
+        "jurisdictionWindow": "{name} ({hours}h window)",
+        "noJurisdictions": "No jurisdictions applied to this organization",
+        "recipient": "Recipient Type",
+        "recipientType": {
+          "DPA": "Data Protection Authority (DPA)",
+          "DATA_SUBJECT": "Affected Data Subjects",
+          "LAW_ENFORCEMENT": "Law Enforcement",
+          "INTERNAL": "Internal Stakeholders"
+        },
+        "submit": "Create"
+      }
+    },
+    "vendorDetail": {
+      "notFound": "Vendor not found",
+      "back": "Back to Vendors",
+      "delete": "Delete",
+      "edit": "Edit Vendor",
+      "riskBadge": "{level} Risk",
+      "noCategories": "No categories",
+      "info": {
+        "website": "Website",
+        "contact": "Contact",
+        "email": "Email",
+        "added": "Added",
+        "empty": "-"
+      },
+      "tabs": {
+        "overview": "Overview",
+        "contractsWithCount": "Contracts ({count})",
+        "assessments": "Assessments",
+        "reviews": "Reviews"
+      },
+      "overview": {
+        "description": "Description",
+        "dataProcessing": "Data Processing",
+        "dataProcessingDesc": "Categories of data this vendor processes",
+        "dataEmpty": "No data categories specified",
+        "countries": "Countries",
+        "countriesDesc": "Data transfer locations",
+        "countriesEmpty": "No countries specified",
+        "certifications": "Certifications",
+        "certificationsDesc": "Security and compliance certifications",
+        "certificationsEmpty": "No certifications recorded",
+        "privacyTech": "Privacy Technologies",
+        "privacyTechDesc": "Privacy enhancing technologies used by this vendor"
+      },
+      "contracts": {
+        "add": "Add Contract",
+        "start": "Start: {date}",
+        "endSuffix": " — End: {date}",
+        "open": "Open",
+        "noDocument": "No document",
+        "empty": "No contracts recorded"
+      },
+      "assessments": {
+        "empty": "No vendor assessments completed",
+        "start": "Start Assessment"
+      },
+      "reviews": {
+        "empty": "No reviews scheduled",
+        "schedule": "Schedule Review"
+      },
+      "editDialog": {
+        "title": "Edit Vendor",
+        "subtitle": "Update core vendor details.",
+        "nameLabel": "Name *",
+        "descLabel": "Description",
+        "websiteLabel": "Website",
+        "websitePlaceholder": "https://…",
+        "statusLabel": "Status",
+        "riskLabel": "Risk Tier",
+        "riskNotSet": "Not set",
+        "contactLabel": "Primary Contact",
+        "emailLabel": "Contact Email",
+        "save": "Save"
+      },
+      "contractDialog": {
+        "title": "Add Contract",
+        "subtitle": "Record a contract, DPA, or SCC for this vendor.",
+        "nameLabel": "Name *",
+        "namePlaceholder": "e.g., Master Services Agreement 2026",
+        "typeLabel": "Type *",
+        "type": {
+          "DPA": "DPA (Data Processing Agreement)",
+          "SCC": "SCC (Standard Contractual Clauses)",
+          "MSA": "MSA (Master Services Agreement)",
+          "NDA": "NDA",
+          "OTHER": "Other"
+        },
+        "descLabel": "Description",
+        "urlLabel": "Document URL",
+        "urlPlaceholder": "https://…",
+        "startLabel": "Start Date",
+        "endLabel": "End Date",
+        "submit": "Add"
+      },
+      "reviewDialog": {
+        "title": "Schedule Review",
+        "subtitle": "Assign a reviewer and date for this vendor's next review.",
+        "reviewerLabel": "Reviewer *",
+        "reviewerPlaceholder": "Select reviewer",
+        "typeLabel": "Review Type",
+        "type": {
+          "PERIODIC": "Periodic",
+          "INITIAL": "Initial",
+          "INCIDENT_TRIGGERED": "Incident-triggered",
+          "CONTRACT_RENEWAL": "Contract renewal"
+        },
+        "dateLabel": "Scheduled Date *",
+        "submit": "Schedule"
+      }
+    },
+    "dsarDetail": {
+      "notFound": "Request not found",
+      "back": "Back to DSAR",
+      "complete": "Complete",
+      "progress": {
+        "title": "Progress",
+        "tasksCompleted": "{completed} of {total} tasks completed"
+      },
+      "sla": {
+        "title": "SLA Status",
+        "overdue": "OVERDUE",
+        "completed": "COMPLETED",
+        "daysShort": "{count, plural, one {# day} other {# days}}",
+        "closed": "Closed",
+        "due": "Due"
+      },
+      "requester": {
+        "title": "Requester Information",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "relationship": "Relationship",
+        "details": "Request Details",
+        "empty": "-"
+      },
+      "tabs": {
+        "tasks": "Tasks ({count})",
+        "communications": "Communications ({count})",
+        "audit": "Audit Log"
+      },
+      "tasks": {
+        "title": "Data Collection Tasks",
+        "subtitle": "Tasks for each data source",
+        "autoGenerate": "Auto-Generate",
+        "addTask": "Add Task",
+        "assignedTo": "Assigned to: {name}",
+        "unassigned": "Unassigned",
+        "empty": "No tasks yet",
+        "emptySub": "Add tasks or auto-generate from data assets",
+        "status": {
+          "PENDING": "Pending",
+          "IN_PROGRESS": "In Progress",
+          "COMPLETED": "Completed",
+          "BLOCKED": "Blocked",
+          "NOT_APPLICABLE": "N/A"
+        }
+      },
+      "comms": {
+        "title": "Communications",
+        "subtitle": "Message history with the requester",
+        "send": "Send Message",
+        "team": "Privacy Team",
+        "sent": "Sent",
+        "received": "Received",
+        "empty": "No communications yet"
+      },
+      "audit": {
+        "title": "Audit Log",
+        "subtitle": "Complete history of actions taken",
+        "empty": "No audit entries"
+      },
+      "addTask": {
+        "title": "Add Task",
+        "subtitle": "Create a new data collection task",
+        "titleLabel": "Task Title *",
+        "titlePlaceholder": "e.g., Search Marketing CRM",
+        "descLabel": "Description",
+        "descPlaceholder": "Task details...",
+        "submit": "Add Task"
+      },
+      "sendMessage": {
+        "title": "Send Message",
+        "subtitle": "Send a message to {name}",
+        "subjectLabel": "Subject",
+        "subjectPlaceholder": "Message subject",
+        "messageLabel": "Message *",
+        "messagePlaceholder": "Write your message...",
+        "submit": "Send"
+      }
+    },
+    "aiSystemDetail": {
+      "notFound": "AI system not found",
+      "back": "Back",
+      "linked": "AI Sentinel Linked",
+      "embeddedModels": "Embedded AI Models ({count})",
+      "details": {
+        "title": "System Details",
+        "description": "Description",
+        "purpose": "Purpose",
+        "category": "Category",
+        "modelType": "Model Type",
+        "provider": "Provider",
+        "deployer": "Deployer",
+        "vendor": "Vendor",
+        "euAiActRole": "EU AI Act Role",
+        "euAiActCompliant": "EU AI Act Compliant",
+        "iso42001": "ISO 42001 Certified",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "compliance": {
+        "title": "Compliance & Oversight",
+        "humanOversight": "Human Oversight",
+        "transparency": "Transparency Measures",
+        "trainingData": "Training Data Sources",
+        "capabilities": "AI Capabilities",
+        "techniques": "AI Techniques",
+        "technicalDoc": "Technical Documentation"
+      },
+      "sentinel": {
+        "linkedTitle": "Linked to AI Sentinel",
+        "linkedBody": "This system is synced with AI Sentinel for deep AI governance management.",
+        "lastSynced": "Last synced: {date}",
+        "openInSentinel": "Open in AI Sentinel"
+      },
+      "unacceptableTitle": "Prohibited AI System",
+      "unacceptableBody": "This AI system has been classified as unacceptable risk under the EU AI Act. It must be decommissioned before August 2026.",
+      "highRiskTitle": "High-Risk AI Obligations",
+      "highRiskItems": {
+        "riskMgmt": "Risk management system required",
+        "dataGovernance": "Data governance measures must be documented",
+        "technicalDoc": "Technical documentation must be maintained",
+        "recordKeeping": "Record-keeping and logging required",
+        "oversight": "Human oversight mechanisms must be in place",
+        "accuracy": "Accuracy, robustness and cybersecurity standards"
+      }
+    },
+    "quickstart": {
+      "back": "Dashboard",
+      "title": "Privacy Program Quickstart",
+      "subtitle": "Get a head start on your privacy program",
+      "steps": {
+        "choose": "Choose Path",
+        "vendors": "Select Vendors",
+        "yourVendors": "Your Vendors",
+        "industry": "Industry Template",
+        "review": "Review & Confirm"
+      },
+      "welcome": {
+        "allImportedTitle": "Your vendors are already imported!",
+        "vwTitle": "Welcome from Vendor.Watch!",
+        "allImportedBody": "All <b>{count, plural, one {# vendor} other {# vendors}}</b> from your Vendor.Watch portfolio have already been imported. You can still add an industry template to fill in processing activities and data flows.",
+        "vwBody": "We found <b>{count, plural, one {# vendor} other {# vendors}}</b> in your portfolio{newCount, select, none {} other { ({newCount} new)}}. Can we help you build your privacy program around your initial vendor portfolio?",
+        "vwAddMore": "You will be able to add more vendors and processing activities later on.",
+        "addIndustry": "Add an industry template",
+        "backToDashboard": "Back to Dashboard",
+        "yesBuild": "Yes, build my privacy program",
+        "yesAndIndustry": "Yes, and also add an industry template",
+        "manual": "Let me choose manually",
+        "portfolioFrom": "Portfolio imported from",
+        "verified": "Verified",
+        "highCriticality": "High criticality",
+        "alreadyImported": "Already imported",
+        "vendorMeta": "{category} — {label} — {count, plural, one {# data element} other {# data elements}}"
+      },
+      "choose": {
+        "intro": "Choose how you want to bootstrap your privacy program. You can use both options together.",
+        "best": "Best",
+        "or": "or choose individually",
+        "vendorCardTitle": "Import from Vendor Catalog",
+        "vendorCardDesc": "Select vendors you use and auto-generate data assets, elements, and processing activities from their known data profiles.",
+        "industryCardTitle": "Start from Industry Template",
+        "industryCardDesc": "Pick your industry and get a pre-built privacy program with common data assets, processing activities, and data flows.",
+        "tagAssets": "Data Assets",
+        "tagElements": "Data Elements",
+        "tagActivities": "Processing Activities",
+        "tagTransfers": "Data Transfers",
+        "tagFlows": "Data Flows",
+        "free": "Free",
+        "fiveFree": "5 Free",
+        "continue": "Continue"
+      },
+      "vendors": {
+        "title": "Select Vendors",
+        "subtitle": "Search the vendor catalog and select the tools your organization uses.",
+        "back": "Back",
+        "selectedSuffix": "{count} selected",
+        "searchPlaceholder": "Search vendors (e.g., Google Analytics, Salesforce, Stripe...)",
+        "searching": "Searching...",
+        "noResults": "No vendors found for \"{query}\"",
+        "verified": "Verified",
+        "gdpr": "GDPR",
+        "previewTitle": "Import Preview",
+        "previewSummary": "{vendors} vendors, {assets} assets, {elements} elements, {activities} activities",
+        "previewSummaryWithTransfers": "{vendors} vendors, {assets} assets, {elements} elements, {activities} activities, {transfers} data transfers",
+        "alreadyExists": "Already exists",
+        "highRisk": "High Risk",
+        "willCreate": "Will create:",
+        "assetCount": "{count, plural, one {# Asset} other {# Assets}}",
+        "elementCount": "{count, plural, one {# Element} other {# Elements}}",
+        "activityCount": "{count, plural, one {# Activity} other {# Activities}}",
+        "transferCount": "{count, plural, one {# Transfer} other {# Transfers}}",
+        "privacyTech": "Privacy technologies:",
+        "continueToIndustry": "Continue to Industry",
+        "reviewBtn": "Review"
+      },
+      "industry": {
+        "title": "Select Industry",
+        "subtitle": "Choose the template that best matches your organization.",
+        "back": "Back",
+        "templateAssets": "{count, plural, one {# asset} other {# assets}}",
+        "templateActivities": "{count, plural, one {# activity} other {# activities}}",
+        "templateFlows": "{count, plural, one {# flow} other {# flows}}",
+        "previewTitle": "{name} Template Preview",
+        "previewSummary": "{assets} assets, {elements} elements, {activities} activities, {flows} flows",
+        "collapse": "Collapse",
+        "expand": "Expand",
+        "dataAssets": "Data Assets",
+        "exists": "Exists",
+        "elementsList": "{count, plural, one {# element} other {# elements}}: {list}",
+        "processingActivities": "Processing Activities",
+        "dataFlows": "Data Flows",
+        "review": "Review"
+      },
+      "review": {
+        "title": "Review & Confirm",
+        "subtitle": "Review what will be created, then build your privacy program.",
+        "back": "Back",
+        "stats": {
+          "vendors": "Vendors",
+          "assets": "Data Assets",
+          "elements": "Data Elements",
+          "activities": "Activities",
+          "flows": "Data Flows",
+          "transfers": "Transfers",
+          "aiSystems": "AI Systems"
+        },
+        "nondestructiveTitle": "Non-destructive operation",
+        "nondestructiveBody": "This will only create new records. Existing data assets, vendors, and processing activities will not be modified. Duplicates are automatically skipped.",
+        "vendorImport": "Vendor Import",
+        "vendorMeta": "{count, plural, one {# element} other {# elements}}, 1 activity",
+        "vendorMetaWithTransfers": "{count, plural, one {# element} other {# elements}}, 1 activity, {transfers, plural, one {# transfer} other {# transfers}}",
+        "vendorMetaWithAi": "{count, plural, one {# element} other {# elements}}, 1 activity, 1 AI system",
+        "vendorMetaFull": "{count, plural, one {# element} other {# elements}}, 1 activity, {transfers, plural, one {# transfer} other {# transfers}}, 1 AI system",
+        "templateSuffix": "{name} Template",
+        "templateAssetMeta": "{count, plural, one {# element} other {# elements}}",
+        "building": "Building...",
+        "build": "Build My Privacy Program",
+        "aiTooltip": "AI-capable vendor — AI System record will be created"
+      },
+      "success": {
+        "alreadySetTitle": "Everything is already set up!",
+        "createdTitle": "Privacy Program Created!",
+        "alreadySetBody": "All the selected records already exist in your privacy program. You're good to go!",
+        "createdBody": "Your privacy program has been bootstrapped. Explore your new records and customize them as needed.",
+        "cardDataInventory": "Data Inventory",
+        "cardDataInventoryDesc": "View assets & elements",
+        "cardActivities": "Processing Activities",
+        "cardActivitiesDesc": "View activities & ROPA",
+        "cardVendors": "Vendors",
+        "cardVendorsDesc": "Manage vendor list",
+        "cardAiSystems": "AI Systems",
+        "cardAiSystemsDesc": "{count, plural, one {# AI system created} other {# AI systems created}}",
+        "cardDashboard": "Dashboard",
+        "cardDashboardDesc": "Return to overview"
+      }
+    },
+    "reports": {
+      "title": "Compliance Dashboard",
+      "subtitle": "Privacy program compliance posture",
+      "saveSnapshot": "Save Snapshot",
+      "regulatoryReport": "Regulatory Report",
+      "score": {
+        "title": "Overall Compliance Score",
+        "subtitle": "Aggregated score across all privacy modules, weighted by importance.",
+        "strong": "Strong",
+        "moderate": "Moderate",
+        "needsAttention": "Needs Attention",
+        "trendUp": "+{points} pts",
+        "trendDown": "{points} pts",
+        "vsLastMonth": "vs last month",
+        "outOf": "/ 100"
+      },
+      "breakdown": {
+        "heading": "Module Compliance Breakdown",
+        "weight": "{value} weight",
+        "compliantOf": "{compliant} of {total} compliant",
+        "ropa": "ROPA Completeness",
+        "assessments": "Assessments",
+        "dsarSla": "DSAR SLA",
+        "incidentResponse": "Incident Response",
+        "vendorReviews": "Vendor Reviews"
+      },
+      "risk": {
+        "title": "Risk Indicators",
+        "subtitle": "Actionable items requiring attention",
+        "noneTitle": "No risk indicators detected. Great job!"
+      },
+      "modules": {
+        "heading": "Module Details",
+        "dataInventory": "Data Inventory",
+        "assets": "Assets",
+        "elements": "Elements",
+        "activities": "Activities",
+        "flows": "Flows",
+        "dsarTitle": "DSAR Requests",
+        "dsarTotal": "Total",
+        "dsarOpen": "Open",
+        "dsarOverdue": "Overdue",
+        "dsarAvgResolution": "Avg Resolution",
+        "daysShort": "{days}d",
+        "assessmentsTitle": "Assessments",
+        "assessmentTotal": "Total",
+        "assessmentApproved": "Approved",
+        "assessmentInProgress": "In Progress",
+        "assessmentHighRisk": "High Risk",
+        "incidentsTitle": "Incidents",
+        "incidentTotal": "Total",
+        "incidentOpen": "Open",
+        "incidentCritical": "Critical",
+        "incidentAvgResolution": "Avg Resolution",
+        "vendorsTitle": "Vendors",
+        "vendorTotal": "Total",
+        "vendorActive": "Active",
+        "vendorHighRisk": "High Risk",
+        "vendorNoReview": "No Review",
+        "scoreHistory": "Score History",
+        "noSnapshots": "No snapshots yet. Save a snapshot to start tracking trends."
+      }
+    },
+    "regulations": {
+      "title": "Regulation Hub",
+      "subtitle": "Track applicable privacy regulations and compliance requirements",
+      "exportReport": "Export Report",
+      "wizard": "Applicability Wizard",
+      "tabs": {
+        "catalog": "Jurisdiction Catalog",
+        "appliedWithCount": "Applied ({count})"
+      },
+      "search": "Search regulations...",
+      "category": {
+        "label": "Category",
+        "all": "All Categories",
+        "comprehensive": "Comprehensive",
+        "sectoral": "Sectoral",
+        "ai_governance": "AI Governance",
+        "emerging": "Emerging"
+      },
+      "card": {
+        "applied": "Applied",
+        "primary": "Primary",
+        "dsarShort": "DSAR: {days}d",
+        "breachShort": "Breach: {hours}h",
+        "appliedSummary": "{region} | DSAR: {days, plural, one {# day} other {# days}} | Breach: {hours}h",
+        "moreItems": "+{count} more",
+        "apply": "Apply"
+      },
+      "applied": {
+        "emptyTitle": "No jurisdictions applied",
+        "emptySubtitle": "Use the Applicability Wizard to determine which regulations apply to your organization",
+        "startWizard": "Start Wizard"
+      },
+      "checklist": {
+        "headingPrefix": "Action checklist",
+        "summary": "{satisfied}/{total} complete",
+        "satisfied": "Done",
+        "partial": "In progress",
+        "missing": "Not started",
+        "takeAction": "Take action",
+        "reqRopa": "Maintain a Record of Processing Activities (ROPA)",
+        "reqRopaDesc": "Document all processing activities your organisation performs, including purpose, legal basis, and data categories.",
+        "reqDpia": "Conduct DPIAs for high-risk processing",
+        "reqDpiaDesc": "Document a Data Protection Impact Assessment for any processing likely to result in a high risk to data subjects.",
+        "reqDsarPortal": "Provide a public data subject request channel",
+        "reqDsarPortalDesc": "Configure an intake form so data subjects can submit access, rectification, erasure, and other requests.",
+        "reqIncidentResponse": "Establish a breach response process",
+        "reqIncidentResponseDesc": "Have a documented incident-response workflow so breaches can be triaged, contained, and notified within statutory deadlines.",
+        "reqVendorDpas": "Sign DPAs with all data processors",
+        "reqVendorDpasDesc": "Maintain a Data Processing Agreement with every active vendor that processes personal data on your behalf.",
+        "reqTransferTia": "Complete a TIA for each international data transfer",
+        "reqTransferTiaDesc": "When personal data leaves the regulated territory, a Transfer Impact Assessment (Schrems II) is required for non-adequate destinations.",
+        "reqAiSystemRegister": "Maintain an AI system register",
+        "reqAiSystemRegisterDesc": "Document each AI system in use, classify its risk tier, and track provider/deployer obligations."
+      }
+    },
+    "aiSystems": {
+      "title": "AI Governance Register",
+      "subtitle": "Register and classify AI systems per the EU AI Act",
+      "register": "Register AI System",
+      "search": "Search AI systems...",
+      "filter": {
+        "riskLevel": "Risk Level",
+        "status": "Status",
+        "allRisks": "All Risks",
+        "allStatus": "All Status"
+      },
+      "stats": {
+        "total": "Total Systems",
+        "unacceptable": "Unacceptable",
+        "highRisk": "High Risk",
+        "limited": "Limited",
+        "minimal": "Minimal"
+      },
+      "riskLevel": {
+        "UNACCEPTABLE": "Unacceptable",
+        "HIGH_RISK": "High Risk",
+        "LIMITED": "Limited",
+        "MINIMAL": "Minimal"
+      },
+      "status": {
+        "DRAFT": "Draft",
+        "REGISTERED": "Registered",
+        "UNDER_REVIEW": "Under Review",
+        "COMPLIANT": "Compliant",
+        "NON_COMPLIANT": "Non-Compliant",
+        "DECOMMISSIONED": "Decommissioned"
+      },
+      "card": {
+        "provider": "Provider: {value}",
+        "type": "Type: {value}",
+        "vendor": "Vendor: {value}",
+        "category": "Category: {value}"
+      },
+      "empty": {
+        "title": "No AI systems registered",
+        "subtitle": "Start by registering AI systems your organization uses or deploys"
+      },
+      "sentinel": {
+        "send": "Send to AI Sentinel",
+        "title": "Send to AI Sentinel",
+        "description": "Forward AI systems to AI Sentinel for deeper governance tracking. Already-synced systems can be re-sent to push updates.",
+        "noSystems": "No AI systems registered yet.",
+        "allSynced": "All systems are already synced. Re-sending will push the latest state.",
+        "alreadySynced": "Already synced",
+        "sending": "Sending…",
+        "sendCount": "Send {count, plural, one {# system} other {# systems}}"
+      }
+    },
+    "incidents": {
+      "title": "Incident Management",
+      "subtitle": "Track security incidents and breaches",
+      "exportRegister": "Export Register",
+      "exportPdf": "Download as PDF",
+      "exportCsv": "Download as CSV",
+      "reportIncident": "Report Incident",
+      "search": "Search incidents...",
+      "stats": {
+        "total": "Total",
+        "open": "Open",
+        "critical": "Critical",
+        "pendingDpa": "Pending DPA"
+      },
+      "tabs": {
+        "all": "All",
+        "open": "Open",
+        "critical": "Critical",
+        "closed": "Closed"
+      },
+      "card": {
+        "records": "Records",
+        "recordsShort": "{count, plural, one {# record} other {# records}}"
+      },
+      "type": {
+        "DATA_BREACH": "Data Breach",
+        "UNAUTHORIZED_ACCESS": "Unauthorized Access",
+        "DATA_LOSS": "Data Loss",
+        "SYSTEM_COMPROMISE": "System Compromise",
+        "PHISHING": "Phishing",
+        "RANSOMWARE": "Ransomware",
+        "INSIDER_THREAT": "Insider Threat",
+        "PHYSICAL_SECURITY": "Physical Security",
+        "VENDOR_INCIDENT": "Vendor Incident",
+        "OTHER": "Other"
+      },
+      "status": {
+        "REPORTED": "Reported",
+        "INVESTIGATING": "Investigating",
+        "CONTAINED": "Contained",
+        "ERADICATED": "Eradicated",
+        "RECOVERING": "Recovering",
+        "CLOSED": "Closed",
+        "FALSE_POSITIVE": "False Positive"
+      },
+      "severity": {
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "High",
+        "CRITICAL": "Critical"
+      },
+      "emptyAll": {
+        "title": "No incidents reported",
+        "subtitle": "Report security incidents and data breaches here"
+      },
+      "emptyOpen": "No open incidents",
+      "emptyCritical": "No critical incidents",
+      "emptyClosed": "No closed incidents"
+    },
+    "vendors": {
+      "title": "Vendor Management",
+      "subtitle": "Manage third-party vendors and data processors",
+      "exportRegister": "Export Register",
+      "exportPdf": "Download as PDF",
+      "exportCsv": "Download as CSV",
+      "questionnaires": "Questionnaires",
+      "addVendor": "Add Vendor",
+      "addVendorShort": "Add",
+      "search": "Search vendors...",
+      "stats": {
+        "total": "Total Vendors",
+        "active": "Active Vendors",
+        "highRisk": "High Risk",
+        "pendingReview": "Pending Review"
+      },
+      "tabs": {
+        "all": "All",
+        "active": "Active",
+        "review": "Under Review",
+        "highRisk": "High Risk"
+      },
+      "catalog": {
+        "title": "Vendor Catalog",
+        "subtitle": "Search 700+ pre-audited MarTech, AI, and SaaS vendors",
+        "lockedSubtitle": "Get access to 700+ pre-audited vendors with compliance data, certifications, and DPA links",
+        "active": "Active",
+        "addFromCatalog": "Add from Catalog",
+        "perMonth": "/mo",
+        "enable": "Enable",
+        "contactUs": "Contact Us",
+        "modalDescription": "Get access to 700+ pre-audited vendors with compliance data, certifications, and DPA links."
+      },
+      "card": {
+        "noCategories": "No categories",
+        "dataProcessed": "Data Processed",
+        "moreItems": "+{count} more",
+        "added": "Added: {date}",
+        "riskBadge": "{level} Risk"
+      },
+      "status": {
+        "PROSPECTIVE": "Prospective",
+        "ACTIVE": "Active",
+        "UNDER_REVIEW": "Under Review",
+        "SUSPENDED": "Suspended",
+        "TERMINATED": "Terminated"
+      },
+      "riskTier": {
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "High",
+        "CRITICAL": "Critical"
+      },
+      "emptyAll": {
+        "title": "No vendors yet",
+        "subtitle": "Add your first vendor to track third-party risk"
+      },
+      "emptyActive": "No active vendors",
+      "emptyReview": "No vendors under review",
+      "emptyHighRisk": "No high risk vendors"
+    },
+    "assessments": {
+      "title": "Assessments",
+      "subtitle": "Privacy impact assessments and vendor evaluations",
+      "exportPortfolio": "Export Portfolio",
+      "templates": "Templates",
+      "newAssessment": "New Assessment",
+      "newAssessmentShort": "New",
+      "stats": {
+        "total": "Total Assessments",
+        "inProgress": "In Progress",
+        "pendingReview": "Pending Review",
+        "highRisk": "High Risk"
+      },
+      "search": "Search assessments...",
+      "tabs": {
+        "all": "All",
+        "dpia": "DPIA",
+        "vendor": "Vendor",
+        "tia": "TIA"
+      },
+      "card": {
+        "responses": "Responses",
+        "responsesShort": "{count, plural, one {# response} other {# responses}}",
+        "templateUnknown": "Unknown",
+        "templatePrefix": "Template: {name}",
+        "riskBadge": "{level} Risk"
+      },
+      "type": {
+        "DPIA": "DPIA",
+        "PIA": "PIA",
+        "TIA": "TIA",
+        "LIA": "LIA",
+        "VENDOR": "Vendor",
+        "CUSTOM": "Custom"
+      },
+      "status": {
+        "DRAFT": "Draft",
+        "IN_PROGRESS": "In Progress",
+        "PENDING_REVIEW": "Pending Review",
+        "PENDING_APPROVAL": "Pending Approval",
+        "APPROVED": "Approved",
+        "REJECTED": "Rejected"
+      },
+      "riskLevel": {
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "High",
+        "CRITICAL": "Critical"
+      },
+      "emptyAll": {
+        "title": "No assessments yet",
+        "subtitle": "Start your first privacy impact assessment"
+      },
+      "emptyDpia": "No DPIA assessments",
+      "emptyVendor": "No vendor assessments",
+      "emptyTia": "No TIA assessments",
+      "quickStart": {
+        "title": "Quick Start Templates",
+        "subtitle": "Start a new assessment from a template",
+        "premium": "Premium",
+        "sectionsCount": "{count, plural, one {# section} other {# sections}}",
+        "systemTemplate": "System template",
+        "useTemplate": "Use Template",
+        "lia": "Legitimate Interest Assessment",
+        "custom": "Custom Assessment",
+        "dpia": "Data Protection Impact Assessment"
+      }
+    },
+    "dsar": {
+      "title": "Data Subject Requests",
+      "subtitle": "Manage and track DSARs",
+      "exportReport": "Export Report",
+      "settings": "Settings",
+      "comingSoon": "Coming Soon",
+      "newRequest": "New Request",
+      "newRequestShort": "New",
+      "stats": {
+        "total": "Total Requests",
+        "open": "Open",
+        "overdue": "Overdue",
+        "atRisk": "At Risk"
+      },
+      "search": "Search requests...",
+      "tabs": {
+        "all": "All",
+        "open": "Open",
+        "overdue": "Overdue",
+        "completed": "Completed"
+      },
+      "card": {
+        "tasks": "Tasks",
+        "tasksShort": "{count, plural, one {# task} other {# tasks}}",
+        "completed": "Completed",
+        "rejected": "Rejected",
+        "due": "Due: {date}",
+        "naDate": "N/A",
+        "dueToday": "Due today",
+        "daysLeft": "{count, plural, one {# day left} other {# days left}}",
+        "daysLeftShort": "{count}d left",
+        "daysOverdue": "{count, plural, one {# day overdue} other {# days overdue}}",
+        "daysOverdueShort": "{count}d overdue"
+      },
+      "type": {
+        "ACCESS": "Access",
+        "RECTIFICATION": "Rectification",
+        "ERASURE": "Erasure",
+        "PORTABILITY": "Portability",
+        "OBJECTION": "Objection",
+        "RESTRICTION": "Restriction"
+      },
+      "status": {
+        "SUBMITTED": "Submitted",
+        "IDENTITY_PENDING": "Identity Pending",
+        "IDENTITY_VERIFIED": "Identity Verified",
+        "IN_PROGRESS": "In Progress",
+        "DATA_COLLECTED": "Data Collected",
+        "REVIEW_PENDING": "Review Pending",
+        "COMPLETED": "Completed",
+        "REJECTED": "Rejected"
+      },
+      "emptyAll": {
+        "title": "No data subject requests yet",
+        "subtitle": "Create a request or set up a public intake form"
+      },
+      "emptyOpen": "No open requests",
+      "emptyOverdue": "No overdue requests",
+      "emptyCompleted": "No completed requests",
+      "publicPortal": {
+        "title": "Public Intake Portal",
+        "subtitle": "Share this link with data subjects",
+        "comingSoonSubtitle": "A public-facing portal for data subjects to submit GDPR requests. Currently under development.",
+        "open": "Open Portal"
+      }
+    },
+    "dataInventory": {
+      "title": "Data Inventory",
+      "subtitle": "Manage data assets and processing activities",
+      "export": "Export",
+      "exportPrivacyProgram": "Privacy Program Report",
+      "exportRopa": "ROPA Export",
+      "addAsset": "Add Asset",
+      "addAssetShort": "Add",
+      "addActivity": "Add Activity",
+      "addTransfer": "Add Transfer",
+      "search": "Search assets...",
+      "filters": "Filters",
+      "tabs": {
+        "assets": "Assets ({count})",
+        "activities": "Activities ({count})",
+        "flows": "Data Flows",
+        "transfers": "Transfers",
+        "transfersWithCount": "Transfers ({count})"
+      },
+      "asset": {
+        "ownerEmpty": "No owner",
+        "elements": "{count, plural, one {# element} other {# elements}}",
+        "activities": "{count, plural, one {# activity} other {# activities}}",
+        "locationEmpty": "No location specified"
+      },
+      "activity": {
+        "noBasis": "No basis",
+        "noSubjects": "No subjects",
+        "assetsCount": "{count, plural, one {# asset} other {# assets}}",
+        "details": "Details",
+        "viewDetails": "View Details"
+      },
+      "loadMore": "Load More",
+      "emptyAssets": {
+        "title": "No data assets yet",
+        "subtitle": "Start by adding your first data asset"
+      },
+      "emptyActivities": {
+        "title": "No processing activities yet",
+        "subtitle": "Document your data processing activities for ROPA compliance"
+      },
+      "emptyTransfers": {
+        "title": "No international transfers recorded",
+        "subtitle": "Document cross-border data transfers and safeguards (Art. 44–49 GDPR)"
+      },
+      "transfer": {
+        "tiaCompleted": "TIA completed",
+        "tiaPending": "TIA pending",
+        "tiaInProgress": "TIA in progress",
+        "startTia": "Start TIA",
+        "continueTia": "Continue TIA",
+        "viewTia": "View TIA"
+      },
+      "activityDialog": {
+        "title": "Add Processing Activity",
+        "description": "Document a data processing activity for your ROPA (Record of Processing Activities).",
+        "nameLabel": "Activity Name",
+        "namePlaceholder": "e.g. Customer Onboarding",
+        "purposeLabel": "Purpose",
+        "purposePlaceholder": "e.g. Collect and verify customer identity for account creation",
+        "legalBasisLabel": "Legal Basis",
+        "legalBasisPlaceholder": "Select legal basis...",
+        "subjectsLabel": "Data Subjects",
+        "subjectsPlaceholder": "e.g. Customers, Employees, Website visitors",
+        "subjectsHelp": "Comma-separated list"
+      },
+      "transferDialog": {
+        "title": "Add International Transfer",
+        "description": "Record a cross-border data transfer under GDPR Art. 44–49.",
+        "nameLabel": "Transfer Name",
+        "namePlaceholder": "e.g. Customer data to US analytics provider",
+        "countryLabel": "Destination Country",
+        "countryPlaceholder": "e.g. US, IN, GB",
+        "orgLabel": "Receiving Organization",
+        "orgPlaceholder": "e.g. Stripe Inc.",
+        "mechanismLabel": "Transfer Mechanism",
+        "mechanismPlaceholder": "Select mechanism...",
+        "safeguardsLabel": "Safeguards",
+        "safeguardsPlaceholder": "e.g. EU SCCs (2021) + supplementary measures"
+      },
+      "legalBasis": {
+        "CONSENT": "Consent",
+        "CONTRACT": "Contract",
+        "LEGAL_OBLIGATION": "Legal Obligation",
+        "VITAL_INTERESTS": "Vital Interests",
+        "PUBLIC_TASK": "Public Task",
+        "LEGITIMATE_INTERESTS": "Legitimate Interests"
+      },
+      "mechanism": {
+        "ADEQUACY_DECISION": "Adequacy Decision",
+        "STANDARD_CONTRACTUAL_CLAUSES": "SCCs",
+        "BINDING_CORPORATE_RULES": "BCRs",
+        "DEROGATION": "Derogation",
+        "CERTIFICATION": "Certification",
+        "CODE_OF_CONDUCT": "Code of Conduct",
+        "OTHER": "Other"
+      }
+    },
+    "dashboard": {
+      "subtitle": "Privacy Dashboard",
+      "exportReport": "Privacy Program Report",
+      "exportReportShort": "Report",
+      "switchOrg": "Switch",
+      "vwQuickstartTitle": "Build your privacy program from your vendor portfolio",
+      "vwQuickstartDesc": "We found {count, plural, one {<b>1 vendor</b>} other {<b>{count} vendors</b>}} in your Vendor.Watch portfolio. We can auto-generate data assets, processing activities, and data flows — you'll be able to add more later.",
+      "vwQuickstartCta": "Build Now",
+      "moreVendors": "+{count} more",
+      "quickstartTitle": "Get Started with Quickstart",
+      "quickstartDesc": "Bootstrap your privacy program in minutes. Import vendors from the catalog or start from an industry template to auto-generate data assets, processing activities, and data flows.",
+      "quickstartCta": "Get Started",
+      "stats": {
+        "dataInventory": "Data Inventory",
+        "activitiesCount": "{count, plural, one {# activity} other {# activities}}",
+        "openDsars": "Open DSARs",
+        "overdueCount": "{count} overdue",
+        "allOnTrack": "All on track",
+        "assessments": "Assessments",
+        "inProgress": "In progress",
+        "incidents": "Incidents",
+        "openCases": "Open cases"
+      },
+      "dsarQueue": {
+        "title": "DSAR Queue",
+        "subtitle": "Data subject access requests",
+        "viewAll": "View all",
+        "done": "Done",
+        "overdue": "Overdue",
+        "daysShort": "{count}d",
+        "empty": "No open DSARs"
+      },
+      "recentActivity": {
+        "title": "Recent Activity",
+        "subtitle": "Latest updates across your privacy program",
+        "empty": "No recent activity"
+      },
+      "quickActions": {
+        "title": "Quick Actions",
+        "subtitle": "Common tasks",
+        "addAsset": "Add Data Asset",
+        "newDsar": "New DSAR",
+        "reportIncident": "Report Incident",
+        "addVendor": "Add Vendor",
+        "quickstart": "Quickstart Wizard"
+      },
+      "vendors": {
+        "title": "Vendors",
+        "activeCount": "{count, plural, one {# active vendor} other {# active vendors}}",
+        "categoryFallback": "Vendor",
+        "empty": "Add vendors to track third-party risk"
+      },
+      "newOrgDialog": {
+        "title": "New Organization",
+        "nameLabel": "Organization Name",
+        "namePlaceholder": "e.g., Acme Corporation",
+        "creating": "Creating...",
+        "create": "Create"
+      }
+    }
+  },
+  "confirms": {
+    "deleteAssetTitle": "Delete asset?",
+    "deleteAssetDesc": "This will permanently delete the asset and all linked elements. This cannot be undone.",
+    "deleteElementTitle": "Delete element?",
+    "deleteElementDesc": "Delete \"{name}\"? This cannot be undone.",
+    "deleteVendorTitle": "Delete vendor?",
+    "deleteVendorDesc": "This will remove the vendor and unlink it from any assets or activities. This cannot be undone.",
+    "deleteFlowTitle": "Delete data flow?",
+    "deleteFlowDesc": "Delete flow \"{name}\"? This cannot be undone.",
+    "deleteEntitlementTitle": "Delete entitlement?",
+    "deleteEntitlementDesc": "Delete this entitlement ({name})? Linked organizations will lose access immediately. This cannot be undone."
+  },
+  "auth": {
+    "signIn": "Sign In",
+    "signOut": "Sign Out",
+    "signUp": "Sign Up",
+    "email": "Email Address",
+    "password": "Password",
+    "enterEmail": "Enter your email to receive a magic link",
+    "continueWithEmail": "Continue with Email",
+    "continueWithGoogle": "Continue with Google",
+    "orContinueWith": "Or continue with",
+    "noPasswordNeeded": "No password needed. We'll send you a secure link.",
+    "checkEmail": "Check Your Email",
+    "magicLinkSent": "We've sent a magic link to {email}. Click the link in the email to sign in.",
+    "didntReceive": "Didn't receive it?",
+    "tryAgain": "Try again",
+    "sendingLink": "Sending...",
+    "signingIn": "Signing in...",
+    "bySigningIn": "By signing in, you agree to our",
+    "termsOfUse": "Terms of Use",
+    "and": "and",
+    "privacyPolicy": "Privacy Policy",
+    "developmentMode": "Development Mode",
+    "devSignIn": "Dev Sign In (Instant)",
+    "termsOfService": "Terms of Service",
+    "emailPlaceholder": "you@company.com",
+    "devEmailPlaceholder": "dev@example.com",
+    "failedToSendLink": "Failed to send magic link. Please try again.",
+    "unexpectedError": "An unexpected error occurred.",
+    "devSignInFailed": "Dev sign-in failed.",
+    "error": {
+      "OAuthAccountNotLinked": "This email is already associated with a different sign-in method. Try using your magic link instead.",
+      "OAuthCallback": "Google sign-in failed. Please try again.",
+      "OAuthSignin": "Could not start Google sign-in. Please try again.",
+      "Default": "Sign-in failed. Please try again."
+    },
+    "authErrorPage": {
+      "title": "Authentication Error",
+      "titleAccountExists": "Account Already Exists",
+      "body": "Something went wrong during sign-in. The link may have expired or already been used.",
+      "bodyAccountExists": "An account with this email already exists using a different sign-in method. Please sign in using your original method (email magic link or Google) to access your account.",
+      "bodyFallback": "Something went wrong during sign-in.",
+      "cta": "Try Again",
+      "ctaAccountExists": "Sign In with Original Method"
+    },
+    "verifyRequestPage": {
+      "body": "A sign-in link has been sent to your email address. Click the link to sign in."
+    }
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "dataInventory": "Data Inventory",
+    "dsar": "DSAR",
+    "assessments": "Assessments",
+    "incidents": "Incidents",
+    "vendors": "Vendors",
+    "settings": "Settings",
+    "openMenu": "Open menu",
+    "findExpert": "Find Expert",
+    "myClients": "My Clients",
+    "feedback": "Feedback",
+    "signOut": "Sign out",
+    "reports": "Reports",
+    "regulations": "Regulations",
+    "aiSystems": "AI Systems",
+    "more": "More",
+    "newOrganization": "New Organization"
+  },
+  "footer": {
+    "serviceBy": "{brandName} is a {companyName} service.",
+    "userGuide": "User Guide",
+    "billing": "Billing",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy",
+    "dataSecurity": "Data Security",
+    "docs": "Docs",
+    "howItWorks": "How It Works",
+    "signIn": "Sign In"
+  },
+  "onboarding": {
+    "welcome": "Welcome to {brandName}",
+    "subtitle": "Set up your account to get started with privacy management",
+    "howWillYouUse": "How will you use {brandName}?",
+    "businessOwner": "Business Owner",
+    "businessOwnerDesc": "I need privacy compliance for my organisation",
+    "privacyProfessional": "Privacy Professional",
+    "privacyProfessionalDesc": "I advise multiple organisations on privacy",
+    "orgName": "Organisation Name",
+    "orgNamePlaceholder": "e.g., Acme Corporation",
+    "getStarted": "Get Started",
+    "settingUp": "Setting up..."
+  },
+  "organization": {
+    "welcome": "Welcome to {brandName}",
+    "createOrg": "Create your organization to get started with privacy management",
+    "orgName": "Organization Name",
+    "orgNamePlaceholder": "e.g., Acme Corporation",
+    "createOrganization": "Create Organization",
+    "creating": "Creating...",
+    "switchOrg": "Switch Organization"
+  },
+  "quickstart": {
+    "recommended": "Recommended: Complete Setup",
+    "recommendedDesc": "Import your vendors and add an industry template for the most comprehensive privacy program."
+  },
+  "dashboard": {
+    "title": "Privacy Dashboard",
+    "overview": "Overview",
+    "recentActivity": "Recent Activity",
+    "quickActions": "Quick Actions",
+    "metrics": {
+      "totalAssets": "Total Assets",
+      "activeRequests": "Active Requests",
+      "pendingAssessments": "Pending Assessments",
+      "openIncidents": "Open Incidents"
+    }
+  },
+  "dataInventory": {
+    "title": "Data Inventory",
+    "assets": "Data Assets",
+    "elements": "Data Elements",
+    "activities": "Processing Activities",
+    "flows": "Data Flows",
+    "transfers": "Data Transfers",
+    "newAsset": "New Asset",
+    "newElement": "New Element",
+    "newActivity": "New Activity",
+    "assetType": "Asset Type",
+    "sensitivity": "Sensitivity",
+    "owner": "Owner",
+    "location": "Location"
+  },
+  "dsar": {
+    "title": "Data Subject Access Requests",
+    "newRequest": "New Request",
+    "allRequests": "All Requests",
+    "pending": "Pending",
+    "inProgress": "In Progress",
+    "completed": "Completed",
+    "overdue": "Overdue",
+    "requesterName": "Requester Name",
+    "requesterEmail": "Requester Email",
+    "requestType": "Request Type",
+    "dueDate": "Due Date",
+    "receivedDate": "Received Date",
+    "types": {
+      "access": "Right to Access",
+      "rectification": "Right to Rectification",
+      "erasure": "Right to Erasure",
+      "portability": "Right to Portability",
+      "objection": "Right to Object",
+      "restriction": "Right to Restriction"
+    }
+  },
+  "assessments": {
+    "title": "Assessments",
+    "newAssessment": "New Assessment",
+    "templates": "Templates",
+    "draft": "Draft",
+    "inProgress": "In Progress",
+    "pendingReview": "Pending Review",
+    "approved": "Approved",
+    "types": {
+      "dpia": "Data Protection Impact Assessment",
+      "pia": "Privacy Impact Assessment",
+      "tia": "Transfer Impact Assessment",
+      "lia": "Legitimate Interest Assessment",
+      "vendor": "Vendor Risk Assessment",
+      "custom": "Custom Assessment"
+    },
+    "riskLevel": "Risk Level",
+    "startDate": "Start Date",
+    "completedDate": "Completed Date"
+  },
+  "incidents": {
+    "title": "Incidents",
+    "newIncident": "New Incident",
+    "reported": "Reported",
+    "investigating": "Investigating",
+    "contained": "Contained",
+    "resolved": "Resolved",
+    "severity": "Severity",
+    "severityLevels": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High",
+      "critical": "Critical"
+    },
+    "discoveredAt": "Discovered At",
+    "affectedRecords": "Affected Records",
+    "notificationRequired": "Notification Required"
+  },
+  "vendors": {
+    "title": "Vendors",
+    "newVendor": "New Vendor",
+    "active": "Active",
+    "prospective": "Prospective",
+    "underReview": "Under Review",
+    "suspended": "Suspended",
+    "riskTier": "Risk Tier",
+    "contracts": "Contracts",
+    "questionnaires": "Questionnaires",
+    "lastAssessed": "Last Assessed",
+    "nextReview": "Next Review"
+  },
+  "premium": {
+    "accessRequired": "Access Required",
+    "premiumFeature": "Premium Feature",
+    "upgradeRequired": "This feature requires a premium license.",
+    "contactUs": "Contact Us",
+    "upgradeNow": "Upgrade Now",
+    "premiumSuite": "This assessment type is part of the {brandName} premium suite. Upgrade your plan to access advanced privacy assessment tools."
+  },
+  "expertCta": {
+    "findExpert": "Find Expert",
+    "quickstart": {
+      "heading": "Need help setting up your privacy program?",
+      "body": "Connect with a certified privacy expert who can guide you through GDPR compliance and help tailor your program."
+    },
+    "assessment": {
+      "heading": "Need help with your assessment?",
+      "body": "Privacy experts can help you conduct DPIAs, PIAs, and other assessments to ensure thorough compliance."
+    },
+    "incident": {
+      "heading": "Need expert guidance on incident response?",
+      "body": "A privacy professional can help you manage breach notifications, DPA communications, and remediation."
+    },
+    "emptyState": {
+      "heading": "Not sure where to start?",
+      "body": "A privacy expert can help you build your data inventory and establish compliant processes from day one."
+    },
+    "general": {
+      "heading": "Get professional help with your privacy program",
+      "body": "Connect with certified privacy professionals who can help with GDPR compliance, assessments, and more."
+    },
+    "vendor": {
+      "heading": "Need help with vendor due diligence?",
+      "body": "A privacy expert can review your vendor contracts, DPAs, and help assess third-party data processing risks."
+    },
+    "dsar": {
+      "heading": "Need help managing subject access requests?",
+      "body": "Privacy professionals can help you establish efficient DSAR workflows and ensure timely, compliant responses."
+    },
+    "highRisk": {
+      "heading": "High-risk processing detected",
+      "body": "Your selection includes vendors that process sensitive data. A DPIA specialist can help you assess and mitigate these risks."
+    },
+    "transfer": {
+      "heading": "International transfers detected",
+      "body": "Data leaving the EEA requires appropriate safeguards. A transfer specialist can help with TIAs and SCCs."
+    }
+  },
+  "experts": {
+    "title": "Find a Privacy Expert",
+    "subtitle": "Connect with certified privacy professionals who can help with your compliance needs",
+    "searchPlaceholder": "Search by name, firm, or expertise...",
+    "specialization": "Specialization",
+    "allSpecializations": "All Specializations",
+    "expertType": "Expert Type",
+    "allTypes": "All Types",
+    "country": "Country",
+    "allCountries": "All Countries",
+    "language": "Language",
+    "allLanguages": "All Languages",
+    "showing": "Showing {count} of {total} expert(s)",
+    "available": "Available",
+    "contactExpert": "Contact Expert",
+    "previous": "Previous",
+    "next": "Next",
+    "noResults": "No experts found matching your criteria. Try adjusting your filters.",
+    "noExperts": "No experts available at this time.",
+    "unnamedExpert": "Unnamed Expert",
+    "privacyExpert": "Privacy Expert",
+    "typeLegal": "Legal",
+    "typeTechnical": "Technical",
+    "typeDeployment": "Deployment",
+    "engagements": {
+      "tabDirectory": "Directory",
+      "tabHistory": "Engagement History",
+      "empty": "No expert engagements yet. Contact an expert to start tracking.",
+      "contactedBy": "{name} · {date}",
+      "notes": "Notes",
+      "notesPlaceholder": "Track outcomes, fees, deliverables, follow-ups…",
+      "addNotes": "Add notes",
+      "saveNotes": "Save",
+      "cancelNotes": "Cancel",
+      "status": {
+        "CONTACTED": "Contacted",
+        "RESPONDED": "Responded",
+        "ENGAGED": "Engaged",
+        "COMPLETED": "Completed",
+        "DECLINED": "Declined"
+      }
+    },
+    "contact": {
+      "title": "Contact {name}",
+      "description": "Send a message to this expert. They'll respond to your email directly.",
+      "requestSent": "Request Sent",
+      "requestSentBody": "Your message has been sent to {name}. They'll respond directly to your email.",
+      "nameLabel": "Name *",
+      "emailLabel": "Email *",
+      "companyLabel": "Company",
+      "subjectLabel": "Subject *",
+      "subjectPlaceholder": "e.g., GDPR compliance consultation",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Briefly describe what you need help with...",
+      "errorMessage": "Something went wrong sending your request. Please try again or contact us directly via email.",
+      "sendRequest": "Send Request"
+    }
+  },
+  "deploymentCta": {
+    "heading": "Want to self-host DPO Central?",
+    "body": "Deployment experts can help you set up and maintain your own instance.",
+    "findExpert": "Find Expert",
+    "dismiss": "Dismiss"
+  },
+  "security": {
+    "badge": "Defense in Depth",
+    "title": "Data Security",
+    "subtitle": "DPO Central is built with defense-in-depth across every layer. As a privacy management platform handling assessment results, incident records, vendor contracts, and data subject requests, security is a foundational requirement — not an afterthought.",
+    "stats": {
+      "layers": "Security Layers",
+      "headers": "HTTP Headers",
+      "roles": "Role Tiers",
+      "hsts": "HSTS Max-Age"
+    },
+    "categories": {
+      "identityAccess": "Identity & Access",
+      "identityAccessDesc": "Authentication, authorization, and session management",
+      "appSecurity": "Application Security",
+      "appSecurityDesc": "Input handling, API protection, and abuse prevention",
+      "dataProtection": "Data Protection",
+      "dataProtectionDesc": "Transport security, audit logging, minimization, and payment handling",
+      "infrastructure": "Infrastructure",
+      "infrastructureDesc": "Hosting, encryption, and environment isolation"
+    },
+    "controlsLabel": "Security Controls",
+    "sections": {
+      "authentication": "Authentication",
+      "authorization": "Authorization & Access Control",
+      "inputValidation": "Input Validation & Sanitization",
+      "apiSecurity": "API Security",
+      "rateLimiting": "Rate Limiting & Abuse Prevention",
+      "transport": "Transport & Browser Security",
+      "audit": "Audit Trail",
+      "minimization": "Data Minimization",
+      "payment": "Payment Security",
+      "hosting": "Hosting & Environment"
+    },
+    "badges": {
+      "zeroKnowledge": "Zero-knowledge",
+      "fiveTierRbac": "5-tier RBAC",
+      "perEndpoint": "Per-endpoint",
+      "sixHeaders": "6 headers",
+      "stripeVerified": "Stripe verified",
+      "edgeNetwork": "Edge network"
+    },
+    "items": {
+      "auth1": "Multi-provider sign-in via Google OAuth and email magic links",
+      "auth2": "Stateless JWT sessions — no server-side session state to compromise",
+      "auth3": "OAuth tokens are never persisted to the database",
+      "auth4": "Account isolation — each sign-in method is kept separate",
+      "auth5": "Cross-app SSO via secure, scoped session cookies",
+      "authHighlight": "No passwords are stored. Authentication is delegated to trusted identity providers or cryptographically signed magic links.",
+      "authz1": "Strict multi-tenancy — every query is scoped to your organization",
+      "authz2": "Five-tier role hierarchy: Owner, Admin, Privacy Officer, Member, Viewer",
+      "authz3": "Role-based enforcement on all create, update, and delete operations",
+      "authz4": "Destructive actions restricted to Admins and Owners only",
+      "authz5": "No raw SQL — all access via parameterized ORM queries",
+      "authzHighlight": "All database access uses parameterized ORM queries. SQL injection is structurally prevented, not just mitigated.",
+      "input1": "Schema validation on every API endpoint",
+      "input2": "HTML sanitization on all public-facing inputs",
+      "input3": "Parameterized database queries prevent SQL injection",
+      "input4": "Validation error details hidden in production",
+      "api1": "Timing-safe API key verification on administrative endpoints",
+      "api2": "Payload size validation on batch operations",
+      "api3": "Token expiry enforcement on all vendor questionnaire operations",
+      "api4": "Public DSAR portal validates active configuration before accepting submissions",
+      "apiHighlight": "API key comparisons use constant-time algorithms to prevent timing attacks on administrative endpoints.",
+      "rate1": "Authentication endpoints throttled against credential stuffing",
+      "rate2": "Checkout and billing routes protected against payment fraud",
+      "rate3": "Public submission endpoints throttled to prevent spam",
+      "rate4": "Proper 429 responses with Retry-After headers",
+      "transport1": "HSTS with 2-year duration, subdomains, and preload",
+      "transport2": "Content Security Policy with per-request nonces",
+      "transport3": "Clickjacking protection via X-Frame-Options: DENY",
+      "transport4": "MIME sniffing prevention and strict referrer policy",
+      "transport5": "Camera, microphone, and geolocation disabled by policy",
+      "transportHighlight": "CSP nonces are generated per request, preventing inline script injection even if an attacker finds an XSS vector.",
+      "audit1": "Comprehensive logging for all create, update, and delete operations",
+      "audit2": "Administrative actions logged with full metadata",
+      "audit3": "Structured production logging with no stack traces or sensitive context",
+      "min1": "API responses return only the fields needed by the interface",
+      "min2": "Sensitive keys are masked in administrative views",
+      "min3": "Public email domains blocked from automatic organization membership",
+      "pay1": "Stripe webhook signature verification via HMAC-SHA256",
+      "pay2": "Server-side checkout prevents client-side price manipulation",
+      "pay3": "Entitlements automatically suspended on payment failure",
+      "infra1": "Hosted on Vercel with automatic TLS and global edge network",
+      "infra2": "PostgreSQL database with encrypted connections",
+      "infra3": "Environment secrets excluded from client bundles",
+      "infra4": "Development-only endpoints gated by runtime environment checks"
+    },
+    "disclosure": {
+      "title": "Responsible Disclosure",
+      "body": "If you discover a security vulnerability, please report it responsibly. Do not open a public issue. Contact us directly at the email address listed in the repository."
+    }
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again.",
+    "notFound": "Not found",
+    "unauthorized": "You are not authorized to perform this action.",
+    "sessionExpired": "Your session has expired. Please sign in again.",
+    "networkError": "Network error. Please check your connection."
+  },
+  "toasts": {
+    "generic": {
+      "somethingWentWrong": "Something went wrong. Please try again."
+    },
+    "organization": {
+      "created": "Created \"{name}\"",
+      "updated": "Organization updated",
+      "deleted": "Deleted \"{name}\""
+    },
+    "dataFlow": {
+      "created": "Data flow created",
+      "updated": "Data flow updated",
+      "deleted": "Data flow deleted",
+      "createFailed": "Failed to create data flow",
+      "updateFailed": "Failed to update data flow",
+      "deleteFailed": "Failed to delete data flow"
+    },
+    "asset": {
+      "created": "Data asset created",
+      "deleted": "Asset deleted",
+      "elementAdded": "Data element added",
+      "elementDeleted": "Element deleted",
+      "activitiesUpdated": "Activities updated",
+      "activitiesUpdatedWithFlows": "Activities updated — auto-generated {count, plural, one {# data flow} other {# data flows}}"
+    },
+    "activity": {
+      "assetsLinked": "Linked assets updated",
+      "assetsLinkedWithFlows": "Linked assets — auto-generated {count, plural, one {# data flow} other {# data flows}}",
+      "flowsGenerated": "{count, plural, one {Generated # new data flow} other {Generated # new data flows}}",
+      "noNewFlows": "No new flows to generate — the existing graph already covers this activity"
+    },
+    "vendor": {
+      "created": "Vendor created",
+      "updated": "Vendor updated",
+      "deleted": "Vendor deleted",
+      "contractAdded": "Contract added",
+      "reviewScheduled": "Review scheduled"
+    },
+    "incident": {
+      "created": "Incident reported",
+      "statusUpdated": "Incident status updated",
+      "timelineAdded": "Timeline entry added",
+      "taskCreated": "Task created",
+      "notificationCreated": "Notification created",
+      "statusUpdateFailed": "Failed to update status",
+      "timelineAddFailed": "Failed to add entry",
+      "taskCreateFailed": "Failed to create task",
+      "notificationCreateFailed": "Failed to create notification"
+    },
+    "dsar": {
+      "created": "DSAR request created",
+      "statusUpdated": "Request status updated",
+      "taskAdded": "Task added",
+      "taskUpdated": "Task updated",
+      "tasksGenerated": "Tasks generated from data assets",
+      "messageSent": "Message sent"
+    },
+    "assessment": {
+      "created": "Assessment created",
+      "submittedForReview": "Assessment submitted for review",
+      "submittedApproved": "Assessment submitted and approved",
+      "approvalRequested": "Approval requested",
+      "approvalRecorded": "Approval decision recorded",
+      "mitigationAdded": "Mitigation added",
+      "mitigationUpdated": "Mitigation updated",
+      "templateCloned": "Template cloned successfully",
+      "autoFillAllSaved": "Assessment created with all responses pre-filled",
+      "autoFillPartialSaved": "Assessment created but only {saved} of {total} responses were saved"
+    },
+    "aiSystem": {
+      "registered": "AI system registered",
+      "sentToSentinel": "{count, plural, one {Sent # system to AI Sentinel} other {Sent # systems to AI Sentinel}}"
+    },
+    "reports": {
+      "snapshotSaved": "Compliance snapshot saved",
+      "snapshotSaveFailed": "Failed to save snapshot"
+    },
+    "quickstart": {
+      "noNewRecords": "All records already exist — nothing new to create",
+      "selectAtLeastOne": "Select at least one option",
+      "selectAtLeastOneVendor": "Select at least one vendor",
+      "selectTemplate": "Select an industry template",
+      "createdSummary": "Created {summary}",
+      "createdVendors": "{count, plural, one {# vendor} other {# vendors}}",
+      "createdAssets": "{count, plural, one {# asset} other {# assets}}",
+      "createdActivities": "{count, plural, one {# activity} other {# activities}}"
+    }
+  },
+  "pdf": {
+    "common": {
+      "brand": "DPO Central",
+      "brandUppercase": "DPO CENTRAL",
+      "confidential": "CONFIDENTIAL",
+      "generated": "Generated {date}",
+      "confidentialBody": "CONFIDENTIAL — This document contains sensitive information about data protection practices. Distribution should be limited to authorised personnel and supervisory authorities upon request."
+    },
+    "enum": {
+      "assetType": {
+        "APPLICATION": "Application",
+        "CLOUD_SERVICE": "Cloud Service",
+        "DATABASE": "Database",
+        "FILE_SYSTEM": "File System",
+        "THIRD_PARTY": "Third Party",
+        "PHYSICAL": "Physical",
+        "OTHER": "Other"
+      },
+      "legalBasis": {
+        "CONSENT": "Consent",
+        "CONTRACT": "Contract",
+        "LEGAL_OBLIGATION": "Legal Obligation",
+        "VITAL_INTERESTS": "Vital Interests",
+        "PUBLIC_TASK": "Public Task",
+        "LEGITIMATE_INTERESTS": "Legitimate Interests"
+      },
+      "riskTier": {
+        "LOW": "Low",
+        "MEDIUM": "Medium",
+        "HIGH": "High",
+        "CRITICAL": "Critical"
+      },
+      "aiRisk": {
+        "UNACCEPTABLE": "Unacceptable",
+        "HIGH_RISK": "High Risk",
+        "LIMITED": "Limited",
+        "MINIMAL": "Minimal"
+      },
+      "vendorStatus": {
+        "PROSPECTIVE": "Prospective",
+        "ACTIVE": "Active",
+        "UNDER_REVIEW": "Under Review",
+        "SUSPENDED": "Suspended",
+        "TERMINATED": "Terminated"
+      },
+      "contractStatus": {
+        "DRAFT": "Draft",
+        "ACTIVE": "Active",
+        "EXPIRED": "Expired",
+        "TERMINATED": "Terminated",
+        "PENDING": "Pending"
+      },
+      "aiSystemStatus": {
+        "DRAFT": "Draft",
+        "REGISTERED": "Registered",
+        "UNDER_REVIEW": "Under Review",
+        "COMPLIANT": "Compliant",
+        "NON_COMPLIANT": "Non-compliant",
+        "DECOMMISSIONED": "Decommissioned"
+      },
+      "dataCategory": {
+        "IDENTIFIERS": "Identifiers",
+        "DEMOGRAPHICS": "Demographics",
+        "FINANCIAL": "Financial",
+        "HEALTH": "Health",
+        "BIOMETRIC": "Biometric",
+        "LOCATION": "Location",
+        "BEHAVIORAL": "Behavioural",
+        "EMPLOYMENT": "Employment",
+        "EDUCATION": "Education",
+        "POLITICAL": "Political",
+        "RELIGIOUS": "Religious",
+        "GENETIC": "Genetic",
+        "SEXUAL_ORIENTATION": "Sexual orientation",
+        "CRIMINAL": "Criminal",
+        "OTHER": "Other"
+      }
+    },
+    "privacyProgram": {
+      "title": "Privacy Program Report",
+      "eyebrow": "Privacy Program Report",
+      "coverSubtitle": "Board-Level Privacy Posture",
+      "coverReference": "GDPR · Article 30 · Article 28 · Privacy Governance",
+      "wordmarkRight": "Privacy Program Documentation",
+      "cover": {
+        "keyFindings": "Key Findings",
+        "dataEnrichmentCoverage": "Data Enrichment Coverage",
+        "vendorCategories": "Vendor Categories",
+        "stats": {
+          "dataAssets": "Data Assets",
+          "processingActivities": "Processing Activities",
+          "vendors": "Vendors",
+          "dsarsOnTime": "DSARs On Time"
+        },
+        "coverage": {
+          "assetsClassified": "Assets classified",
+          "activitiesReviewed": "Activities reviewed",
+          "vendorsWithDpa": "Vendors with DPA"
+        },
+        "noFindings": "No findings."
+      },
+      "inventory": {
+        "sectionNumber": "Section 02",
+        "title": "Data Inventory",
+        "lead": "Overview of registered data assets, their classification density, and the share of personal and special-category data catalogued across the estate.",
+        "donutPersonal": "Personal Data",
+        "donutPersonalSub": "{count} of {total} elements",
+        "donutSpecial": "Special Category",
+        "donutSpecialSub": "{count} of {total} elements · Art. 9",
+        "assetsByType": "Assets by Type",
+        "assetRegister": "Asset Register",
+        "columns": {
+          "name": "Name",
+          "type": "Type",
+          "owner": "Owner",
+          "location": "Location",
+          "elements": "Elts",
+          "personal": "Personal",
+          "article9": "Art. 9"
+        },
+        "empty": "No data assets have been registered."
+      },
+      "ropa": {
+        "sectionNumber": "Section 03",
+        "title": "Record of Processing",
+        "lead": "Article 30 summary. For auditor-grade detail (systems, data elements, transfer safeguards), export the standalone ROPA report.",
+        "byLegalBasis": "By Legal Basis",
+        "signals": "Signals",
+        "autoDecisions": "Auto. Decisions",
+        "intlTransfers": "Intl. Transfers",
+        "overdueReview": "Overdue Review",
+        "allActivities": "All Activities",
+        "columns": {
+          "activity": "Activity",
+          "legalBasis": "Legal Basis",
+          "systems": "Systems",
+          "transfers": "Transfers",
+          "adm": "ADM",
+          "nextReview": "Next Review"
+        },
+        "empty": "No processing activities recorded.",
+        "admYes": "YES"
+      },
+      "vendors": {
+        "sectionNumber": "Section 04",
+        "title": "Vendors & Processors",
+        "lead": "All processors and sub-processors subject to Article 28 obligations. Risk tiering and DPA status are summarised below; the full register follows by category.",
+        "criticalityDistribution": "Criticality Distribution",
+        "coverage": "Coverage",
+        "coverageDpa": "DPA on file",
+        "coverageActive": "Active",
+        "coverageCertified": "Certified",
+        "columns": {
+          "vendor": "Vendor",
+          "risk": "Risk",
+          "countries": "Countries",
+          "certifications": "Certifications",
+          "dpa": "DPA",
+          "nextReview": "Next Review"
+        },
+        "dpaYes": "YES",
+        "dpaMissing": "MISSING"
+      },
+      "ai": {
+        "sectionNumber": "Section 05",
+        "title": "AI Governance",
+        "lead": "EU AI Act posture across the organisation's registered AI systems. Coverage reflects only systems explicitly catalogued — inferred or shadow AI is out of scope.",
+        "donutCompliant": "EU AI Act Compliant",
+        "donutSub": "{count} of {total} systems",
+        "riskDistribution": "Risk Distribution",
+        "stats": {
+          "registered": "AI Systems Registered",
+          "highRisk": "High / Unacceptable Risk",
+          "certified": "ISO 42001 Certified"
+        },
+        "role": "Role Under EU AI Act",
+        "roleUnclassified": "Unclassified",
+        "inventory": "AI Systems Inventory",
+        "columns": {
+          "name": "Name",
+          "category": "Category",
+          "risk": "Risk",
+          "role": "Role",
+          "provider": "Provider",
+          "status": "Status"
+        },
+        "statusCompliant": "COMPLIANT",
+        "statusNonCompliant": "NON-COMPLIANT",
+        "empty": "No AI systems registered."
+      },
+      "flowMap": {
+        "sectionNumber": "Section 06",
+        "title": "Data Flow Map",
+        "leadSingle": "Production assets that participate in at least one data flow or processing activity. Nodes are colour-coded by asset type; dashed edges are auto-generated from activity–asset links, solid edges are explicitly recorded.",
+        "leadMulti": "End-to-end data flows are split across {count} cluster groups to stay legible at this scale. Each page shows one group of processing activities.",
+        "showingCount": "Showing {filtered} of {original} assets",
+        "orphansDropped": "{count, plural, one {# orphaned} other {# orphaned}} (no flows, no activity link) filtered out",
+        "assetTypes": "Asset Types",
+        "clusterOverview": "Overview",
+        "clusterUnassigned": "Unassigned",
+        "clusterMoreSuffix": "+{count} more"
+      },
+      "findings": {
+        "overdueDsars": "{count, plural, one {# data-subject request is} other {# data-subject requests are}} past the statutory response deadline.",
+        "vendorsMissingDpa": "{count, plural, one {# active vendor ({pct}%) has} other {# active vendors ({pct}%) have}} no Data Processing Agreement on file.",
+        "highRiskVendors": "{count, plural, one {# vendor is} other {# vendors are}} classified as high or critical risk — governance review recommended.",
+        "overdueReview": "{count, plural, one {# processing activity is} other {# processing activities are}} overdue for periodic review.",
+        "specialCat": "{count, plural, one {# special category data element is} other {# special category data elements are}} catalogued — Article 9 safeguards apply.",
+        "intlTransfers": "{count, plural, one {# international transfer is} other {# international transfers are}} documented across processing activities.",
+        "adm": "{count, plural, one {# activity involves} other {# activities involve}} automated decision-making subject to Article 22.",
+        "openIncidents": "{count, plural, one {# incident is} other {# incidents are}} open and under investigation.",
+        "healthyProgram": "No material findings detected. The privacy program is in a steady state across inventory, processing, vendors, and incident response."
+      }
+    },
+    "ropaReport": {
+      "eyebrow": "Record of Processing",
+      "coverTitle": "Record of Processing",
+      "coverSubtitle": "Article 30 Register",
+      "coverReference": "GDPR · Article 30",
+      "stats": {
+        "processingActivities": "Processing Activities",
+        "intlTransfers": "Int'l Transfers",
+        "automatedDecisions": "Automated Decisions",
+        "needingReview": "Needing Review"
+      },
+      "byLegalBasis": "By Legal Basis",
+      "dataFlowMap": "Data Flow Map",
+      "dataFlowMapLead": "Each processing activity is shown as a bordered cluster containing the assets it touches. Dashed edges were auto-generated from activity-asset links; solid edges are explicit.",
+      "processingActivities": "Processing Activities",
+      "incomplete": "INCOMPLETE",
+      "activity": {
+        "purpose": "Purpose",
+        "legalBasis": "Legal Basis",
+        "dataSubjects": "Data Subjects",
+        "dataCategories": "Data Categories",
+        "recipients": "Recipients",
+        "retentionPeriod": "Retention Period",
+        "automatedDecisions": "Automated Decisions",
+        "automatedYes": "Yes — {detail}",
+        "automatedNoDetails": "No details",
+        "automatedNo": "No",
+        "lastReviewed": "Last Reviewed",
+        "nextReview": "Next Review",
+        "systems": "Systems / Assets",
+        "systemsColumns": {
+          "system": "System",
+          "type": "Type",
+          "location": "Location",
+          "elements": "Elements"
+        },
+        "transfers": "International Transfers",
+        "transfersColumns": {
+          "destination": "Destination",
+          "organization": "Organization",
+          "mechanism": "Mechanism",
+          "safeguards": "Safeguards"
+        },
+        "warningPrefix": "Warning: "
+      }
+    },
+    "assessmentReport": {
+      "coverGenerated": "Generated: {date}",
+      "coverConfidential": "CONFIDENTIAL — This document contains sensitive information about data protection practices. Distribution should be limited to authorised personnel and supervisory authorities upon request.",
+      "executiveSummary": "Executive Summary",
+      "stats": {
+        "riskLevel": "Risk Level",
+        "completion": "Completion",
+        "questionsAnswered": "Questions Answered",
+        "mitigations": "Mitigations",
+        "notAvailable": "N/A"
+      },
+      "meta": {
+        "assessmentType": "Assessment Type",
+        "template": "Template",
+        "status": "Status",
+        "riskScore": "Risk Score",
+        "started": "Started",
+        "submitted": "Submitted",
+        "completed": "Completed",
+        "dueDate": "Due Date",
+        "linkedActivity": "Linked Activity",
+        "linkedVendor": "Linked Vendor"
+      },
+      "description": "Description",
+      "dpiaCalloutTitle": "GDPR Article 35(7) — Required DPIA Elements",
+      "dpiaCallout1": "Systematic description of processing operations and purposes",
+      "dpiaCallout2": "Assessment of necessity and proportionality",
+      "dpiaCallout3": "Assessment of risks to rights and freedoms of data subjects",
+      "dpiaCallout4": "Measures envisaged to address risks and demonstrate compliance",
+      "sectionProgress": "{answered} of {total} questions answered",
+      "sectionComplete": "Complete",
+      "questionRequired": "REQUIRED",
+      "questionNumber": "Q{n}.",
+      "notAnswered": "Not yet answered",
+      "riskScoreLabel": "Risk Score:",
+      "noteLabel": "Note:",
+      "riskAssessmentSummary": "Risk Assessment Summary",
+      "stats2": {
+        "overallRiskLevel": "Overall Risk Level",
+        "riskScore": "Risk Score",
+        "scoredQuestions": "Scored Questions"
+      },
+      "questionRiskScores": "Question Risk Scores",
+      "riskColumns": {
+        "section": "Section",
+        "question": "Question",
+        "score": "Score",
+        "level": "Level"
+      },
+      "mitigationsTitle": "Risk Mitigations",
+      "mitigationStats": {
+        "total": "Total",
+        "completed": "Completed",
+        "outstanding": "Outstanding"
+      },
+      "mitigationColumns": {
+        "title": "Title",
+        "status": "Status",
+        "priority": "Priority",
+        "owner": "Owner",
+        "dueDate": "Due Date",
+        "evidence": "Evidence"
+      },
+      "priorityCode": "P{n}",
+      "yes": "Yes",
+      "no": "No",
+      "mitigationDetails": "Mitigation Details",
+      "approvalHistory": "Approval History",
+      "approvalColumns": {
+        "level": "Level",
+        "approver": "Approver",
+        "status": "Status",
+        "date": "Date",
+        "comments": "Comments"
+      },
+      "approvalLevel": "Level {n}",
+      "assessmentTypes": {
+        "DPIA": "Data Protection Impact Assessment",
+        "PIA": "Privacy Impact Assessment",
+        "TIA": "Transfer Impact Assessment",
+        "LIA": "Legitimate Interest Assessment",
+        "VENDOR": "Vendor Risk Assessment",
+        "CUSTOM": "Custom Assessment"
+      },
+      "articleRefs": {
+        "DPIA": "GDPR Article 35(7)"
+      }
+    },
+    "assessmentPortfolio": {
+      "pageTitle": "Assessment Portfolio",
+      "coverTitle": "Impact Assessment Portfolio",
+      "coverSubtitle": "DPIA, LIA & Privacy Assessment Status Report",
+      "coverGenerated": "Generated: {date}",
+      "coverConfidential": "CONFIDENTIAL — This document summarises the organisation's privacy impact assessment program. It is intended for DPOs, privacy officers, and supervisory authorities upon request.",
+      "executiveSummary": "Executive Summary",
+      "stats": {
+        "total": "Total Assessments",
+        "approved": "Approved",
+        "highCriticalRisk": "High / Critical Risk",
+        "avgCompletion": "Avg Completion"
+      },
+      "meta": {
+        "organization": "Organization",
+        "reportDate": "Report Date",
+        "typesUsed": "Assessment Types Used",
+        "typesUsedNone": "None",
+        "totalMitigations": "Total Mitigations",
+        "mitigationsCompleted": "Mitigations Completed",
+        "mitigationsCompletedValue": "{done} of {total}",
+        "overdueAssessments": "Overdue Assessments",
+        "overdueNone": "None"
+      },
+      "gdprCalloutTitle": "GDPR Article 35 — Impact Assessment Obligations",
+      "gdprCalloutBody": "Controllers must carry out a DPIA before processing that is likely to result in a high risk to the rights and freedoms of natural persons. The assessment must be reviewed and updated when processing operations change.",
+      "overview": "Assessment Overview",
+      "byStatus": "By Status",
+      "byStatusDesc": "Current status of all assessments across the organisation",
+      "statusColumns": {
+        "status": "Status",
+        "count": "Count",
+        "percentage": "Percentage"
+      },
+      "byType": "By Type",
+      "byTypeDesc": "Distribution across assessment types",
+      "typeColumns": {
+        "type": "Assessment Type",
+        "count": "Count",
+        "approved": "Approved",
+        "highRisk": "High Risk"
+      },
+      "byRiskLevel": "By Risk Level",
+      "byRiskLevelDesc": "Risk classification across all assessed activities",
+      "riskStats": {
+        "low": "Low Risk",
+        "medium": "Medium Risk",
+        "high": "High Risk",
+        "critical": "Critical"
+      },
+      "register": "Assessment Register",
+      "registerDesc": "Complete inventory of {count} assessments with current status, risk level, completion, and linked processing activities or vendors.",
+      "registerColumns": {
+        "name": "Name",
+        "type": "Type",
+        "status": "Status",
+        "risk": "Risk",
+        "completion": "Completion",
+        "due": "Due"
+      },
+      "highRiskTitle": "High & Critical Risk Assessments",
+      "highRiskDesc": "The following assessments have been classified as high or critical risk and require priority attention, mitigation measures, and regular review.",
+      "highRiskMeta": {
+        "type": "Type",
+        "riskScore": "Risk Score",
+        "completion": "Completion",
+        "linkedActivity": "Linked Activity",
+        "linkedVendor": "Linked Vendor",
+        "mitigations": "Mitigations",
+        "mitigationsValue": "{done}/{total} completed",
+        "dueDate": "Due Date"
+      },
+      "overdueTitle": "Overdue Assessments",
+      "overdueColumns": {
+        "name": "Name",
+        "type": "Type",
+        "status": "Status",
+        "dueDate": "Due Date",
+        "daysOverdue": "Days Overdue"
+      },
+      "mitigationOverview": "Mitigation Measures Overview",
+      "mitigationStats": {
+        "total": "Total Mitigations",
+        "completed": "Completed",
+        "outstanding": "Outstanding",
+        "completionRate": "Completion Rate",
+        "notAvailable": "N/A"
+      },
+      "mitigationDesc": "Mitigation measures are tracked across all assessments to ensure identified risks are addressed with appropriate safeguards. Measures with status \"Implemented\" or \"Verified\" are counted as completed.",
+      "mitigationColumns": {
+        "assessment": "Assessment",
+        "type": "Type",
+        "total": "Total",
+        "completed": "Completed",
+        "rate": "Rate"
+      },
+      "perTypeCount": "{type} ({count})",
+      "assessmentMeta": {
+        "completion": "Completion:",
+        "completionValue": "{pct}% ({answered}/{total} questions)",
+        "activity": "Activity:",
+        "vendor": "Vendor:",
+        "mitigations": "Mitigations:",
+        "mitigationsValue": "{done}/{total} completed",
+        "started": "Started:",
+        "completed": "Completed:"
+      },
+      "assessmentTypes": {
+        "DPIA": "Data Protection Impact Assessment",
+        "PIA": "Privacy Impact Assessment",
+        "TIA": "Transfer Impact Assessment",
+        "LIA": "Legitimate Interest Assessment",
+        "VENDOR": "Vendor Risk Assessment",
+        "CUSTOM": "Custom Assessment"
+      }
+    },
+    "regulatoryLandscape": {
+      "pageTitle": "Regulatory Landscape",
+      "coverTitle": "Regulatory Landscape Report",
+      "coverSubtitle": "Privacy Program Compliance & Exposure Analysis",
+      "coverGenerated": "Generated: {date}",
+      "coverConfidential": "CONFIDENTIAL — This document provides a regulatory compliance overview for internal use by the privacy and legal teams. It should not be distributed externally without authorization.",
+      "executiveSummary": "Executive Summary",
+      "stats": {
+        "appliedFrameworks": "Applied Frameworks",
+        "complianceScore": "Compliance Score",
+        "strictestDsar": "Strictest DSAR",
+        "strictestBreach": "Strictest Breach",
+        "totalDsars": "Total DSARs",
+        "onTimeRate": "On-Time Rate",
+        "avgResolution": "Avg Resolution",
+        "overdue": "Overdue",
+        "totalTransfers": "Total Transfers",
+        "destinationCountries": "Destination Countries",
+        "nonAdequate": "Non-Adequate",
+        "totalVendors": "Total Vendors",
+        "operatingCountries": "Operating Countries",
+        "highRiskVendors": "High-Risk Vendors",
+        "notAvailable": "N/A"
+      },
+      "meta": {
+        "organization": "Organization",
+        "reportDate": "Report Date",
+        "dataAssets": "Data Assets",
+        "processingActivities": "Processing Activities",
+        "activeVendors": "Active Vendors",
+        "internationalTransfers": "International Transfers",
+        "primaryJurisdiction": "Primary Jurisdiction",
+        "primaryJurisdictionNotSet": "Not set"
+      },
+      "programHealth": "Program Health Indicators",
+      "healthDsarOnTime": "DSAR on-time completion: {rate}%",
+      "healthOpenIncidents": "Open incidents: {open} ({critical} critical)",
+      "healthOverdueDsars": "Overdue DSARs: {count}",
+      "healthHighRiskVendors": "High-risk vendors: {count}",
+      "healthAssessments": "Assessments approved: {approved} of {total}",
+      "appliedFrameworks": "Applied Regulatory Frameworks",
+      "appliedFrameworksDesc": "The following {count} regulatory frameworks have been identified as applicable to {org}. Deadlines shown represent the strictest requirements; where multiple jurisdictions overlap, the shortest deadline should prevail.",
+      "frameworkColumns": {
+        "framework": "Framework",
+        "region": "Region",
+        "category": "Category",
+        "dsar": "DSAR",
+        "breach": "Breach",
+        "primary": "Primary"
+      },
+      "penaltyExposure": "Penalty Exposure",
+      "penaltyDesc": "Summary of maximum penalties per applied regulatory framework. Actual penalties depend on the nature, gravity, and duration of the infringement, as well as cooperation with supervisory authorities.",
+      "supervisoryAuthority": "Supervisory Authority: {name}",
+      "deadlineCompliance": "Response Deadline Compliance",
+      "dsarByJurisdiction": "DSAR Deadlines by Jurisdiction",
+      "dsarByJurisdictionDesc": "Data subject access request response deadlines vary by framework",
+      "dsarStatusColumns": {
+        "framework": "Framework",
+        "deadline": "Deadline",
+        "status": "Status"
+      },
+      "slaDays": "{days} days",
+      "statusMeeting": "Meeting deadline",
+      "statusAtRisk": "At risk",
+      "statusNoData": "No data yet",
+      "breachDeadlines": "Breach Notification Deadlines",
+      "breachDeadlinesDesc": "Maximum time to notify supervisory authorities after discovering a breach",
+      "breachColumns": {
+        "framework": "Framework",
+        "deadline": "Deadline",
+        "authority": "Authority"
+      },
+      "transferExposure": "International Transfer Exposure",
+      "transferDesc": "Data transfers to countries without an adequacy decision require additional safeguards such as Standard Contractual Clauses (SCCs), Binding Corporate Rules (BCRs), or approved certification mechanisms.",
+      "transferColumns": {
+        "country": "Country",
+        "transfers": "Transfers",
+        "adequacy": "Adequacy",
+        "mechanisms": "Mechanisms"
+      },
+      "yes": "Yes",
+      "no": "No",
+      "vendorFootprint": "Vendor Geographic Footprint",
+      "vendorFootprintDesc": "Vendor operations across jurisdictions create regulatory obligations. High-risk vendors operating in multiple jurisdictions require enhanced due diligence and contractual protections.",
+      "vendorColumns": {
+        "country": "Country",
+        "vendors": "Vendors",
+        "highRisk": "High Risk"
+      },
+      "consolidatedRequirements": "Consolidated Compliance Requirements",
+      "consolidatedDesc": "The following requirements are aggregated from all {count} applied frameworks. Requirements that appear across multiple frameworks indicate areas of regulatory convergence and should be prioritized.",
+      "frameworksList": "Frameworks: {codes} ({count, plural, one {# framework} other {# frameworks}})",
+      "hours": "{hours} hours",
+      "days": "{days} days",
+      "dayOne": "1 day",
+      "noDeadline": "No specific deadline",
+      "category": {
+        "comprehensive": "Comprehensive",
+        "sectoral": "Sectoral",
+        "ai_governance": "AI Governance",
+        "emerging": "Emerging"
+      }
+    },
+    "dsarPerformance": {
+      "pageTitle": "DSAR Performance",
+      "coverTitle": "DSAR Performance Report",
+      "coverSubtitle": "Data Subject Access Request Compliance & Metrics",
+      "coverGenerated": "Generated: {date}",
+      "coverConfidential": "CONFIDENTIAL — This report contains aggregated performance metrics for data subject request handling. No individual personal data is included in this report.",
+      "executiveSummary": "Executive Summary",
+      "stats": {
+        "totalRequests": "Total Requests",
+        "onTimeRate": "On-Time Rate",
+        "avgResolution": "Avg Resolution",
+        "overdue": "Overdue",
+        "notAvailable": "N/A"
+      },
+      "meta": {
+        "organization": "Organization",
+        "reportDate": "Report Date",
+        "primaryJurisdiction": "Primary Jurisdiction",
+        "primaryJurisdictionNotSet": "Not set",
+        "defaultDeadline": "Default Deadline",
+        "defaultDeadlineDays": "{count} days",
+        "totalRequests": "Total Requests",
+        "completed": "Completed",
+        "currentlyOpen": "Currently Open",
+        "completedLast30Days": "Completed (Last 30 Days)",
+        "autoRedacted": "Auto-Redacted"
+      },
+      "privacyByDesign": "Privacy by Design",
+      "privacyByDesignBody": "This report contains no individual personal data. All metrics are aggregated. Completed DSAR records are automatically redacted after the configured retention period to minimize data protection risk.",
+      "requestAnalysis": "Request Analysis",
+      "byType": "By Request Type",
+      "byTypeDesc": "Distribution of data subject requests by type of right exercised",
+      "typeColumns": {
+        "type": "Request Type",
+        "count": "Count",
+        "percentage": "Percentage"
+      },
+      "byStatus": "By Status",
+      "byStatusDesc": "Current status distribution of all requests",
+      "statusColumns": {
+        "status": "Status",
+        "count": "Count",
+        "percentage": "Percentage"
+      },
+      "slaCompliance": "SLA Compliance by Jurisdiction",
+      "slaDesc": "DSAR response deadlines vary by jurisdiction. Where multiple jurisdictions apply, the strictest deadline should prevail. Average resolution time is compared against each framework's deadline.",
+      "slaColumns": {
+        "jurisdiction": "Jurisdiction",
+        "deadline": "Deadline",
+        "avgResolution": "Avg Resolution",
+        "status": "Status"
+      },
+      "slaDays": "{days} days",
+      "monthlyTrend": "Monthly Trend",
+      "monthlyTrendDesc": "Request volume and completion rate over the last 12 months. Monitoring trends helps anticipate resource needs and identify seasonal patterns.",
+      "monthlyColumns": {
+        "month": "Month",
+        "received": "Received",
+        "completed": "Completed",
+        "backlog": "Backlog"
+      },
+      "openRequestAging": "Open Request Aging",
+      "agingDesc": "Requests aged beyond the jurisdiction's deadline require immediate attention. Aging analysis helps prioritize workload and identify bottlenecks in the fulfillment process.",
+      "agingColumns": {
+        "band": "Age Band",
+        "open": "Open Requests",
+        "risk": "Risk Level"
+      },
+      "riskCritical": "Critical — likely overdue",
+      "riskAtRisk": "At risk",
+      "riskOnTrack": "On track",
+      "dsarTypes": {
+        "ACCESS": "Access (Right of Access)",
+        "ERASURE": "Erasure (Right to be Forgotten)",
+        "RECTIFICATION": "Rectification",
+        "PORTABILITY": "Data Portability",
+        "OBJECTION": "Objection to Processing",
+        "RESTRICTION": "Restriction of Processing",
+        "WITHDRAW_CONSENT": "Withdraw Consent",
+        "AUTOMATED_DECISION": "Automated Decision Review",
+        "OTHER": "Other"
+      }
+    },
+    "breachRegister": {
+      "pageTitle": "Breach Register",
+      "coverTitle": "Breach / Incident Register",
+      "coverSubtitle": "GDPR Article 33(5)",
+      "summary": "Summary",
+      "stats": {
+        "totalIncidents": "Total Incidents",
+        "critical": "Critical",
+        "high": "High",
+        "pendingNotifications": "Pending DPA Notifications"
+      },
+      "byStatus": "By Status",
+      "allIncidents": "All Incidents",
+      "unknown": "Unknown",
+      "overviewColumns": {
+        "id": "ID",
+        "title": "Title",
+        "type": "Type",
+        "severity": "Severity",
+        "status": "Status",
+        "discovered": "Discovered",
+        "affectedRecords": "Affected Records"
+      },
+      "statusColumns": {
+        "status": "Status",
+        "count": "Count"
+      },
+      "meta": {
+        "incidentId": "Incident ID",
+        "type": "Type",
+        "discovered": "Discovered",
+        "discoveredBy": "Discovered By",
+        "discoveryMethod": "Discovery Method",
+        "affectedRecords": "Affected Records",
+        "affectedSubjects": "Affected Subjects",
+        "dataCategories": "Data Categories",
+        "containedAt": "Contained At",
+        "resolvedAt": "Resolved At",
+        "notificationRequired": "DPA Notification Required",
+        "notificationDeadline": "Notification Deadline",
+        "yes": "Yes",
+        "no": "No"
+      },
+      "subsections": {
+        "description": "Description",
+        "containmentActions": "Containment Actions",
+        "rootCause": "Root Cause",
+        "lessonsLearned": "Lessons Learned",
+        "dpaNotifications": "DPA Notifications",
+        "timeline": "Timeline"
+      },
+      "notificationColumns": {
+        "jurisdiction": "Jurisdiction",
+        "status": "Status",
+        "date": "Date"
+      },
+      "timelineColumns": {
+        "timestamp": "Timestamp",
+        "event": "Event",
+        "by": "By"
+      },
+      "timelineSystem": "System"
+    },
+    "vendorRegister": {
+      "eyebrow": "Vendor Register",
+      "coverTitle": "Vendor Register",
+      "coverSubtitle": "Processor & Sub-processor Inventory",
+      "coverReference": "GDPR · Article 28",
+      "stats": {
+        "totalVendors": "Total Vendors",
+        "active": "Active",
+        "highCritical": "High / Critical",
+        "contractsExpiring": "Contracts Expiring 30d"
+      },
+      "criticality": "Criticality",
+      "coverage": "Coverage",
+      "coverageDpa": "DPA on file",
+      "coverageCertified": "Certified",
+      "certificationsTop": "Certifications — Top",
+      "directory": "Directory",
+      "directoryLead": "All vendors grouped by primary category. Risk tier and DPA status are shown inline; certifications appear as chips.",
+      "columns": {
+        "vendor": "Vendor",
+        "status": "Status",
+        "risk": "Risk",
+        "countries": "Countries",
+        "certifications": "Certifications",
+        "dpa": "DPA",
+        "nextReview": "Next Review"
+      },
+      "dpaMissing": "MISSING"
+    }
+  }
+}
